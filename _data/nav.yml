@@ -1,0 +1,35 @@
+- section: "시작하기"
+  items:
+    - { title: "대시보드",        url: "/",                 icon: "◈" }
+    - { title: "이 사이트 사용법", url: "/pm/jekyll-guide/", icon: "◇" }
+
+- section: "기획"
+  items:
+    - { title: "기획 목차",       url: "/plan/",            icon: "◈" }
+    - { title: "서비스 개요",     url: "/plan/overview/",   icon: "01" }
+    - { title: "범위 & 우선순위", url: "/plan/scope/",      icon: "02" }
+    - { title: "시스템 아키텍처", url: "/plan/architecture/", icon: "03" }
+    - { title: "데이터 · ERD",    url: "/plan/data/",       icon: "04" }
+    - { title: "API 계약",        url: "/plan/api/",        icon: "05" }
+    - { title: "AI 에이전트 설계", url: "/plan/ai/",        icon: "06" }
+    - { title: "디자인 시스템",   url: "/plan/design/",     icon: "07" }
+    - { title: "인프라 & 배포",   url: "/plan/infra/",      icon: "08" }
+    - { title: "QA & 릴리스",     url: "/plan/release/",    icon: "09" }
+    - { title: "리스크 관리",     url: "/plan/risk/",       icon: "10" }
+
+- section: "실행"
+  items:
+    - { title: "전체 칸반",       url: "/kanban/",          icon: "▦" }
+    - { title: "14일 타임라인",   url: "/schedule/",        icon: "▤" }
+    - { title: "오늘 할 일",      url: "/today/",           icon: "▶" }
+
+- section: "PM 운영"
+  items:
+    - { title: "PM 운영 매뉴얼",  url: "/pm/",              icon: "◆" }
+    - { title: "인프라 런북",     url: "/pm/infra/",        icon: "◆" }
+    - { title: "리뷰 & 숙지 사이클", url: "/pm/review/",    icon: "◆" }
+    - { title: "데일리 체크리스트", url: "/pm/checklist/",  icon: "◆" }
+
+- section: "기록"
+  items:
+    - { title: "데브로그",        url: "/devlog/",          icon: "✎" }

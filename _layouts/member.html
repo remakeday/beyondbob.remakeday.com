@@ -1,0 +1,66 @@
+---
+layout: default
+---
+{%- assign M = site.data.team | where: "key", page.member | first -%}
+{%- assign BOARD = site.data.kanban[page.member].tasks -%}
+<div class="container">
+  <header class="page-head">
+    <div class="page-head__eyebrow">개인 칸반 보드</div>
+    <div class="member-row" style="margin:8px 0 10px">
+      <span class="avatar" style="background:{{ M.color }}">{{ M.initial }}</span>
+      <div>
+        <h1 style="margin:0;font-size:26px">{{ M.name }}</h1>
+        <div class="member-card__role">{{ M.role }}</div>
+      </div>
+    </div>
+    <p>{{ M.scope }}</p>
+  </header>
+
+  <div class="content">
+    <div class="card" style="margin-bottom:22px">
+      <div class="card__title">진행 현황</div>
+      {% include progress.html tasks=BOARD %}
+    </div>
+
+    <h2 id="소유-영역">소유 영역</h2>
+    <ul>{% for o in M.owns %}<li>{{ o }}</li>{% endfor %}</ul>
+
+    <h2 id="칸반-보드">칸반 보드</h2>
+    <p style="color:var(--text-2);font-size:13.5px">
+      카드 상태는 <code>_data/kanban/{{ page.member }}.yml</code> 의 <code>status</code> 값을 바꾸면 반영됩니다
+      (<code>todo</code> → <code>doing</code> → <code>review</code> → <code>done</code>).
+      <code>review</code> 는 <strong>PM 확인 대기</strong>를 뜻하고, <code>done</code> 은 PM이 확인한 뒤에만 붙입니다.
+    </p>
+    {% include kanban-board.html tasks=BOARD %}
+
+    <h2 id="날짜별-업무">날짜별 업무</h2>
+    {% for d in site.data.schedule %}
+      {% assign _day = BOARD | where: "date", d.date %}
+      {% if _day.size > 0 %}
+      <div class="tl-day">
+        <div class="tl-day__head">
+          <span class="tl-day__dday">{{ d.dday }}</span>
+          <span class="tl-day__date">{{ d.date }} ({{ d.dow }})</span>
+          <span class="tl-day__theme">{{ d.theme }}</span>
+          <span class="pill" style="margin-left:auto">{{ _day.size }}건</span>
+        </div>
+        <div class="tl-day__body">
+          <div class="tl-gate"><b>당일 관문</b><br>{{ d.gate }}</div>
+          <ul style="padding-left:20px;margin:0 0 12px">
+            {% for t in _day %}
+            <li style="margin:6px 0">
+              <a href="#{{ t.id }}" class="mono">{{ t.id }}</a>
+              <span class="pill pill--{{ t.priority | downcase }}">{{ t.priority }}</span>
+              <b>{{ t.title }}</b><br>
+              <span style="color:var(--text-3);font-size:12.5px">완료 기준 · {{ t.dod }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    {{ content }}
+  </div>
+</div>

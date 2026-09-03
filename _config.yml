@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────
+#  REMAKE DAY · BeyondBob — 팀 개발 허브 (Jekyll)
+# ─────────────────────────────────────────────────────────────
+title:       "REMAKE DAY"
+tagline:     "BeyondBob 개발 허브"
+description: "REMAKE DAY 팀의 기획·칸반·일정·데브로그를 한곳에서 관리하는 개발 허브입니다."
+url:         "https://beyondbob.remakeday.com"
+baseurl:     ""
+lang:        ko-KR
+timezone:    Asia/Seoul
+
+# 프로젝트 핵심 상수 — 사이트 전역에서 참조
+project:
+  code_name:   "BeyondBob"
+  repo_app:    "https://github.com/remakeday/com.remakeday"
+  repo_site:   "https://github.com/remakeday/beyondbob.remakeday.com"
+  kickoff:     "2026-09-03"
+  deadline:    "2026-09-16"          # 프로덕션 배포 · 서비스 오픈 (D-0)
+  spec_doc:    "REMAKE_DAY_기획서_v6.md"
+
+collections:
+  plan:
+    output: true
+    permalink: /plan/:name/
+  boards:
+    output: true
+    permalink: /kanban/:name/
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: "post" }
+  - scope: { path: "", type: "plan" }
+    values: { layout: "page", section: "plan" }
+  - scope: { path: "", type: "boards" }
+    values: { layout: "member", section: "kanban" }
+  - scope: { path: "" }
+    values: { layout: "page" }
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  toc_levels: 2..3
+
+permalink: /devlog/:year-:month-:day-:title/
+paginate: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .github

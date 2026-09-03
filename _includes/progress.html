@@ -1,0 +1,23 @@
+{%- assign _t     = include.tasks -%}
+{%- assign _all   = _t | size -%}
+{%- assign _done  = _t | where: "status", "done"   | size -%}
+{%- assign _rev   = _t | where: "status", "review" | size -%}
+{%- assign _doing = _t | where: "status", "doing"  | size -%}
+{%- if _all > 0 -%}
+  {%- assign _pd = _done  | times: 100 | divided_by: _all -%}
+  {%- assign _pr = _rev   | times: 100 | divided_by: _all -%}
+  {%- assign _pg = _doing | times: 100 | divided_by: _all -%}
+{%- else -%}
+  {%- assign _pd = 0 -%}{%- assign _pr = 0 -%}{%- assign _pg = 0 -%}
+{%- endif -%}
+<div class="bar" role="img" aria-label="완료 {{ _pd }}%">
+  <i class="bar__done"   style="width:{{ _pd }}%"></i>
+  <i class="bar__review" style="width:{{ _pr }}%"></i>
+  <i class="bar__doing"  style="width:{{ _pg }}%"></i>
+</div>
+<div class="legend">
+  <span><i style="background:var(--done)"></i>완료 {{ _done }}</span>
+  <span><i style="background:var(--review)"></i>확인 요청 {{ _rev }}</span>
+  <span><i style="background:var(--doing)"></i>진행 중 {{ _doing }}</span>
+  <span><i style="background:var(--todo)"></i>전체 {{ _all }}</span>
+</div>

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="container">
+  <header class="page-head">
+    {% if page.eyebrow %}<div class="page-head__eyebrow">{{ page.eyebrow }}</div>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+    {% if page.owner %}
+      {% assign _o = site.data.team | where: "key", page.owner | first %}
+      <p style="margin-top:10px">
+        <span class="pill"><span class="avatar avatar--sm" style="background:{{ _o.color }}">{{ _o.initial }}</span> 담당 {{ _o.name }}</span>
+      </p>
+    {% endif %}
+  </header>
+  <div class="content">
+    {{ content }}
+  </div>
+</div>

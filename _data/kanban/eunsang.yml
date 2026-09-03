@@ -1,0 +1,109 @@
+member: eunsang
+tasks:
+  # ── D-13 · 9/03 (목) ──────────────────────────────────────
+  - { id: APP-01, date: "2026-09-03", status: doing, priority: P0, tags: [셋업], title: "Flutter 프로젝트 생성 · 폴더 구조 확정",
+      dod: "feature 단위 구조 확정, Android/iOS 빌드 각 1회 성공", output: "app/ 스켈레톤" }
+  - { id: APP-02, date: "2026-09-03", status: todo,  priority: P0, tags: [셋업], title: "라우팅 · 상태관리 선정",
+      dod: "go_router + Riverpod 등 선택 근거를 남기고 샘플 화면 2개 이동 동작", output: "라우팅 설정" }
+  - { id: APP-03, date: "2026-09-03", status: todo,  priority: P1, tags: [디자인], title: "디자인 토큰 수신 준비 · 테마 뼈대",
+      dod: "색·타이포·간격 토큰을 ThemeData 로 주입할 구조 마련", output: "theme/*" }
+
+  # ── D-12 · 9/04 (금) ──────────────────────────────────────
+  - { id: APP-04, date: "2026-09-04", status: todo, priority: P0, tags: [화면], title: "앱 스캐폴드 — 첫 화면 렌더",
+      dod: "실기기에서 스플래시→첫 화면까지 표시", output: "실행 스크린샷" }
+  - { id: APP-05, date: "2026-09-04", status: todo, priority: P0, tags: [연동], title: "API 클라이언트 + 인터셉터",
+      dod: "공통 헤더·에러 변환·로깅 인터셉터 동작, OpenAPI 계약 기준 모델 생성", output: "api client" }
+  - { id: APP-06, date: "2026-09-04", status: todo, priority: P1, tags: [셋업], title: "환경 분리 (dev · stg · prod)",
+      dod: "flavor 또는 dart-define 으로 엔드포인트 전환 확인", output: "환경 설정" }
+
+  # ── D-11 · 9/05 (토) ──────────────────────────────────────
+  - { id: APP-07, date: "2026-09-05", status: todo, priority: P0, tags: [화면], title: "로그인 · 회원가입 화면",
+      dod: "입력 검증·에러 메시지·로딩 상태까지 포함해 완성", output: "auth 화면" }
+  - { id: APP-08, date: "2026-09-05", status: todo, priority: P0, tags: [보안], title: "토큰 보관 + 자동 갱신",
+      dod: "secure storage 저장, 401 시 갱신 후 원요청 재시도", output: "토큰 매니저" }
+  - { id: APP-09, date: "2026-09-05", status: todo, priority: P0, tags: [연동], title: "스테이징 로그인 성공",
+      dod: "실기기에서 실제 스테이징 계정으로 로그인 후 홈 진입", output: "연동 확인" }
+
+  # ── D-10 · 9/06 (일) ──────────────────────────────────────
+  - { id: APP-10, date: "2026-09-06", status: todo, priority: P1, tags: [화면], title: "온보딩 플로우",
+      dod: "최초 실행 시 1회 노출되고 이후 스킵됨", output: "온보딩" }
+  - { id: APP-11, date: "2026-09-06", status: todo, priority: P0, tags: [화면], title: "홈 화면 1차",
+      dod: "실 API 데이터로 목록이 렌더되고 새로고침 동작", output: "홈" }
+  - { id: APP-12, date: "2026-09-06", status: todo, priority: P1, tags: [디자인], title: "공통 컴포넌트 (버튼 · 입력 · 로딩)",
+      dod: "화면 3개 이상에서 재사용, 스타일 중복 제거", output: "widgets/common" }
+
+  # ── D-9 · 9/07 (월) ───────────────────────────────────────
+  - { id: APP-13, date: "2026-09-07", status: todo, priority: P0, tags: [화면], title: "주요 화면 A — end-to-end",
+      dod: "생성→저장→목록 반영까지 실 API 로 완주", output: "화면 A" }
+  - { id: APP-14, date: "2026-09-07", status: todo, priority: P0, tags: [UX], title: "에러 · 빈 상태 처리",
+      dod: "네트워크 오류·빈 목록·권한 오류에 각각 정해진 화면 표시", output: "상태 UI" }
+  - { id: APP-15, date: "2026-09-07", status: todo, priority: P1, tags: [연동], title: "이미지 업로드",
+      dod: "갤러리·카메라 선택 후 업로드 성공, 진행률 표시", output: "업로드 위젯" }
+
+  # ── D-8 · 9/08 (화) ───────────────────────────────────────
+  - { id: APP-16, date: "2026-09-08", status: todo, priority: P0, tags: [AI], title: "AI 대화 화면 (스트리밍)",
+      dod: "SSE 델타가 실시간으로 말풍선에 누적되고 중단 버튼 동작", output: "chat 화면" }
+  - { id: APP-17, date: "2026-09-08", status: todo, priority: P0, tags: [화면], title: "목록 · 상세 화면",
+      dod: "페이지네이션·상세 진입·뒤로가기 상태 유지", output: "list/detail" }
+  - { id: APP-18, date: "2026-09-08", status: todo, priority: P2, tags: [연동], title: "푸시 알림 기초",
+      dod: "디바이스 토큰 등록 및 테스트 알림 수신", output: "push 설정" }
+
+  # ── D-7 · 9/09 (수) ───────────────────────────────────────
+  - { id: APP-19, date: "2026-09-09", status: todo, priority: P0, tags: [배포], title: "알파 빌드 내부 배포",
+      dod: "내부 테스트 트랙에 업로드, 팀원 전원 설치 성공", output: "알파 APK/IPA" }
+  - { id: APP-20, date: "2026-09-09", status: todo, priority: P0, tags: [QA], title: "시연 대응 · 즉시 버그 수정",
+      dod: "시연 중 앱 크래시 0건", output: "핫픽스" }
+  - { id: APP-21, date: "2026-09-09", status: todo, priority: P1, tags: [디자인], title: "다크모드 · 화면 크기 대응 점검",
+      dod: "소형/대형 기기, 라이트/다크에서 레이아웃 깨짐 없음", output: "점검표" }
+
+  # ── D-6 · 9/10 (목) ───────────────────────────────────────
+  - { id: APP-22, date: "2026-09-10", status: todo, priority: P0, tags: [화면], title: "잔여 MUST 화면 완결",
+      dod: "MUST 화면 목록에 미구현 0건", output: "화면 완료 표" }
+  - { id: APP-23, date: "2026-09-10", status: todo, priority: P2, tags: [연동], title: "딥링크",
+      dod: "외부 링크로 특정 상세 화면 진입 성공", output: "딥링크 설정" }
+  - { id: APP-24, date: "2026-09-10", status: todo, priority: P1, tags: [디자인], title: "앱 아이콘 · 스플래시 최종 적용",
+      dod: "양 플랫폼에서 아이콘·스플래시가 정상 표시", output: "앱 리소스" }
+
+  # ── D-5 · 9/11 (금) ───────────────────────────────────────
+  - { id: APP-25, date: "2026-09-11", status: todo, priority: P0, tags: [운영], title: "Feature Freeze — 앱 기능 동결",
+      dod: "18:00 이후 기능 커밋 없음", output: "동결 확인" }
+  - { id: APP-26, date: "2026-09-11", status: todo, priority: P1, tags: [QA], title: "위젯 테스트 핵심 3개",
+      dod: "로그인·목록·대화 화면 테스트가 CI 에서 통과", output: "test/" }
+  - { id: APP-27, date: "2026-09-11", status: todo, priority: P2, tags: [접근성], title: "접근성 · 글자 크기 대응",
+      dod: "시스템 글자 크기 확대 시 잘림 없음", output: "접근성 점검" }
+
+  # ── D-4 · 9/12 (토) ───────────────────────────────────────
+  - { id: APP-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "버그 스쿼시",
+      dod: "배정된 P0/P1 전건 종료", output: "이슈 종료" }
+  - { id: APP-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "실기기 회귀 (Android · iOS)",
+      dod: "양 플랫폼 각 1대 이상에서 전 시나리오 통과", output: "회귀 결과" }
+  - { id: APP-30, date: "2026-09-12", status: todo, priority: P1, tags: [운영], title: "크래시 리포팅 연동",
+      dod: "의도적 크래시가 대시보드에 수집됨", output: "크래시 리포팅" }
+
+  # ── D-3 · 9/13 (일) ───────────────────────────────────────
+  - { id: APP-31, date: "2026-09-13", status: todo, priority: P0, tags: [스토어], title: "스토어 메타데이터 · 스크린샷",
+      dod: "설명·스크린샷·개인정보 항목이 심사 요건을 충족", output: "스토어 자료" }
+  - { id: APP-32, date: "2026-09-13", status: todo, priority: P0, tags: [스토어], title: "스토어 심사 제출",
+      dod: "심사 제출 완료, 접수 확인", output: "제출 확인" }
+  - { id: APP-33, date: "2026-09-13", status: todo, priority: P1, tags: [성능], title: "성능 점검 (프레임 · 시작 시간)",
+      dod: "주요 스크롤 구간 프레임 드랍 최소화, 콜드 스타트 목표치 충족", output: "성능 리포트" }
+
+  # ── D-2 · 9/14 (월) ───────────────────────────────────────
+  - { id: APP-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 빌드 서명 · 업로드",
+      dod: "릴리스 서명 빌드가 스토어에 업로드됨", output: "RC 빌드" }
+  - { id: APP-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 엔드포인트 전환 검증",
+      dod: "prod flavor 빌드가 운영 API 를 바라보고 정상 동작", output: "전환 확인" }
+
+  # ── D-1 · 9/15 (화) ───────────────────────────────────────
+  - { id: APP-36, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응",
+      dod: "핫픽스 외 커밋 없음", output: "동결 확인" }
+  - { id: APP-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 — 앱 파트",
+      dod: "릴리스 전환 절차와 롤백(이전 빌드 유지) 방법 확인", output: "리허설 기록" }
+
+  # ── D-0 · 9/16 (수) ───────────────────────────────────────
+  - { id: APP-38, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "스토어 릴리스 공개",
+      dod: "앱이 공개 상태로 전환되고 설치 가능", output: "v1.0.0" }
+  - { id: APP-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영], title: "오픈 온콜 — 크래시 관측",
+      dod: "오픈 2시간 크래시율 목표 이내", output: "온콜 기록" }
+  - { id: APP-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록], title: "데브로그 — 앱 개발 회고",
+      dod: "구조 선택과 스트리밍 UI 구현 경험을 글 1편으로 작성", output: "데브로그" }

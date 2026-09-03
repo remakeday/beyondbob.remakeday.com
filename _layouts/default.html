@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>{% include head.html %}</head>
+<body>
+{%- assign DL = site.project.deadline | append: "T23:59:59+09:00" | date: "%s" | plus: 0 -%}
+{%- assign NOW = site.time | date: "%s" | plus: 0 -%}
+{%- assign DLEFT = DL | minus: NOW | divided_by: 86400 -%}
+<div class="shell">
+  {% include sidebar.html %}
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-toggle aria-label="메뉴 열기">☰</button>
+      <span class="topbar__title">{{ page.title | default: "대시보드" }}</span>
+      <span class="topbar__spacer"></span>
+      <span class="pill pill--accent" data-dday="{{ site.project.deadline }}">D-{{ DLEFT }}</span>
+      <span class="pill">오픈 {{ site.project.deadline }}</span>
+    </div>
+    {{ content }}
+    {% include footer.html %}
+  </div>
+</div>
+<script src="{{ '/assets/js/app.js' | relative_url }}"></script>
+</body>
+</html>

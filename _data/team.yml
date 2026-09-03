@@ -1,0 +1,75 @@
+# 팀 프로필 — com.remakeday/docs/teamprofile.md 기준
+- key:      ryujun
+  name:     "류준"
+  role:     "PM · 인프라 · 릴리스"
+  prefix:   "PM"
+  color:    "#f2c94c"
+  initial:  "류"
+  scope:    >-
+    프로젝트 총괄, 인프라(서버·DB·CI/CD·도메인) 구축, Jekyll 개발 허브 운영,
+    팀원 업무 확인·숙지 사이클 관리, 릴리스 판단.
+  owns:
+    - "인프라 / 배포 파이프라인"
+    - "Jekyll 개발 허브 (이 사이트)"
+    - "일정·리스크·의사결정 기록"
+    - "데일리 리뷰 & 승인"
+
+- key:      minseok
+  name:     "장민석"
+  role:     "백엔드 · AI"
+  prefix:   "BE"
+  color:    "#56ccf2"
+  initial:  "민"
+  scope:    >-
+    core/matrix 전역 인프라, ERD·DB 스키마, 인증/계정, 핵심 도메인 Bounded Context,
+    API 계약 관리. Fractal 11-File Set 규약의 기준선을 세운다.
+  owns:
+    - "core/matrix (DB·Secret 매니저)"
+    - "ERD & 마이그레이션"
+    - "인증 / 계정 BC"
+    - "핵심 도메인 BC + API 계약"
+
+- key:      chaeyeon
+  name:     "신채연"
+  role:     "AI · 백엔드"
+  prefix:   "AI"
+  color:    "#bb6bd9"
+  initial:  "채"
+  scope:    >-
+    AI 에이전트 Bounded Context, LLM 파이프라인(프롬프트·툴·RAG), 추천/분석 로직,
+    비동기 작업 큐, AI 응답 품질 평가.
+  owns:
+    - "AI 에이전트 BC"
+    - "LLM 파이프라인 / 프롬프트"
+    - "RAG · 벡터 검색"
+    - "AI 품질 평가 & 비용 관리"
+
+- key:      eunsang
+  name:     "이은상"
+  role:     "Flutter (모바일 앱)"
+  prefix:   "APP"
+  color:    "#6fcf97"
+  initial:  "은"
+  scope:    >-
+    Flutter 앱 전체. 라우팅·상태관리·API 연동·디자인 시스템 적용,
+    스토어 배포(내부 테스트 트랙 포함).
+  owns:
+    - "Flutter 앱 아키텍처"
+    - "앱 화면 · 상태관리"
+    - "앱 ↔ API 연동"
+    - "스토어 빌드 / 배포"
+
+- key:      chungsik
+  name:     "김충식"
+  role:     "프론트엔드 (웹)"
+  prefix:   "FE"
+  color:    "#eb5757"
+  initial:  "충"
+  scope:    >-
+    웹 프론트엔드 전체. 디자인 시스템·공통 컴포넌트, 랜딩/온보딩, 주요 화면,
+    API 연동, 접근성·성능.
+  owns:
+    - "디자인 시스템 / 공통 컴포넌트"
+    - "랜딩 · 온보딩"
+    - "웹 주요 화면"
+    - "웹 ↔ API 연동 · 성능"

@@ -1,0 +1,38 @@
+{%- assign _tasks = include.tasks -%}
+<div class="kanban">
+  {%- assign _cols = "todo|할 일,doing|진행 중,review|확인 요청,done|완료" | split: "," -%}
+  {%- for c in _cols -%}
+    {%- assign _p = c | split: "|" -%}
+    {%- assign _key = _p[0] -%}
+    {%- assign _items = _tasks | where: "status", _key -%}
+    <section class="kcol">
+      <header class="kcol__head">
+        <span class="kcol__dot" style="background:var(--{{ _key }})"></span>
+        <span class="kcol__name">{{ _p[1] }}</span>
+        <span class="kcol__count">{{ _items | size }}</span>
+      </header>
+      {%- if _items.size == 0 -%}
+        <div class="kcol__empty">— 없음 —</div>
+      {%- else -%}
+        {%- assign _sorted = _items | sort: "date" -%}
+        {%- for t in _sorted -%}
+        <article class="kcard" data-status="{{ t.status }}" id="{{ t.id }}">
+          <div class="kcard__top">
+            <span class="kcard__id">{{ t.id }}</span>
+            <span class="pill pill--{{ t.priority | downcase }}">{{ t.priority }}</span>
+            <span class="kcard__date">{{ t.date | date: "%m/%d" }}</span>
+          </div>
+          <div class="kcard__title">{{ t.title }}</div>
+          {%- if t.dod %}<div class="kcard__dod"><b>완료 기준</b><br>{{ t.dod }}</div>{% endif -%}
+          {%- if t.tags %}
+          <div class="kcard__tags">
+            {%- for tag in t.tags %}<span class="tag">{{ tag }}</span>{% endfor -%}
+            {%- if t.output %}<span class="tag">→ {{ t.output }}</span>{% endif -%}
+          </div>
+          {%- endif -%}
+        </article>
+        {%- endfor -%}
+      {%- endif -%}
+    </section>
+  {%- endfor -%}
+</div>
