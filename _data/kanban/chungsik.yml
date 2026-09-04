@@ -1,109 +1,109 @@
 member: chungsik
 tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
-  - { id: FE-01, date: "2026-09-03", status: doing, priority: P0, tags: [셋업], title: "프론트 스택 확정 · 프로젝트 생성",
-      dod: "선택 근거를 남기고 dev 서버가 3300 포트로 기동", output: "frontend/ 스켈레톤" }
-  - { id: FE-02, date: "2026-09-03", status: todo,  priority: P0, tags: [디자인], title: "디자인 토큰 정의 (색 · 타이포 · 간격)",
-      dod: "토큰이 코드에 존재하고 앱(Flutter)과 값이 일치", output: "design tokens" }
-  - { id: FE-03, date: "2026-09-03", status: todo,  priority: P1, tags: [규약], title: "로컬 실행 규약 정리 (3300 → 8300)",
-      dod: "프록시 설정으로 CORS 없이 로컬 개발 가능, README 반영", output: "frontend/README" }
+  - { id: FE-01, date: "2026-09-03", status: doing, priority: P0, tags: [셋업],   title: "웹 프로젝트 생성 · Vercel 연결",
+      dod: "dev 서버가 3300 으로 뜨고 /api 가 8300 으로 프록시, Vercel 프리뷰 배포 1회 성공", output: "frontend/" }
+  - { id: FE-02, date: "2026-09-03", status: todo,  priority: P0, tags: [디자인], title: "디자인 토큰 — 읽기 우선 타이포",
+      dod: "본문 행간 1.8 이상, 어절 단위 줄바꿈, 상태색 3종 확정. 이은상과 값 공유", output: "design tokens" }
+  - { id: FE-03, date: "2026-09-03", status: todo,  priority: P1, tags: [규약],   title: "화면 5장 라우팅 골격",
+      dod: "아침·대화·노트·인스펙터 라우트가 존재하고 이동 동작 (권고는 오버레이)", output: "라우팅" }
 
   # ── D-12 · 9/04 (금) ──────────────────────────────────────
-  - { id: FE-04, date: "2026-09-04", status: todo, priority: P0, tags: [셋업], title: "레이아웃 · 라우팅 뼈대",
-      dod: "공통 헤더/사이드/컨텐츠 골격과 라우트 4개 이동 동작", output: "레이아웃" }
-  - { id: FE-05, date: "2026-09-04", status: todo, priority: P0, tags: [연동], title: "API 클라이언트 + 공통 에러 처리",
-      dod: "OpenAPI 계약 기준 타입 생성, 에러 코드별 처리 분기 존재", output: "api layer" }
-  - { id: FE-06, date: "2026-09-04", status: todo, priority: P1, tags: [디자인], title: "공통 컴포넌트 1차",
-      dod: "버튼·입력·모달·스피너가 토큰 기반으로 구현", output: "components/ui" }
+  - { id: FE-04, date: "2026-09-04", status: todo, priority: P0, tags: [연동],   title: "API 클라이언트 + 세션 키 보관",
+      dod: "첫 진입 시 세션 발급 후 로컬 보관, X-Session-Key 자동 첨부", output: "api client" }
+  - { id: FE-05, date: "2026-09-04", status: todo, priority: P0, tags: [연동],   title: "SSE 수신 골격",
+      dod: "delta/tool/done/error 이벤트를 받아 상태로 반영, 자체 타임아웃 존재", output: "sse client" }
+  - { id: FE-06, date: "2026-09-04", status: todo, priority: P1, tags: [디자인], title: "공통 컴포넌트 최소 세트",
+      dod: "버튼·입력·배너·스켈레톤이 토큰 기반으로 구현", output: "components" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
-  - { id: FE-07, date: "2026-09-05", status: todo, priority: P0, tags: [화면], title: "로그인 · 회원가입 화면",
-      dod: "검증·에러·로딩 상태 포함해 완성", output: "auth 페이지" }
-  - { id: FE-08, date: "2026-09-05", status: todo, priority: P0, tags: [보안], title: "인증 세션 관리",
-      dod: "새로고침 후 로그인 유지, 만료 시 자동 갱신 또는 재로그인 유도", output: "세션 관리" }
-  - { id: FE-09, date: "2026-09-05", status: todo, priority: P0, tags: [연동], title: "스테이징 로그인 성공",
-      dod: "실제 스테이징 API 로 로그인 후 보호 페이지 진입", output: "연동 확인" }
+  - { id: FE-07, date: "2026-09-05", status: todo, priority: P0, tags: [화면],   title: "아침 화면 — 공개 진입점",
+      dod: "서버가 내려준 morning.fixed 를 그대로 렌더. 프론트 하드코딩 없음", output: "아침 화면" }
+  - { id: FE-08, date: "2026-09-05", status: todo, priority: P0, tags: [화면],   title: "손상 1층 렌더 — 두 번째 문장",
+      dod: "고정 문장 뒤 변형 문장이 자연스럽게 이어지고, 강조 표시가 없다", output: "손상 렌더" }
+  - { id: FE-09, date: "2026-09-05", status: todo, priority: P0, tags: [연동],   title: "스테이징 실 API로 아침 화면 진입",
+      dod: "로그인 없이 첫 방문에서 아침 화면까지 도달", output: "연동 확인" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
-  - { id: FE-10, date: "2026-09-06", status: todo, priority: P0, tags: [화면], title: "랜딩 페이지",
-      dod: "서비스 소개·CTA·반응형이 완성되어 공개 가능한 수준", output: "랜딩" }
-  - { id: FE-11, date: "2026-09-06", status: todo, priority: P1, tags: [화면], title: "온보딩",
-      dod: "최초 로그인 사용자에게 1회 노출", output: "온보딩" }
-  - { id: FE-12, date: "2026-09-06", status: todo, priority: P1, tags: [규약], title: "폼 검증 공통화",
-      dod: "검증 규칙이 한 곳에 모이고 서버 에러 메시지와 매핑됨", output: "form 유틸" }
+  - { id: FE-10, date: "2026-09-06", status: todo, priority: P0, tags: [화면],   title: "대화창 — 발화 입력과 스트리밍 렌더",
+      dod: "입력 → 전송 → 델타가 실시간으로 쌓이고 중단 버튼 동작", output: "대화창" }
+  - { id: FE-11, date: "2026-09-06", status: todo, priority: P0, tags: [화면],   title: "발화 예산 UI",
+      dod: "남은 예산이 항상 보이고, 소진 시 입력이 비활성화되며 안내가 뜬다", output: "예산 표시" }
+  - { id: FE-12, date: "2026-09-06", status: todo, priority: P0, tags: [규약],   title: "NPC 상태 비노출 확인",
+      dod: "의심도·신뢰도가 화면 어디에도 렌더되지 않음 (인스펙터 제외)", output: "점검" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
-  - { id: FE-13, date: "2026-09-07", status: todo, priority: P0, tags: [화면], title: "주요 화면 A — end-to-end",
-      dod: "실 API 로 생성→목록 반영까지 완주", output: "화면 A" }
-  - { id: FE-14, date: "2026-09-07", status: todo, priority: P0, tags: [UX], title: "로딩 · 스켈레톤 · 빈 상태",
-      dod: "모든 데이터 화면에 3가지 상태가 정의됨", output: "상태 UI" }
-  - { id: FE-15, date: "2026-09-07", status: todo, priority: P1, tags: [디자인], title: "반응형 브레이크포인트",
-      dod: "모바일·태블릿·데스크톱에서 레이아웃 깨짐 없음", output: "반응형 규칙" }
+  - { id: FE-13, date: "2026-09-07", status: todo, priority: P0, tags: [화면],   title: "1루프 end-to-end",
+      dod: "아침 → 대화 3회 → 하루 종료 → 아침 복귀가 실 API로 완주", output: "루프 플로우" }
+  - { id: FE-14, date: "2026-09-07", status: todo, priority: P0, tags: [UX],     title: "로딩 · 오류 · 종료 상태",
+      dod: "LLM 지연·네트워크 끊김·예산 소진에 각각 정해진 화면", output: "상태 UI" }
+  - { id: FE-15, date: "2026-09-07", status: todo, priority: P1, tags: [화면],   title: "툴 호출 진행 표시",
+      dod: "event: tool 수신 시 '~를 확인하는 중' 표시 후 사라짐", output: "툴 인디케이터" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
-  - { id: FE-16, date: "2026-09-08", status: todo, priority: P0, tags: [AI], title: "AI 대화 UI (스트리밍)",
-      dod: "SSE 델타 실시간 렌더, 중단·재시도 동작", output: "chat UI" }
-  - { id: FE-17, date: "2026-09-08", status: todo, priority: P0, tags: [화면], title: "목록 · 상세 · 필터",
-      dod: "페이지네이션과 필터 상태가 URL 에 반영되어 공유 가능", output: "list/detail" }
-  - { id: FE-18, date: "2026-09-08", status: todo, priority: P1, tags: [UX], title: "토스트 · 모달 시스템",
-      dod: "성공/실패 피드백이 전 화면에서 일관되게 표시", output: "피드백 시스템" }
+  - { id: FE-16, date: "2026-09-08", status: todo, priority: P0, tags: [권고],   title: "침묵 권고 배너",
+      dod: "권고와 근거가 함께 뜨고, 수용/무시 버튼이 동등하게 배치됨", output: "권고 배너" }
+  - { id: FE-17, date: "2026-09-08", status: todo, priority: P0, tags: [측정],   title: "권고 응답 전송 — 무시 포함",
+      dod: "무시 후 발화 시 발화 요청 전에 ignored 가 먼저 전송됨", output: "응답 전송" }
+  - { id: FE-18, date: "2026-09-08", status: todo, priority: P1, tags: [측정],   title: "근거 표시 A/B 렌더 분기",
+      dod: "서버가 내려준 분기값에 따라 근거가 표시되거나 생략됨", output: "A/B 렌더" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
-  - { id: FE-19, date: "2026-09-09", status: todo, priority: P0, tags: [배포], title: "알파 배포 대응",
-      dod: "웹 알파가 스테이징 URL 에서 동작", output: "알파 배포" }
-  - { id: FE-20, date: "2026-09-09", status: todo, priority: P0, tags: [QA], title: "시연 버그 수정",
+  - { id: FE-19, date: "2026-09-09", status: todo, priority: P0, tags: [배포],   title: "알파 배포 · 시연 대응",
+      dod: "웹 알파가 스테이징 URL에서 동작하고 전원이 완주", output: "알파 배포" }
+  - { id: FE-20, date: "2026-09-09", status: todo, priority: P0, tags: [QA],     title: "시연 버그 수정",
       dod: "시연 중 발견된 웹 P0 당일 처리", output: "핫픽스" }
-  - { id: FE-21, date: "2026-09-09", status: todo, priority: P1, tags: [접근성], title: "접근성 1차 (키보드 · 대비)",
-      dod: "주요 플로우를 키보드만으로 완주, 대비비 기준 충족", output: "접근성 점검" }
+  - { id: FE-21, date: "2026-09-09", status: todo, priority: P1, tags: [UX],     title: "첫 루프 진입 속도",
+      dod: "방문 → 아침 화면까지 LLM 호출 없이 즉시 렌더", output: "진입 최적화" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
-  - { id: FE-22, date: "2026-09-10", status: todo, priority: P0, tags: [화면], title: "잔여 MUST 화면 완결",
-      dod: "MUST 화면 목록에 미구현 0건", output: "화면 완료 표" }
-  - { id: FE-23, date: "2026-09-10", status: todo, priority: P1, tags: [SEO], title: "메타 · OG · 사이트맵",
-      dod: "공유 시 카드 미리보기가 정상 노출", output: "메타 설정" }
-  - { id: FE-24, date: "2026-09-10", status: todo, priority: P2, tags: [UX], title: "에러 페이지 (404 · 500)",
-      dod: "복귀 경로가 있는 에러 페이지 제공", output: "에러 페이지" }
+  - { id: FE-22, date: "2026-09-10", status: todo, priority: P0, tags: [화면],   title: "엔딩 화면 4종",
+      dod: "반복·고립·망설임·인계가 각각 다른 마무리로 렌더", output: "엔딩 화면" }
+  - { id: FE-23, date: "2026-09-10", status: todo, priority: P0, tags: [화면],   title: "루프 카운터 비노출 · 후반 문장 변화 대응",
+      dod: "카운터가 없고, 7시 13분으로 바뀌어도 화면이 자연스럽다", output: "점검" }
+  - { id: FE-24, date: "2026-09-10", status: todo, priority: P1, tags: [접근성], title: "키보드 완주 · 대비비",
+      dod: "대화 입력→전송→권고 응답을 키보드만으로, 본문 대비비 4.5:1", output: "접근성" }
 
   # ── D-5 · 9/11 (금) ───────────────────────────────────────
-  - { id: FE-25, date: "2026-09-11", status: todo, priority: P0, tags: [운영], title: "Feature Freeze — 웹 기능 동결",
+  - { id: FE-25, date: "2026-09-11", status: todo, priority: P0, tags: [운영],   title: "Feature Freeze — 웹 본류 동결",
       dod: "18:00 이후 기능 커밋 없음", output: "동결 확인" }
-  - { id: FE-26, date: "2026-09-11", status: todo, priority: P1, tags: [QA], title: "크로스 브라우저 점검",
-      dod: "Chrome·Safari·모바일 브라우저에서 주요 플로우 통과", output: "점검표" }
-  - { id: FE-27, date: "2026-09-11", status: todo, priority: P2, tags: [성능], title: "번들 사이즈 점검",
-      dod: "초기 로드 번들 목표치 이내, 큰 의존성 분할", output: "번들 리포트" }
+  - { id: FE-26, date: "2026-09-11", status: todo, priority: P1, tags: [QA],     title: "크로스 브라우저 점검",
+      dod: "Chrome·Safari·모바일 브라우저에서 1루프 완주", output: "점검표" }
+  - { id: FE-27, date: "2026-09-11", status: todo, priority: P2, tags: [성능],   title: "번들 사이즈 · 초기 로드",
+      dod: "첫 화면 로드가 목표치 이내", output: "번들 리포트" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: FE-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "버그 스쿼시",
-      dod: "배정된 P0/P1 전건 종료", output: "이슈 종료" }
-  - { id: FE-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "회귀 시나리오 수행",
-      dod: "회귀 표의 웹 항목 전건 통과 표시", output: "회귀 결과" }
-  - { id: FE-30, date: "2026-09-12", status: todo, priority: P2, tags: [성능], title: "이미지 최적화",
-      dod: "주요 이미지 포맷·사이즈 최적화로 로드 시간 단축 확인", output: "최적화 커밋" }
+  - { id: FE-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "버그 스쿼시",
+      dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
+  - { id: FE-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "회귀 R1~R4 담당 수행",
+      dod: "루프 완주·예산 소진·권고 수용·권고 무시 통과 표시", output: "회귀 결과" }
+  - { id: FE-30, date: "2026-09-12", status: todo, priority: P2, tags: [UX],     title: "텍스트 가독성 최종 조정",
+      dod: "긴 대사에서 줄바꿈·행간이 무너지지 않음", output: "타이포 조정" }
 
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
-  - { id: FE-31, date: "2026-09-13", status: todo, priority: P1, tags: [성능], title: "Lighthouse 목표 달성",
-      dod: "성능·접근성·SEO 점수 목표치 충족", output: "Lighthouse 리포트" }
-  - { id: FE-32, date: "2026-09-13", status: todo, priority: P0, tags: [보안], title: "보안 헤더 · CSP 확인",
-      dod: "프록시 설정과 함께 헤더가 실제 응답에 적용됨", output: "헤더 점검" }
-  - { id: FE-33, date: "2026-09-13", status: todo, priority: P0, tags: [릴리스], title: "개인정보처리방침 · 이용약관 페이지",
-      dod: "공개 URL 로 접근 가능 (앱 스토어 심사 선행 조건)", output: "정책 페이지" }
+  - { id: FE-31, date: "2026-09-13", status: todo, priority: P0, tags: [보안],   title: "보안 헤더 · CSP (Vercel)",
+      dod: "헤더가 실제 응답에 적용되고 SSE 가 막히지 않음", output: "헤더 설정" }
+  - { id: FE-32, date: "2026-09-13", status: todo, priority: P0, tags: [공개],   title: "공개 진입 동선 · 소개 문구",
+      dod: "소개가 표면 목표로 통일되고, 커리어 시나리오 진입 링크가 같은 화면에 존재", output: "진입 화면" }
+  - { id: FE-33, date: "2026-09-13", status: todo, priority: P1, tags: [성능],   title: "Lighthouse 목표 달성",
+      dod: "성능·접근성 점수 목표치 충족", output: "리포트" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
   - { id: FE-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 검증",
-      dod: "RC1 빌드로 스테이징 전 시나리오 통과", output: "검증 결과" }
+      dod: "RC1 로 스테이징 회귀 전건 통과", output: "검증 결과" }
   - { id: FE-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 환경변수 전환",
-      dod: "운영 API·도메인 기준으로 빌드되어 정상 동작", output: "prod 빌드" }
+      dod: "Vercel prod 환경이 운영 API를 바라보고 정상 동작", output: "prod 빌드" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
   - { id: FE-36, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응",
       dod: "핫픽스 외 커밋 없음", output: "동결 확인" }
-  - { id: FE-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 — 웹 파트",
-      dod: "배포·롤백 리허설에서 웹 단계 무오류", output: "리허설 기록" }
+  - { id: FE-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포·롤백 리허설 웹 파트",
+      dod: "Vercel 이전 배포로 되돌리는 절차 확인", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
   - { id: FE-38, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
-      dod: "운영 도메인에서 주요 플로우 전건 통과", output: "배포 검증" }
-  - { id: FE-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영], title: "오픈 온콜 — 프론트 오류 관측",
-      dod: "오픈 2시간 JS 오류·실패 요청 이상 없음", output: "온콜 기록" }
-  - { id: FE-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록], title: "데브로그 — 프론트 회고",
-      dod: "디자인 시스템·스트리밍 UI 구현 경험을 글 1편으로 작성", output: "데브로그" }
+      dod: "운영 도메인에서 1루프 완주", output: "배포 검증" }
+  - { id: FE-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 프론트 오류",
+      dod: "JS 오류·실패 요청 이상 없음", output: "온콜 기록" }
+  - { id: FE-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 스트리밍 대화 UI 회고",
+      dod: "SSE 렌더와 권고 배너 구현 경험을 글 1편", output: "데브로그" }

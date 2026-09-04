@@ -4,141 +4,124 @@ slug: architecture
 owner: minseok
 due: "2026-09-04"
 state: p1
-state_label: "확정"
+state_label: "기획서 9장 반영"
 eyebrow: "기획 03"
-description: "모듈러 모놀리스 · 헥사고날 · Fractal 11-File Set. 5인이 서로 안 밟히며 병렬로 달리기 위한 구조."
+description: "헥사고날 + DDD. 포트는 세 곳만. 어댑터 위 계층 전체가 BeyondBob Engine 입니다."
 ---
 
-## 전체 그림
+## 계층 구조 (기획서 9.1)
 
-<pre><code>┌── 클라이언트 ─────────────────────────────┐
-│  Flutter 앱 (이은상)      웹 프론트 (김충식) │
-│         └────────┬──────────┘               │
-└──────────────────│──────────────────────────┘
-                   │  같은 API 계약 (OpenAPI)
-                   │  HTTPS · JWT · SSE
-┌──────────────────▼──────────────────────────┐
-│  FastAPI  :8300   모듈러 모놀리스            │
-│                                              │
-│  apps/            ← Bounded Context 모음     │
-│    auth/          인증          (장민석)      │
-│    profile/       프로필        (장민석)      │
-│    {domain}/      핵심 도메인   (장민석)      │
-│    agent/         AI 에이전트   (신채연)      │
-│                                              │
-│  core/matrix/     ← 전역 인프라               │
-│    DB 매니저 · Secret 매니저                  │
-│    (apps → core 단방향. 역참조 금지)          │
-└──────────────────┬──────────────────────────┘
-                   │
-        ┌──────────┴──────────┐
-   PostgreSQL              LLM Provider
-   (+ 벡터 검색)            (신채연 관리)</code></pre>
+```
+[도메인 계층]   의심도·신뢰도 산정, 발화 예산, 루프 상태 전이
+                  → 순수 함수. LLM 없이 유닛테스트 가능
 
-## 왜 모듈러 모놀리스인가
+[애플리케이션]  Planner / Agent / Evaluator 오케스트레이션 + 도구 디스패치
+                  → 포트 인터페이스에만 의존
 
-14일짜리 프로젝트에서 마이크로서비스는 **비용만 내고 이득은 못 받습니다.**
-배포 파이프라인이 N배, 로컬 실행이 N배, 장애 추적이 N배가 되는데,
-그 대가로 얻는 독립 배포·독립 확장은 오픈 첫 주에 필요하지 않습니다.
-
-대신 **내부는 Bounded Context 단위로 완전히 갈라놓습니다.** 그래서:
-
-- 장민석과 신채연이 각자 다른 `apps/*` 디렉토리에서 작업 → **머지 충돌이 거의 안 난다**
-- 나중에 진짜 분리가 필요해지면 BC 하나를 통째로 떼면 됨
-- AI가 실수해도 해당 BC 안에서만 망가짐
-
-## 의존성 규칙 — 이것만 지키면 된다
+[어댑터]        LLM 포트 · 도구 포트 · 도메인 포트 · 저장소 · 프론트엔드
+```
 
 <div class="callout callout--ok">
-  <div class="callout__title">단 하나의 규칙</div>
-  <p><strong>비즈니스 로직은 인프라를 모른다.</strong> 의존성은 항상 안쪽을 향한다.</p>
+  <div class="callout__title">어댑터 위 계층 전체 = BeyondBob Engine</div>
+  <p>도메인을 교체해도 이 경계 안쪽은 <strong>코드가 바뀌지 않습니다.</strong>
+  게임 · 감사 대응 · 커리어 대화가 이것을 공유합니다. 전이 시연(방어선 ⑤)의 근거가 여기입니다.</p>
 </div>
 
-```
-Adapter (FastAPI · SQLAlchemy)  →  Application (UseCase)  →  Domain (Entity · VO)
-   바깥                                                          안
-```
+## 포트는 세 곳만 둔다
 
-- `domain/`, `app/use_cases/` 에서 **FastAPI · SQLAlchemy import 금지**
-- `core/` 는 `apps/` 를 **절대 import 하지 않는다** (한 방향: `apps → core`)
-- 외부와의 접점은 전부 **Port**(인터페이스)를 통과한다
+레이어를 늘리는 것 자체가 목적이 아닙니다. 나머지는 실용적으로 처리합니다.
 
-## Fractal 11-File Set
+| 포트 | 무엇을 갈아끼우나 |
+|---|---|
+| **① LLM 포트** | 모델 교체 (model-agnostic) |
+| **② 도구 포트** | 도구 등록·호출 규약 |
+| **③ 도메인 포트** | 전이 시연 — 게임 ↔ 감사 대응 ↔ 커리어 |
 
-**ERD 테이블 1개 = 파일 11개 = 한 사람이 한 번에 맡는 단위.**
+### 도구 포트를 왜 따로 두나 — 전이 때문입니다
 
-```
-테이블 {name} 을 만들면 항상 이 11개:
+도구의 **시그니처는 도메인과 무관하게 고정**되고, 구현만 어댑터에서 갈립니다.
 
-  adapter/inbound/api/v1/{name}_router.py       ← HTTP 진입
-  app/ports/input/{name}_use_case.py            ← Driving Port
-  app/use_cases/{name}_interactor.py            ← 비즈니스 로직
-  app/ports/output/{name}_port.py               ← Driven Port
-  adapter/outbound/repositories/{name}_repository.py
-  adapter/inbound/api/schemas/{name}_schema.py  ← 요청/응답 스키마
-  app/dtos/{name}_dto.py
-  adapter/outbound/orms/{name}_orm.py
-  domain/entities/{name}_entity.py
-  adapter/inbound/mappers/{name}_mapper.py      ← schema ↔ dto
-  adapter/outbound/orm_mappers/{name}_orm_mapper.py  ← entity ↔ orm
-```
-
-**왜 이렇게까지 하나:** 형태가 항상 같으면 새 테이블을 붙일 때 **생각할 게 없습니다.**
-14일 안에 테이블 10개를 만들어야 한다면, 매번 구조를 고민하는 시간이 곧 일정입니다.
-
-### 새 라우터를 만들 때 — myself 부터
-
-실제 비즈니스 로직보다 **먼저** `GET /{prefix}/myself` 를 붙입니다.
-DB 없이 하드코딩한 값(`{id, name}`)을 그대로 왕복시키고, 200 이 나오면
-`router → use_case → interactor → port → repository` 배선이 살아 있다는 뜻입니다.
-
-> 배선이 틀린 상태에서 비즈니스 로직을 얹으면, 어디가 문제인지 찾는 데 반나절이 갑니다.
-> `myself` 는 그 반나절을 5분으로 줄이는 장치입니다.
-
-## 경계 톨게이트
-
-| 경계 | 변환 담당 | 무엇 ↔ 무엇 |
+| 고정 시그니처 | 게임 | 전이 도메인 |
 |---|---|---|
-| Inbound (Router → Interactor) | `mapper` | `schema` ↔ `dto` |
-| Outbound (Repository → DB) | `orm_mapper` | `entity` ↔ `ORM` |
+| `ask_third_party` | NPC에게 묻는다 | 제3자에게 확인한다 |
+| `search_history` | 루프 노트 검색 | 이전 대화 기록 조회 |
 
-이 두 지점을 넘을 때 반드시 변환합니다. **FastAPI 의 요청 객체나 SQLAlchemy 모델이 UseCase 안으로 들어오면 규칙 위반입니다.**
+## 판정 구조 — 계산은 코드, 판단은 LLM
 
-## 클라이언트 아키텍처
-
-| | 웹 (김충식) | 앱 (이은상) |
-|---|---|---|
-| 라우팅 | 파일/설정 기반 라우터 | `go_router` |
-| 상태 | 서버 상태와 UI 상태 분리 | `Riverpod` |
-| API | OpenAPI 계약에서 타입 생성 | 동일 계약 |
-| 인증 | 세션 유지 + 자동 갱신 | secure storage + 자동 갱신 |
-| 스트리밍 | SSE (`EventSource` 계열) | SSE |
-| 디자인 | 디자인 토큰 원본 | 같은 토큰 값을 `ThemeData` 로 |
-
-<div class="callout">
-  <div class="callout__title">웹과 앱은 같은 계약을 본다</div>
-  <p>클라이언트마다 API 를 따로 만들면 백엔드 1인이 두 배로 일하게 됩니다.
-  화면 차이는 클라이언트에서 흡수하고, 서버는 <strong>하나의 계약</strong>만 유지합니다.</p>
+<div class="callout callout--danger">
+  <div class="callout__title">이 분리가 없으면 답할 수 없는 질문이 생긴다</div>
+  <p>"의심도 34는 어디서 나온 숫자인가"</p>
 </div>
 
-## AI 에이전트의 위치
+| | 담당 | 예 |
+|---|---|---|
+| **수치 근거** | 코드 (순수 함수) | 의심도 누적, 신뢰 임계, 발화 예산 감소·회복, 루프 잔류율 |
+| **해석과 행동 결정** | LLM | 이 발화를 의심할 것인가, 계획을 바꿀 것인가 |
 
-에이전트는 `apps/agent/` 라는 **또 하나의 Bounded Context** 입니다. 특별 취급하지 않습니다.
+도메인 계층이 결정론적이므로 **LLM 없이 유닛테스트가 가능**합니다. 9.3의 근거입니다.
 
-- 도메인 데이터가 필요하면 → 다른 BC 가 노출한 **내부 포트**를 호출 (DB 직접 접근 금지)
-- LLM 프로바이더는 → `LlmPort` 뒤에 숨긴다. 프로바이더 교체 = 어댑터 교체
-- 자세한 내용은 <a href="{{ '/plan/ai/' | relative_url }}">06 AI 에이전트 설계</a>
+## 에이전트 하네스
 
-## 기획서 v6 대조
+모든 LLM 출력에 **JSON 스키마를 강제**하고 유효성 검증과 재시도를 겁니다.
+자유 텍스트 응답을 허용하지 않아 게임 상태가 깨지지 않게 합니다.
 
-- [ ] 기획서의 기능이 어느 BC 에 속하는지 매핑 (BC 목록 확정)
-- [ ] 외부 연동(결제·지도·소셜 등) 유무 확인 → 있으면 BC 또는 어댑터 추가
-- [ ] 실시간성 요구사항 확인 → SSE 로 충분한지, 웹소켓이 필요한지
+**도구 호출도 같은 하네스를 통과합니다** — 존재하지 않는 도구, 인자 스키마 위반,
+예산 초과 호출은 **실행 전에 거부**되고 재시도됩니다.
+
+## 아키텍처 테스트를 CI에 건다 (9.2)
+
+- **import-linter** 로 의존성 방향 위반을 자동 검출
+- **도메인 계층이 LLM 어댑터를 참조하면 CI 실패**
+- 배지를 README에 노출
+
+> **의도:** AI가 생성한 코드의 아키텍처 준수 여부를 눈이 아니라 **기계로 검증**한다.
+> 세션마다 스타일이 흔들리는 아키텍처 드리프트를 방지하는 실질적 장치다.
+
+## 도메인 규칙은 테스트 우선 (9.3)
+
+의심도 누적, 신뢰 임계 판정, 발화 예산 감소·회복, 루프 잔류율은 **전부 결정론적**입니다.
+
+> **명세와 검증은 사람이 소유하고, 구현은 AI에 위임한다.**
+
+이 분리 덕분에 *"이 코드 AI가 짰죠?"* 에 대한 답이 명확해집니다 —
+**생성은 AI, 검증은 아키텍처 테스트와 도메인 테스트.**
+
+## Fractal 11-File Set 과의 관계
+
+기존 백엔드 규약(테이블 1개 = 파일 11벌)은 **저장소 어댑터와 도메인 엔티티 쪽에 그대로 적용**합니다.
+다만 이 프로젝트의 위임 단위는 테이블만이 아닙니다.
+
+| 위임 단위 | 예 |
+|---|---|
+| 테이블 1개 = 11-File Set | `loop`, `utterance`, `note`, `judgement_log` |
+| **에이전트 역할 1개** | Planner / Agent / Advisor / Re-plan / Evaluator |
+| **도구 1개** | `ask_npc` / `search_notes` |
+| **도메인 어댑터 1개** | 게임 / 감사 대응 / 커리어 |
+
+## 클라이언트
+
+<div class="callout callout--warn">
+  <div class="callout__title">모바일 앱은 범위에서 빠졌습니다</div>
+  <p>기획서는 <strong>텍스트 전면 · 화면 5장 · 로그인/설치 없이 즉시 진입</strong>(12.2, 12.4)만 요구합니다.
+  네이티브 앱은 언급이 없고, 설치를 요구하는 순간 공개 투표 진입률이 무너집니다.</p>
+</div>
+
+프론트엔드는 **어댑터 계층의 한 조각**입니다. 화면 5장은
+<a href="{{ '/plan/design/' | relative_url }}">07 디자인</a>에 정리돼 있습니다.
+
+## 전이는 언제 착수하나
+
+<div class="callout callout--danger">
+  <div class="callout__title">코어가 돌기 시작하면 즉시 첫 어댑터를 시도한다</div>
+  <p>그때 막히면 <strong>도메인 개념이 코어로 새어 들어간 것</strong>이므로 고칠 시간이 있습니다.
+  3주차에 발견하면 고칠 수 없습니다. 14일 일정에서는 더 그렇습니다.</p>
+</div>
 
 ## 결정 로그
 
 | 날짜 | 결정 | 이유 |
 |---|---|---|
-| 2026-09-03 | 모듈러 모놀리스 유지 (마이크로서비스 안 함) | 14일 일정에서 운영 복잡도 대비 이득 없음 |
-| 2026-09-03 | 실시간은 SSE 로 통일 (웹소켓 미사용) | 단방향 스트리밍만 필요. 웹·앱 양쪽 구현 부담이 절반 |
-| 2026-09-03 | AI 에이전트도 일반 BC 로 취급 | 특별 구조를 만들면 그것만 아무도 못 고치게 됨 |
+| 2026-09-03 | 포트 3개로 제한 (LLM·도구·도메인) | 레이어 증식 자체가 목적이 되지 않게 |
+| 2026-09-03 | 도구 시그니처를 도메인 중립 이름으로 고정 | 전이 때 어댑터만 갈아끼우기 위해 |
+| 2026-09-03 | import-linter CI 게이트 채택 | 아키텍처 드리프트를 사람 눈이 아니라 기계로 막는다 |
+| 2026-09-03 | 모바일 네이티브 제외 | 12.4 즉시 진입 요구와 충돌 |

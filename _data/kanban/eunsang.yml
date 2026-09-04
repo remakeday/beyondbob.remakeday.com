@@ -1,109 +1,109 @@
 member: eunsang
 tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
-  - { id: APP-01, date: "2026-09-03", status: doing, priority: P0, tags: [셋업], title: "Flutter 프로젝트 생성 · 폴더 구조 확정",
-      dod: "feature 단위 구조 확정, Android/iOS 빌드 각 1회 성공", output: "app/ 스켈레톤" }
-  - { id: APP-02, date: "2026-09-03", status: todo,  priority: P0, tags: [셋업], title: "라우팅 · 상태관리 선정",
-      dod: "go_router + Riverpod 등 선택 근거를 남기고 샘플 화면 2개 이동 동작", output: "라우팅 설정" }
-  - { id: APP-03, date: "2026-09-03", status: todo,  priority: P1, tags: [디자인], title: "디자인 토큰 수신 준비 · 테마 뼈대",
-      dod: "색·타이포·간격 토큰을 ThemeData 로 주입할 구조 마련", output: "theme/*" }
+  - { id: APP-01, date: "2026-09-03", status: doing, priority: P0, tags: [운영],   title: "역할 재배치 확인 — 앱 → 노트·인스펙터",
+      dod: "기획서에 모바일 앱이 없음을 확인하고 웹 화면 분담에 합의", output: "역할 확정" }
+  - { id: APP-02, date: "2026-09-03", status: todo,  priority: P0, tags: [셋업],   title: "웹 개발 환경 셋업 · 김충식과 토큰 공유",
+      dod: "같은 레포에서 dev 서버가 뜨고 디자인 토큰을 공유해 사용", output: "환경 셋업" }
+  - { id: APP-03, date: "2026-09-03", status: todo,  priority: P1, tags: [설계],   title: "노트 · 인스펙터 화면 구조 설계",
+      dod: "두 화면의 정보 구조와 진입 동선을 스케치로 확정", output: "화면 설계" }
 
   # ── D-12 · 9/04 (금) ──────────────────────────────────────
-  - { id: APP-04, date: "2026-09-04", status: todo, priority: P0, tags: [화면], title: "앱 스캐폴드 — 첫 화면 렌더",
-      dod: "실기기에서 스플래시→첫 화면까지 표시", output: "실행 스크린샷" }
-  - { id: APP-05, date: "2026-09-04", status: todo, priority: P0, tags: [연동], title: "API 클라이언트 + 인터셉터",
-      dod: "공통 헤더·에러 변환·로깅 인터셉터 동작, OpenAPI 계약 기준 모델 생성", output: "api client" }
-  - { id: APP-06, date: "2026-09-04", status: todo, priority: P1, tags: [셋업], title: "환경 분리 (dev · stg · prod)",
-      dod: "flavor 또는 dart-define 으로 엔드포인트 전환 확인", output: "환경 설정" }
+  - { id: APP-04, date: "2026-09-04", status: todo, priority: P0, tags: [연동],   title: "노트 · 인스펙터 API 계약 리뷰",
+      dod: "필요한 필드가 계약에 다 있는지 확인하고 누락을 백엔드에 요청", output: "계약 피드백" }
+  - { id: APP-05, date: "2026-09-04", status: todo, priority: P0, tags: [화면],   title: "노트 타임라인 골격",
+      dod: "루프별 항목이 시간순으로 쌓이는 레이아웃이 목데이터로 렌더", output: "노트 골격" }
+  - { id: APP-06, date: "2026-09-04", status: todo, priority: P1, tags: [화면],   title: "인스펙터 판정 체인 골격",
+      dod: "발화 → 내부 판정 여러 줄 → 출력 구조가 목데이터로 렌더", output: "인스펙터 골격" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
-  - { id: APP-07, date: "2026-09-05", status: todo, priority: P0, tags: [화면], title: "로그인 · 회원가입 화면",
-      dod: "입력 검증·에러 메시지·로딩 상태까지 포함해 완성", output: "auth 화면" }
-  - { id: APP-08, date: "2026-09-05", status: todo, priority: P0, tags: [보안], title: "토큰 보관 + 자동 갱신",
-      dod: "secure storage 저장, 401 시 갱신 후 원요청 재시도", output: "토큰 매니저" }
-  - { id: APP-09, date: "2026-09-05", status: todo, priority: P0, tags: [연동], title: "스테이징 로그인 성공",
-      dod: "실기기에서 실제 스테이징 계정으로 로그인 후 홈 진입", output: "연동 확인" }
+  - { id: APP-07, date: "2026-09-05", status: todo, priority: P0, tags: [화면],   title: "노트 타임라인 실 API 연동",
+      dod: "세션의 누적 노트가 실제로 조회되어 렌더", output: "노트 화면" }
+  - { id: APP-08, date: "2026-09-05", status: todo, priority: P1, tags: [UX],     title: "노트 빈 상태 · 첫 루프 처리",
+      dod: "1루프에는 노트가 거의 비어 있고, 그 상태가 자연스럽게 보인다", output: "빈 상태" }
+  - { id: APP-09, date: "2026-09-05", status: todo, priority: P1, tags: [디자인], title: "감각 파편 표현 — 짧고 불완전하게",
+      dod: "노트 항목이 보고서가 아니라 파편처럼 보이는 타이포·간격", output: "노트 스타일" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
-  - { id: APP-10, date: "2026-09-06", status: todo, priority: P1, tags: [화면], title: "온보딩 플로우",
-      dod: "최초 실행 시 1회 노출되고 이후 스킵됨", output: "온보딩" }
-  - { id: APP-11, date: "2026-09-06", status: todo, priority: P0, tags: [화면], title: "홈 화면 1차",
-      dod: "실 API 데이터로 목록이 렌더되고 새로고침 동작", output: "홈" }
-  - { id: APP-12, date: "2026-09-06", status: todo, priority: P1, tags: [디자인], title: "공통 컴포넌트 (버튼 · 입력 · 로딩)",
-      dod: "화면 3개 이상에서 재사용, 스타일 중복 제거", output: "widgets/common" }
+  - { id: APP-10, date: "2026-09-06", status: todo, priority: P0, tags: [화면],   title: "인스펙터 실 API 연동",
+      dod: "발화 1건의 판정 체인이 실제 로그로 열린다", output: "인스펙터" }
+  - { id: APP-11, date: "2026-09-06", status: todo, priority: P0, tags: [화면],   title: "도구 호출 체인 표시",
+      dod: "ask_npc 호출·결과·부작용이 체인 안에서 구분되어 보인다", output: "툴 체인 UI" }
+  - { id: APP-12, date: "2026-09-06", status: todo, priority: P1, tags: [UX],     title: "인스펙터 진입 동선",
+      dod: "게임 흐름을 방해하지 않으면서 언제든 열 수 있다", output: "진입 동선" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
-  - { id: APP-13, date: "2026-09-07", status: todo, priority: P0, tags: [화면], title: "주요 화면 A — end-to-end",
-      dod: "생성→저장→목록 반영까지 실 API 로 완주", output: "화면 A" }
-  - { id: APP-14, date: "2026-09-07", status: todo, priority: P0, tags: [UX], title: "에러 · 빈 상태 처리",
-      dod: "네트워크 오류·빈 목록·권한 오류에 각각 정해진 화면 표시", output: "상태 UI" }
-  - { id: APP-15, date: "2026-09-07", status: todo, priority: P1, tags: [연동], title: "이미지 업로드",
-      dod: "갤러리·카메라 선택 후 업로드 성공, 진행률 표시", output: "업로드 위젯" }
+  - { id: APP-13, date: "2026-09-07", status: todo, priority: P0, tags: [연동],   title: "1차 통합 — 노트·인스펙터 실데이터 검증",
+      dod: "실제 1루프를 돌린 뒤 두 화면이 그 루프를 정확히 반영", output: "통합 확인" }
+  - { id: APP-14, date: "2026-09-07", status: todo, priority: P0, tags: [화면],   title: "노트 검색 UI (인터페이스 선구현)",
+      dod: "검색창이 존재하고 전량 반환으로 동작. 임베딩 교체 시 UI 변경 없음", output: "검색 UI" }
+  - { id: APP-15, date: "2026-09-07", status: todo, priority: P1, tags: [UX],     title: "긴 판정 체인 스크롤 처리",
+      dod: "체인이 길어져도 화면이 무너지지 않고 가로 스크롤이 생기지 않음", output: "레이아웃" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
-  - { id: APP-16, date: "2026-09-08", status: todo, priority: P0, tags: [AI], title: "AI 대화 화면 (스트리밍)",
-      dod: "SSE 델타가 실시간으로 말풍선에 누적되고 중단 버튼 동작", output: "chat 화면" }
-  - { id: APP-17, date: "2026-09-08", status: todo, priority: P0, tags: [화면], title: "목록 · 상세 화면",
-      dod: "페이지네이션·상세 진입·뒤로가기 상태 유지", output: "list/detail" }
-  - { id: APP-18, date: "2026-09-08", status: todo, priority: P2, tags: [연동], title: "푸시 알림 기초",
-      dod: "디바이스 토큰 등록 및 테스트 알림 수신", output: "push 설정" }
+  - { id: APP-16, date: "2026-09-08", status: todo, priority: P0, tags: [손상],   title: "노트 불일치(손상 2층) 렌더",
+      dod: "불일치가 오류 표시가 아니라 조용히 존재한다. 경고 아이콘 금지", output: "손상 2층 UI" }
+  - { id: APP-17, date: "2026-09-08", status: todo, priority: P0, tags: [모바일], title: "모바일 웹 최적화 1차",
+      dod: "노트·인스펙터가 모바일 화면에서 읽을 수 있는 수준", output: "모바일 대응" }
+  - { id: APP-18, date: "2026-09-08", status: todo, priority: P1, tags: [화면],   title: "루프별 그룹핑 · 접기",
+      dod: "루프가 쌓여도 노트가 한눈에 들어온다", output: "그룹 UI" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
-  - { id: APP-19, date: "2026-09-09", status: todo, priority: P0, tags: [배포], title: "알파 빌드 내부 배포",
-      dod: "내부 테스트 트랙에 업로드, 팀원 전원 설치 성공", output: "알파 APK/IPA" }
-  - { id: APP-20, date: "2026-09-09", status: todo, priority: P0, tags: [QA], title: "시연 대응 · 즉시 버그 수정",
-      dod: "시연 중 앱 크래시 0건", output: "핫픽스" }
-  - { id: APP-21, date: "2026-09-09", status: todo, priority: P1, tags: [디자인], title: "다크모드 · 화면 크기 대응 점검",
-      dod: "소형/대형 기기, 라이트/다크에서 레이아웃 깨짐 없음", output: "점검표" }
+  - { id: APP-19, date: "2026-09-09", status: todo, priority: P0, tags: [QA],     title: "알파 시연 대응",
+      dod: "시연 중 노트·인스펙터에서 발생한 P0 당일 처리", output: "핫픽스" }
+  - { id: APP-20, date: "2026-09-09", status: todo, priority: P0, tags: [디자인], title: "노트 대표 캡처 다듬기",
+      dod: "루프가 쌓인 노트 화면이 캡처 한 장으로 설득력을 갖는다", output: "캡처본" }
+  - { id: APP-21, date: "2026-09-09", status: todo, priority: P1, tags: [UX],     title: "인스펙터 가독성 조정",
+      dod: "수치·화살표·부작용이 한눈에 구분된다", output: "가독성" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
-  - { id: APP-22, date: "2026-09-10", status: todo, priority: P0, tags: [화면], title: "잔여 MUST 화면 완결",
-      dod: "MUST 화면 목록에 미구현 0건", output: "화면 완료 표" }
-  - { id: APP-23, date: "2026-09-10", status: todo, priority: P2, tags: [연동], title: "딥링크",
-      dod: "외부 링크로 특정 상세 화면 진입 성공", output: "딥링크 설정" }
-  - { id: APP-24, date: "2026-09-10", status: todo, priority: P1, tags: [디자인], title: "앱 아이콘 · 스플래시 최종 적용",
-      dod: "양 플랫폼에서 아이콘·스플래시가 정상 표시", output: "앱 리소스" }
+  - { id: APP-22, date: "2026-09-10", status: todo, priority: P0, tags: [손상],   title: "충식 소실(손상 3층) 표현 지원",
+      dod: "노트에 남은 충식 언급이 후반에 어긋나 보이는 처리", output: "손상 3층" }
+  - { id: APP-23, date: "2026-09-10", status: todo, priority: P0, tags: [전이],   title: "전이 도메인 화면 대응 준비",
+      dod: "인스펙터가 도메인 중립 필드명으로 렌더되어 용어만 갈아끼우면 됨", output: "중립 렌더" }
+  - { id: APP-24, date: "2026-09-10", status: todo, priority: P1, tags: [모바일], title: "모바일 웹 최적화 2차",
+      dod: "대화창까지 포함해 모바일에서 1루프 완주 가능", output: "모바일 대응" }
 
   # ── D-5 · 9/11 (금) ───────────────────────────────────────
-  - { id: APP-25, date: "2026-09-11", status: todo, priority: P0, tags: [운영], title: "Feature Freeze — 앱 기능 동결",
+  - { id: APP-25, date: "2026-09-11", status: todo, priority: P0, tags: [전이],   title: "감사 도메인 인스펙터 개봉 확인",
+      dod: "같은 인스펙터가 감사 시나리오에서 열리고 용어만 다르다", output: "전이 화면" }
+  - { id: APP-26, date: "2026-09-11", status: todo, priority: P0, tags: [운영],   title: "Feature Freeze — 노트·인스펙터 동결",
       dod: "18:00 이후 기능 커밋 없음", output: "동결 확인" }
-  - { id: APP-26, date: "2026-09-11", status: todo, priority: P1, tags: [QA], title: "위젯 테스트 핵심 3개",
-      dod: "로그인·목록·대화 화면 테스트가 CI 에서 통과", output: "test/" }
-  - { id: APP-27, date: "2026-09-11", status: todo, priority: P2, tags: [접근성], title: "접근성 · 글자 크기 대응",
-      dod: "시스템 글자 크기 확대 시 잘림 없음", output: "접근성 점검" }
+  - { id: APP-27, date: "2026-09-11", status: todo, priority: P2, tags: [접근성], title: "글자 크기 확대 대응",
+      dod: "확대 시 노트·인스펙터 레이아웃이 잘리지 않음", output: "접근성" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: APP-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "버그 스쿼시",
-      dod: "배정된 P0/P1 전건 종료", output: "이슈 종료" }
-  - { id: APP-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "실기기 회귀 (Android · iOS)",
-      dod: "양 플랫폼 각 1대 이상에서 전 시나리오 통과", output: "회귀 결과" }
-  - { id: APP-30, date: "2026-09-12", status: todo, priority: P1, tags: [운영], title: "크래시 리포팅 연동",
-      dod: "의도적 크래시가 대시보드에 수집됨", output: "크래시 리포팅" }
+  - { id: APP-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "버그 스쿼시",
+      dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
+  - { id: APP-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "회귀 R6·R10 담당 수행",
+      dod: "5루프 노트 축적·손상 2층 확인, 전이 인스펙터 개봉 통과 표시", output: "회귀 결과" }
+  - { id: APP-30, date: "2026-09-12", status: todo, priority: P1, tags: [모바일], title: "실기기 확인 (iOS · Android 브라우저)",
+      dod: "양 플랫폼 모바일 브라우저에서 1루프 완주", output: "실기기 결과" }
 
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
-  - { id: APP-31, date: "2026-09-13", status: todo, priority: P0, tags: [스토어], title: "스토어 메타데이터 · 스크린샷",
-      dod: "설명·스크린샷·개인정보 항목이 심사 요건을 충족", output: "스토어 자료" }
-  - { id: APP-32, date: "2026-09-13", status: todo, priority: P0, tags: [스토어], title: "스토어 심사 제출",
-      dod: "심사 제출 완료, 접수 확인", output: "제출 확인" }
-  - { id: APP-33, date: "2026-09-13", status: todo, priority: P1, tags: [성능], title: "성능 점검 (프레임 · 시작 시간)",
-      dod: "주요 스크롤 구간 프레임 드랍 최소화, 콜드 스타트 목표치 충족", output: "성능 리포트" }
+  - { id: APP-31, date: "2026-09-13", status: todo, priority: P0, tags: [공개],   title: "공개 대비 모바일 진입 점검",
+      dod: "모바일에서 방문 → 아침 화면까지 30초 안에 판단 가능", output: "진입 점검" }
+  - { id: APP-32, date: "2026-09-13", status: todo, priority: P1, tags: [성능],   title: "노트 렌더 성능 (루프 20회 기준)",
+      dod: "루프가 쌓여도 스크롤이 버벅이지 않음", output: "성능 확인" }
+  - { id: APP-33, date: "2026-09-13", status: todo, priority: P1, tags: [디자인], title: "인스펙터 시연용 화면 정리",
+      dod: "발표에서 그대로 띄울 수 있는 상태", output: "시연 화면" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
-  - { id: APP-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 빌드 서명 · 업로드",
-      dod: "릴리스 서명 빌드가 스토어에 업로드됨", output: "RC 빌드" }
-  - { id: APP-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 엔드포인트 전환 검증",
-      dod: "prod flavor 빌드가 운영 API 를 바라보고 정상 동작", output: "전환 확인" }
+  - { id: APP-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 검증 — 노트·인스펙터",
+      dod: "RC1 에서 두 화면 회귀 통과", output: "검증 결과" }
+  - { id: APP-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 환경 확인",
+      dod: "운영 API 기준으로 두 화면 정상 동작", output: "prod 확인" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
   - { id: APP-36, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응",
       dod: "핫픽스 외 커밋 없음", output: "동결 확인" }
-  - { id: APP-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 — 앱 파트",
-      dod: "릴리스 전환 절차와 롤백(이전 빌드 유지) 방법 확인", output: "리허설 기록" }
+  - { id: APP-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 참여",
+      dod: "리허설에서 노트·인스펙터 정상 확인", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
-  - { id: APP-38, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "스토어 릴리스 공개",
-      dod: "앱이 공개 상태로 전환되고 설치 가능", output: "v1.0.0" }
-  - { id: APP-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영], title: "오픈 온콜 — 크래시 관측",
-      dod: "오픈 2시간 크래시율 목표 이내", output: "온콜 기록" }
-  - { id: APP-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록], title: "데브로그 — 앱 개발 회고",
-      dod: "구조 선택과 스트리밍 UI 구현 경험을 글 1편으로 작성", output: "데브로그" }
+  - { id: APP-38, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
+      dod: "운영에서 노트 축적과 인스펙터 개봉 정상", output: "배포 검증" }
+  - { id: APP-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 모바일 유입 관측",
+      dod: "모바일 브라우저에서의 이탈·오류 확인", output: "온콜 기록" }
+  - { id: APP-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 인스펙터를 왜 이렇게 만들었나",
+      dod: "판정 로그를 사람이 읽을 수 있게 만든 과정을 글 1편", output: "데브로그" }

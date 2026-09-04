@@ -59,3 +59,4 @@ exclude:
   - vendor
   - README.md
   - .github
+  - "REMAKE_DAY_*"   # 기획서 원문 — 비공개. NFD 파일명이라 글로브로 제외한다

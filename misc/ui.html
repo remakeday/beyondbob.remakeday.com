@@ -1,0 +1,467 @@
+---
+layout: default
+title: 예상 UI
+permalink: /misc/ui/
+description: 기획서 12.2 화면 5장과 4.9 연출 원칙을 실제로 만져볼 수 있는 목업으로 옮긴 것. 참고용이며, 확정 디자인은 07 디자인 시스템이 기준입니다.
+---
+<div class="container">
+  <header class="page-head">
+    <div class="page-head__eyebrow">기타 · 예상 UI</div>
+    <h1>REMAKE DAY 화면은 이렇게 생길 수 있다</h1>
+    <p>{{ page.description }}</p>
+  </header>
+
+  <div class="content uim">
+
+  <div class="callout">
+    <div class="callout__title">이 문서의 근거와 위치</div>
+    <p>기획서 v6의 <b>12.2(화면 5장)</b> · <b>4.9(연출 원칙)</b> · <b>12.4(30초 진입)</b> 를 UI로 번역한 것입니다.
+    <a href="{{ '/misc/projection/' | relative_url }}">프로젝트 예상안</a>의 7번 섹션(와이어프레임)을 실제로 만질 수 있게 만든 버전이며,
+    <strong>참고용입니다.</strong> 확정 디자인은 <a href="{{ '/plan/design/' | relative_url }}">07 디자인 시스템</a>과 PM 결정을 따릅니다.</p>
+  </div>
+
+  <!-- ══════════ 1. 브레인스토밍 ══════════ -->
+  <h2 id="bs">1 · 레이아웃 브레인스토밍 — 셋 중 무엇도 단독으로는 안 된다</h2>
+
+  <div class="uim-grid3">
+    <div class="uim-opt">
+      <div class="uim-opt__t">A · 메신저형</div>
+      <div class="uim-opt__like">카톡처럼 말풍선이 쌓인다</div>
+      <p class="good">✓ 처음 보는 사람이 0초 만에 조작법을 안다 — 12.4의 30초 진입에 최적</p>
+      <p class="good">✓ 발화 예산·전송 버튼이 자연스럽게 붙는다</p>
+      <p class="bad">✗ 미스터리 톤이 죽는다. 일상 앱처럼 보인다</p>
+      <p class="bad">✗ 서술(아침·죽음·정황)이 들어갈 자리가 없다</p>
+    </div>
+    <div class="uim-opt">
+      <div class="uim-opt__t">B · 소설형</div>
+      <div class="uim-opt__like">비주얼 노벨처럼 문장이 흐른다</div>
+      <p class="good">✓ 4.9 연출 원칙(정황과 단절)에 가장 맞는 톤</p>
+      <p class="good">✓ 손상 1층(대사 미세 변형)이 텍스트 안에서 작동한다</p>
+      <p class="bad">✗ 예산·입력 같은 게임 UI가 붙을 자리가 어색하다</p>
+      <p class="bad">✗ "내가 지금 뭘 할 수 있지?"를 학습해야 한다</p>
+    </div>
+    <div class="uim-opt">
+      <div class="uim-opt__t">C · 터미널형</div>
+      <div class="uim-opt__like">로그가 흐르는 콘솔</div>
+      <p class="good">✓ 인스펙터와 시각 언어가 통일된다</p>
+      <p class="good">✓ 1차 사용자(에이전트 개발팀)에게 어필</p>
+      <p class="bad">✗ 3차 사용자 — 게임을 안 하는 사람 — 에게 진입장벽</p>
+      <p class="bad">✗ 공개 투표에서 "개발자 장난감"으로 읽힐 위험</p>
+    </div>
+  </div>
+
+  <div class="pj-note" style="border-left:3px solid var(--accent);background:var(--panel);padding:16px 18px;border-radius:0 var(--radius) var(--radius) 0;margin:20px 0;font-size:14.5px">
+    <strong>선택 — A+B 하이브리드, C는 인스펙터에만.</strong>
+    서술(아침·정황·단절)은 소설형 문단으로, 발화는 메신저형 입력으로, 시스템(침묵 권고·인스펙터)은 모노스페이스로.
+    한 화면 안에서 <b>글꼴과 색이 층을 구분</b>합니다 — 세리프는 세계, 산세리프는 대화, 모노는 기계.
+  </div>
+
+  <h2 id="tokens">2 · 목업이 쓰는 임시 토큰</h2>
+  <p style="color:var(--text-2)">게임의 소재에서 뽑았습니다 — 7시 12분의 새벽빛, 복사본의 복사본이 되어가는 세계, 종이 노트.
+  그래서 테크 블랙이 아니라 <b>먹이 번진 어두운 세피아</b>가 바탕이고,
+  이 개발 허브의 청록은 게임 프레임 안에서 일부러 쓰지 않습니다 — 허브(도구)와 게임(세계)이 색으로 구분됩니다.
+  컨셉 영상이 대조되면 <a href="{{ '/plan/design/' | relative_url }}">07 디자인 시스템</a>의 값으로 교체합니다.</p>
+
+  <div class="uim-swatches">
+    <span class="uim-sw"><i style="background:#100e0b"></i>잉크 바탕 <code>#100e0b</code></span>
+    <span class="uim-sw"><i style="background:#d6cfc0"></i>바랜 활자 <code>#d6cfc0</code></span>
+    <span class="uim-sw"><i style="background:#b6c2ce"></i>새벽빛 <code>#b6c2ce</code> — 아침·시간에만</span>
+    <span class="uim-sw"><i style="background:#8a8172"></i>연필 <code>#8a8172</code> — 서술·노트</span>
+    <span class="uim-sw"><i style="background:#c9973f"></i>호박 <code>#c9973f</code> — 침묵 권고</span>
+    <span class="uim-sw"><i style="background:#6f9bbf"></i>기계 <code>#6f9bbf</code> — 인스펙터만</span>
+  </div>
+
+  <p style="color:var(--text-2);font-size:14px">서체는 세 층이 세 목소리입니다 —
+  <b>세리프는 세계</b>(아침·정황·단절), <b>산세리프는 대화</b>(사람의 말), <b>모노스페이스는 기계</b>(판정·권고 근거).
+  움직임은 아침 문장 타자기 한 곳뿐이고 나머지는 전부 정적입니다.</p>
+
+  <!-- ══════════ 3. 번역표 ══════════ -->
+  <h2 id="rules">3 · 기획서 조항 → UI 결정</h2>
+
+  <table>
+    <thead><tr><th>기획서</th><th>조항</th><th>UI 결정</th></tr></thead>
+    <tbody>
+      <tr><td>12.4</td><td>30초 진입 · 로그인/설치 없음</td><td><b>첫 화면이 곧 게임 시작.</b> 온보딩·타이틀 화면 자체를 두지 않는다</td></tr>
+      <tr><td>4.9</td><td>루프 카운터 미노출</td><td>헤더에 숫자 금지 — <b>노트가 대신 센다</b></td></tr>
+      <tr><td>4.9</td><td>사망 직접 묘사 금지</td><td>죽음 = <b>암전 + 문장 단절.</b> 사인 텍스트를 쓰지 않는다</td></tr>
+      <tr><td>4.9</td><td>손상은 설명 없이 발생</td><td>시스템 알림 금지. <b>텍스트 자체가 변형</b>되고 알아차림은 유저 몫</td></tr>
+      <tr><td>5.1</td><td>발화 예산 = 핵심 자원</td><td>항상 보이는 <b>점(●●●○)</b>. 숫자보다 "줄어드는 감각"이 소모감에 맞는다</td></tr>
+      <tr><td>5.5</td><td>권고는 희소 · 근거 필수 · 무시 가능</td><td>모달(강제) 금지 → <b>배너.</b> 따른다/무시한다 버튼이 곧 로깅 지점</td></tr>
+      <tr><td>8.8</td><td>인스펙터는 게임 밖 계층</td><td>모노스페이스 + 차가운 파란색으로 <b>시각 언어를 일부러 분리</b></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ══════════ 3. 목업 ══════════ -->
+  <h2 id="mock">4 · 직접 만져보기</h2>
+  <p style="color:var(--text-2)">기획서 8.8의 예시 시나리오가 그대로 스크립트로 들어 있습니다.
+  <b>아침 → 대화(예산 소모) → 출처 빌린 거짓말 발각 → 침묵 권고 → 하루의 끝 → 2번째 아침</b>까지 한 루프를 돌 수 있습니다.
+  LLM 없이 전부 각본이며, 실제 게임에서는 NPC 응답과 판정이 전부 동적입니다.</p>
+
+  <div class="uim-stage">
+    <div class="uim-frame" id="frame">
+
+      <!-- 아침 화면 -->
+      <div class="scr scr--morning is-on" id="scrMorning">
+        <div class="morning__inner">
+          <div class="morning__t" id="mLine1"></div>
+          <div class="morning__s" id="mLine2"></div>
+          <button class="morning__go" id="btnWake" style="visibility:hidden">하루를 시작한다</button>
+        </div>
+      </div>
+
+      <!-- 암전 -->
+      <div class="scr scr--dead" id="scrDead">
+        <div class="dead__t" id="deadLine"></div>
+      </div>
+
+      <!-- 본 화면 -->
+      <div class="scr scr--app" id="scrApp">
+        <div class="app__top">
+          <span class="app__day">오늘</span>
+          <span class="app__dots" id="dots"></span>
+        </div>
+
+        <!-- 대화 -->
+        <div class="pane is-on" id="paneTalk">
+          <div class="npcrow">
+            <button class="npc is-sel">채연</button><button class="npc">민석</button><button class="npc">은상</button><button class="npc">준</button>
+          </div>
+          <div class="chat" id="chat">
+            <div class="msg msg--sys">채연이 창가 자리에 앉아 있다. 아직 아무 일도 일어나지 않았다.</div>
+          </div>
+          <div class="advisor" id="advisor">
+            <div class="advisor__t">권고 : 지금은 말하지 마세요</div>
+            <div class="advisor__b">근거 · 최근 3턴 의심도 +14<br>근거 · 신뢰 회복 이벤트 없음<br>상태 · 의심 52 / 임계 60 · 예산 3</div>
+            <div class="advisor__btns">
+              <button class="advisor__ok" id="btnFollow">따른다</button>
+              <button class="advisor__no" id="btnIgnore">무시한다</button>
+            </div>
+          </div>
+          <div class="inputrow">
+            <div class="fakeinput" id="preview"></div>
+            <button class="sendbtn" id="btnSend">말한다</button>
+          </div>
+        </div>
+
+        <!-- 노트 -->
+        <div class="pane" id="paneNote">
+          <input class="notesearch" id="noteSearch" placeholder="노트 검색… (예: 물, 계단)">
+          <div class="notelist" id="noteList">
+            <div class="note-item"><span class="note-l">L1</span> 아직 아무것도 적히지 않았다.</div>
+          </div>
+        </div>
+
+        <!-- 인스펙터 -->
+        <div class="pane" id="paneInspect">
+          <div class="ilog__head">인스펙터 — 판정 로그 · 전부 열린다</div>
+          <div class="ilog" id="ilog">
+            <div class="ilog__ln ilog__ln--dim">// 발화가 일어나면 여기에 인과가 기록됩니다</div>
+          </div>
+        </div>
+
+        <div class="app__tabs">
+          <button class="tab is-sel" data-pane="paneTalk">대화</button>
+          <button class="tab" data-pane="paneNote">노트</button>
+          <button class="tab" data-pane="paneInspect">인스펙터 <span class="tabdot" id="tabDot"></span></button>
+        </div>
+      </div>
+
+    </div>
+    <div class="uim-cap">모바일 1열 기준(공개 투표 유입은 폰이 많다) · 데스크톱에서는 노트·인스펙터가 우측 레일로 펼쳐진다</div>
+  </div>
+
+  <!-- ══════════ 4. 화면별 메모 ══════════ -->
+  <h2 id="notes">5 · 화면별 설계 메모</h2>
+
+  <table>
+    <thead><tr><th>화면</th><th>목업에서 확인할 것</th><th>실제 구현에서 달라지는 것</th></tr></thead>
+    <tbody>
+      <tr><td><b>아침</b></td><td>고정 문장 타자기 연출 · 2번째 아침에서 두 번째 문장이 달라진다(손상 1층)</td><td>후반 루프에서 첫 문장(7시 12분)을 딱 한 번 흔든다</td></tr>
+      <tr><td><b>대화창</b></td><td>예산 점이 줄어드는 감각 · 발화 후 되돌릴 수 없음</td><td>자유 입력 + NPC 동적 응답. 목업은 각본 미리보기 방식</td></tr>
+      <tr><td><b>침묵 권고</b></td><td>배너로 침입하고, 근거가 붙고, 무시할 수 있다</td><td>발동 빈도 자체가 튜닝 대상(5.5) — 희소해야 한다</td></tr>
+      <tr><td><b>노트</b></td><td>루프별 타임라인 + 검색 · 루프 카운터를 노트가 대신 센다</td><td>자연어 검색(임베딩) — 목업은 단순 텍스트 필터</td></tr>
+      <tr><td><b>인스펙터</b></td><td>ask_npc 호출 체인이 열린다 · 게임과 다른 시각 언어</td><td>실제 판정 로그 스트림 + 도메인 전이 시연에서 같은 화면 재사용</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout--warn">
+    <div class="callout__title">이 목업이 결정하지 않는 것</div>
+    <p>주조색·서체·모션은 <b>컨셉 영상 대조 항목</b>입니다(01 개요 참조). 여기서는 개발 허브의 다크 팔레트를 빌려 썼을 뿐이며,
+    실제 게임의 색은 <a href="{{ '/plan/design/' | relative_url }}">07 디자인 시스템</a>에서 확정합니다.</p>
+  </div>
+
+  </div><!-- /content -->
+</div>
+
+<style>
+/* ── 브레인스토밍 카드 (허브 팔레트) ── */
+.uim-grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:20px 0; }
+.uim-opt { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px; }
+.uim-opt__t { font-weight:700; font-size:16px; }
+.uim-opt__like { color:var(--text-3); font-size:12.5px; margin:2px 0 12px; }
+.uim-opt p { margin:6px 0; font-size:13px; line-height:1.55; }
+.uim-opt .good { color:var(--text-2); }
+.uim-opt .good::first-letter { color:var(--accent); }
+.uim-opt .bad { color:var(--text-3); }
+.uim-opt .bad::first-letter { color:var(--danger); }
+
+.uim-swatches { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.uim-sw { display:flex; align-items:center; gap:8px; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:7px 12px; font-size:12.5px; color:var(--text-2); }
+.uim-sw i { width:18px; height:18px; border-radius:4px; border:1px solid #0006; }
+
+/* ── 목업 프레임: 게임 전용 팔레트 ──
+   잉크 #100e0b · 바랜 활자 #d6cfc0 · 새벽빛 #b6c2ce · 연필 #8a8172 · 호박 #c9973f · 기계 #6f9bbf
+   허브의 청록(--accent)은 프레임 안에서 쓰지 않는다 */
+.uim-stage { display:flex; flex-direction:column; align-items:center; margin:28px 0; }
+.uim-frame {
+  position:relative; width:min(420px,100%); height:680px; overflow:hidden;
+  background:#100e0b; border:1px solid #2a251d; border-radius:18px;
+  box-shadow:0 24px 60px rgba(0,0,0,.5);
+}
+.uim-cap { color:var(--text-3); font-size:12.5px; margin-top:12px; text-align:center; }
+
+.scr { position:absolute; inset:0; display:none; }
+.scr.is-on { display:flex; flex-direction:column; }
+
+/* 아침 — 새벽빛 */
+.scr--morning { background:#0b0a08; align-items:center; justify-content:center; }
+.morning__inner { text-align:center; padding:0 30px; }
+.morning__t { font-family:"Noto Serif KR",ui-serif,serif; font-size:24px; font-weight:600; color:#b6c2ce; min-height:38px; letter-spacing:.02em; }
+.morning__s { font-family:"Noto Serif KR",ui-serif,serif; font-size:15px; color:#6f695c; margin-top:14px; min-height:24px; }
+.morning__go { margin-top:44px; background:none; border:1px solid #3a342a; color:#8a8172; font-size:14px; padding:10px 26px; border-radius:24px; cursor:pointer; font-family:var(--sans); }
+.morning__go:hover { border-color:#d6cfc0; color:#d6cfc0; }
+
+/* 암전 — 단절 */
+.scr--dead { background:#000; align-items:center; justify-content:center; }
+.dead__t { font-family:"Noto Serif KR",ui-serif,serif; font-size:16px; color:#5a544a; padding:0 40px; text-align:center; line-height:2; white-space:pre-line; }
+
+/* 본 화면 */
+.scr--app { background:#100e0b; }
+.app__top { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #1d1913; }
+.app__day { font-family:"Noto Serif KR",ui-serif,serif; color:#8a8172; font-size:13px; }
+.app__dots { font-size:13px; color:#c9b68a; letter-spacing:3px; font-family:var(--mono); }
+
+.pane { flex:1; display:none; flex-direction:column; min-height:0; }
+.pane.is-on { display:flex; }
+
+.npcrow { display:flex; gap:8px; padding:10px 14px; border-bottom:1px solid #191510; }
+.npc { background:#171410; border:1px solid #241f18; color:#6f695c; font-size:12.5px; padding:5px 13px; border-radius:16px; cursor:default; font-family:var(--sans); }
+.npc.is-sel { color:#e8dcc2; border-color:#4a4234; background:#1e1912; }
+
+.chat { flex:1; overflow-y:auto; padding:16px 14px; display:flex; flex-direction:column; gap:10px; }
+.msg { max-width:82%; padding:9px 13px; border-radius:14px; font-size:13.5px; line-height:1.6; }
+.msg--them { align-self:flex-start; background:#1b1813; color:#d6cfc0; border-bottom-left-radius:4px; }
+.msg--me { align-self:flex-end; background:#2b2418; color:#e8dcc2; border-bottom-right-radius:4px; }
+.msg--sys { align-self:center; max-width:94%; background:none; color:#6b6455; font-family:"Noto Serif KR",ui-serif,serif; font-size:12.5px; text-align:center; padding:4px 0; }
+
+/* 권고 — 촛불 호박색 */
+.advisor { display:none; margin:0 14px 10px; background:#171207; border:1px solid #4a3a1a; border-radius:12px; padding:12px 14px; }
+.advisor.is-on { display:block; }
+.advisor__t { color:#c9973f; font-size:13.5px; font-weight:700; }
+.advisor__b { font-family:var(--mono); font-size:11px; color:#8f8567; line-height:1.8; margin:8px 0 10px; }
+.advisor__btns { display:flex; gap:8px; }
+.advisor__ok,.advisor__no { flex:1; padding:8px 0; border-radius:8px; font-size:13px; cursor:pointer; font-family:var(--sans); }
+.advisor__ok { background:#c9973f22; border:1px solid #c9973f; color:#e8d9b0; }
+.advisor__no { background:#171410; border:1px solid #2e2820; color:#8a8172; }
+
+.inputrow { display:flex; gap:8px; padding:10px 14px 14px; border-top:1px solid #191510; }
+.fakeinput { flex:1; background:#171410; border:1px solid #241f18; border-radius:10px; padding:9px 12px; font-size:13px; color:#8a8172; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.sendbtn { background:#d6cfc0; border:none; color:#14120e; font-weight:700; font-size:13px; padding:0 18px; border-radius:10px; cursor:pointer; font-family:var(--sans); }
+.sendbtn:disabled { background:#2a2620; color:#5a544a; cursor:default; }
+
+/* 노트 — 연필 */
+.notesearch { margin:14px; padding:9px 12px; background:#171410; border:1px solid #241f18; border-radius:10px; color:#d6cfc0; font-size:13px; font-family:var(--sans); }
+.notesearch::placeholder { color:#57503f; }
+.notelist { flex:1; overflow-y:auto; padding:0 14px; }
+.note-item { padding:10px 12px; margin-bottom:8px; background:#171410; border-left:2px solid #35301f; border-radius:0 8px 8px 0; font-size:12.5px; color:#a89f8c; line-height:1.6; }
+.note-item--warn { border-left-color:#b5766f; color:#c9a09a; }
+.note-l { font-family:var(--mono); color:#8a8172; font-size:11px; margin-right:6px; }
+
+/* 인스펙터 — 게임 밖 계층, 유일하게 차가운 색 */
+.ilog__head { padding:12px 14px 6px; font-family:var(--mono); font-size:11px; color:#6f9bbf; border-bottom:1px solid #14171d; }
+.ilog { flex:1; overflow-y:auto; padding:10px 14px; background:#0b0d10; }
+.ilog__ln { font-family:var(--mono); font-size:11px; line-height:2; color:#7f9ab5; white-space:pre-wrap; }
+.ilog__ln--warn { color:#d4b054; }
+.ilog__ln--danger { color:#c97b74; }
+.ilog__ln--dim { color:#3f4854; }
+
+.app__tabs { display:flex; border-top:1px solid #1d1913; }
+.tab { flex:1; background:none; border:none; color:#635c50; font-size:12.5px; padding:12px 0; cursor:pointer; font-family:var(--sans); position:relative; }
+.tab.is-sel { color:#d6cfc0; }
+.tabdot { display:none; position:absolute; top:9px; margin-left:3px; width:6px; height:6px; border-radius:50%; background:#6f9bbf; }
+.tabdot.is-on { display:inline-block; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+}
+</style>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var st = { loop:1, budget:6, max:6, step:0, locked:true, over:false };
+
+  var SCRIPT = [
+    { u:"오늘 저녁에 뭐 해?", n:"글쎄, 별일 없는데. 왜?",
+      log:[["의심 판정 → 변화 없음 (일상 발화)",""]] },
+    { u:"요즘 민석 좀 이상하지 않아?", n:"민석이? 평소랑 똑같던데.",
+      log:[["의심 판정 → 의심도 +3 (누적 29 / 임계 60)",""]] },
+    { u:"어제 준이 네 얘기 물어보더라.", n:"그래? …준이 그런 말을 했다고.",
+      log:[["의심 판정 → 의심도 +5 (누적 41 / 임계 60)",""],
+           ["도구 호출 → ask_npc(준, \"유저 얘기\")  [탐문 예산 2→1]","warn"],
+           ["도구 결과 → \"없음\" · 부작용: 준.의심도 +6","warn"],
+           ["불일치 판정 → 의심도 +15 (누적 56 / 임계 60)","danger"]],
+      banner:true },
+    { u:"오늘 밤에 밖에 나가지 마. 부탁이야.", n:"…뭐? 너 요즘 왜 그래?",
+      log:[["의심 판정 → 의심도 +9 (누적 65 / 임계 60) ⚠ 임계 돌파","danger"],
+           ["재계획 → 트리거: 의심 임계 돌파 · 유저 유도를 역방향으로 해석","danger"]],
+      fatal:true }
+  ];
+
+  function dots(){
+    var s=""; for(var i=0;i<st.max;i++){ s += (i<st.budget) ? "●" : "○"; }
+    $("dots").textContent = s;
+  }
+  function addMsg(cls, text){
+    var d=document.createElement("div"); d.className="msg msg--"+cls; d.textContent=text;
+    $("chat").appendChild(d); $("chat").scrollTop=$("chat").scrollHeight;
+  }
+  function addLog(lines){
+    for(var i=0;i<lines.length;i++){
+      var d=document.createElement("div");
+      d.className="ilog__ln"+(lines[i][1]?" ilog__ln--"+lines[i][1]:"");
+      d.textContent=lines[i][0];
+      $("ilog").appendChild(d);
+    }
+    $("ilog").scrollTop=$("ilog").scrollHeight;
+    $("tabDot").className="tabdot is-on";
+  }
+  function addNote(l, text, warn){
+    var d=document.createElement("div"); d.className="note-item"+(warn?" note-item--warn":"");
+    d.innerHTML='<span class="note-l">'+l+'</span>'+text;
+    $("noteList").appendChild(d);
+  }
+  function preview(){
+    var e=SCRIPT[st.step];
+    $("preview").textContent = e ? "“"+e.u+"”" : "…";
+  }
+
+  function type(el, text, cb){
+    el.textContent=""; var i=0;
+    var iv=setInterval(function(){
+      el.textContent=text.slice(0,++i);
+      if(i>=text.length){ clearInterval(iv); if(cb)cb(); }
+    },60);
+  }
+
+  function morning(loop){
+    st.loop=loop; st.step=0; st.locked=true; st.over=false;
+    st.max = (loop===1)?6:5; st.budget=st.max;
+    $("scrDead").className="scr scr--dead";
+    $("scrApp").className="scr scr--app";
+    $("scrMorning").className="scr scr--morning is-on";
+    $("mLine2").textContent=""; $("btnWake").style.visibility="hidden";
+    type($("mLine1"), "7시 12분. 눈을 뜬다.", function(){
+      setTimeout(function(){
+        var second = (loop===1) ? "창밖에서 물 트는 소리가 난다." : "천장이 조금 낮아 보인다.";
+        type($("mLine2"), second, function(){
+          $("btnWake").style.visibility="visible";
+        });
+      },500);
+    });
+  }
+
+  function endDay(){
+    st.over=true;
+    $("scrApp").className="scr scr--app";
+    $("scrMorning").className="scr scr--morning";
+    var dead=$("scrDead"); dead.className="scr scr--dead is-on";
+    $("deadLine").textContent="";
+    setTimeout(function(){ $("deadLine").textContent="오후 11시 40분."; },400);
+    setTimeout(function(){ $("deadLine").textContent="오후 11시 40분.\n물 냄새가 났고, 그 다음은—"; },1500);
+    setTimeout(function(){
+      addNote("L1","밤 11시 40분 · 물 냄새 · 계단 근처였다");
+      addNote("L1","준이 내 이름을 판 걸 알게 됐다 — 채연이 확인했다", true);
+      addLog([["── 루프 종결 · Evaluator ──","dim"],
+              ["원인 체인 → 채연 불안 상승 → 민석에게 보고 → 경로 성립","" ],
+              ["메모리 정책 → 채연·은상 소거(5% 잔류) · 유저 노트 유지 · 손상 유지","warn"]]);
+      morning(2);
+    },3300);
+  }
+
+  function wake(){
+    $("scrMorning").className="scr scr--morning";
+    $("scrApp").className="scr scr--app is-on";
+    dots(); preview();
+    if(st.loop===2){
+      $("chat").innerHTML="";
+      addMsg("sys","아무도 어제를 기억하지 못한다. 채연은 처음 보는 얼굴로 인사한다.");
+      addMsg("them","어, 왔네. 오늘따라 피곤해 보인다?");
+      addMsg("sys","── 목업은 여기까지. 실제 게임은 이 지점부터가 시작이다 ──");
+      $("preview").textContent="예산이 6에서 5로 줄었다. 정보는 남고, 사람은 닳는다.";
+      $("btnSend").disabled=true;
+      st.locked=true;
+    } else {
+      st.locked=false;
+    }
+  }
+
+  function send(){
+    if(st.locked||st.over) return;
+    var e=SCRIPT[st.step];
+    if(!e){ endDay(); return; }
+    st.locked=true;
+    addMsg("me", e.u);
+    st.budget--; dots();
+    setTimeout(function(){
+      addMsg("them", e.n);
+      addLog(e.log);
+      st.step++; preview();
+      if(e.banner){
+        setTimeout(function(){ $("advisor").className="advisor is-on"; },600);
+      } else if(e.fatal){
+        setTimeout(function(){
+          addMsg("sys","채연이 자리를 떴다. 어딘가로 전화를 걸고 있다.");
+          setTimeout(endDay,1800);
+        },800);
+      } else {
+        st.locked=false;
+      }
+    },800);
+  }
+
+  $("btnWake").addEventListener("click", wake);
+  $("btnSend").addEventListener("click", send);
+  $("btnFollow").addEventListener("click", function(){
+    $("advisor").className="advisor";
+    addLog([["권고 수용 → adopt=true 기록 (11.2 채택률 지표)","warn"]]);
+    addMsg("sys","오늘은 더 말하지 않기로 했다.");
+    setTimeout(endDay,2000);
+  });
+  $("btnIgnore").addEventListener("click", function(){
+    $("advisor").className="advisor";
+    addLog([["권고 무시 → adopt=false 기록 (11.2 채택률 지표)","warn"]]);
+    st.locked=false;
+  });
+  $("noteSearch").addEventListener("input", function(){
+    var q=this.value.trim();
+    var items=$("noteList").children;
+    for(var i=0;i<items.length;i++){
+      items[i].style.display = (!q || items[i].textContent.indexOf(q)>=0) ? "" : "none";
+    }
+  });
+  var tabs=document.querySelectorAll(".tab");
+  for(var i=0;i<tabs.length;i++){
+    tabs[i].addEventListener("click", function(){
+      for(var j=0;j<tabs.length;j++) tabs[j].className="tab";
+      this.className="tab is-sel";
+      var panes=["paneTalk","paneNote","paneInspect"];
+      for(var k=0;k<panes.length;k++) $(panes[k]).className="pane";
+      $(this.getAttribute("data-pane")).className="pane is-on";
+      if(this.getAttribute("data-pane")==="paneInspect") $("tabDot").className="tabdot";
+    });
+  }
+
+  morning(1);
+})();
+</script>

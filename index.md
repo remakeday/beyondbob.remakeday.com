@@ -33,14 +33,23 @@ description: REMAKE DAY 팀의 14일 릴리스 현황을 한 화면에서 확인
     </div>
   </div>
 
-  <div class="callout callout--warn">
-    <div class="callout__title">⚠︎ 기획서 v6 원문이 아직 이 사이트에 반영되지 않았습니다</div>
+  <div class="callout callout--ok">
+    <div class="callout__title">✓ 기획서 v6 반영 완료 (2026-09-03)</div>
     <p>
-      기획 문서의 <strong>서비스 정의·기능 목록·화면 정의</strong>는 현재
-      <code>com.remakeday</code> 레포의 실제 구조(FastAPI 모듈러 모놀리스 · Flutter · 웹 프론트)에서 역으로 정리한 것입니다.
-      <code>{{ site.project.spec_doc }}</code> 를 레포에 넣고
-      <a href="{{ '/plan/' | relative_url }}">기획 목차</a> 각 문서의 <em>기획서 대조</em> 항목을 채워야 확정됩니다.
-      <strong>담당 류준(PM) · 기한 D-13(9/03)</strong>
+      기획 문서 10편과 칸반 {{ N_ALL }}건이 <strong>기획서 v6 원문 기준</strong>으로 재작성됐습니다.
+      REMAKE DAY 는 <strong>루프물 대화 게임</strong>이고, BeyondBob 은 게임·감사 대응·커리어 대화가 공유하는 <strong>엔진 이름</strong>입니다.
+      우선순위는 기획서 12.3 의 <a href="{{ '/plan/scope/' | relative_url }}">절대 방어선 ①~⑤</a> 를 그대로 씁니다 —
+      다섯이 없으면 제출하지 않습니다.
+      바뀐 내역은 <a href="{{ '/misc/projection/' | relative_url }}#gap">반영 결과표</a>에 남겼습니다.
+    </p>
+  </div>
+
+  <div class="callout callout--warn">
+    <div class="callout__title">기획서를 따르지 않는 항목은 「기간」 하나입니다</div>
+    <p>
+      기획서 12장은 <strong>3주</strong> 범위이고 우리 데드라인은 <strong>14일</strong>입니다.
+      방어선 ①~⑤ 는 지키고 ⑥~⑨ 를 줄여 흡수합니다 (<a href="{{ '/plan/risk/' | relative_url }}">R2</a>).
+      또 기획서에 모바일 앱이 없어 이은상이 <strong>노트·인스펙터</strong>로 재배치됐습니다 (<a href="{{ '/plan/risk/' | relative_url }}">R3</a>).
     </p>
   </div>
 

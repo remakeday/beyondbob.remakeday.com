@@ -33,3 +33,9 @@
 - section: "기록"
   items:
     - { title: "데브로그",        url: "/devlog/",          icon: "✎" }
+
+- section: "기타"
+  items:
+    - { title: "프로젝트 예상안",  url: "/misc/projection/", icon: "◎" }
+    - { title: "예상 UI",          url: "/misc/ui/",         icon: "◫" }
+    - { title: "LLM 오케스트레이션", url: "/misc/llm-orchestration/", icon: "⇄" }

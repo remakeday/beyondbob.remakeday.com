@@ -58,10 +58,10 @@ Ruby 가 없으면 설치가 번거로우니, **그냥 YAML 만 고쳐서 push**
 `status` 값만 바꾸면 됩니다.
 
 ```yaml
-- { id: BE-07, date: "2026-09-05", status: doing, priority: P0, tags: [백엔드],
-    title: "회원가입 · 로그인 구현",
-    dod: "비밀번호 해시 저장, 중복 가입 차단, 로그인 성공 시 토큰 반환",
-    output: "POST /auth/signup, /auth/login" }
+- { id: BE-09, date: "2026-09-05", status: doing, priority: P0, tags: [도메인],
+    title: "발화 예산 소모 · 차단 · 회복",
+    dod: "예산 소진 시 BUDGET_EXHAUSTED, 루프 스킵 시 회복, 하한 3 유지",
+    output: "예산 규칙" }
 #                    ↑ 여기만 고친다
 ```
 
@@ -90,10 +90,10 @@ git push
 일을 하다 보면 계획에 없던 게 나옵니다. 그럴 땐 카드를 **추가**하세요 (지우지 말고).
 
 ```yaml
-- { id: BE-42, date: "2026-09-08", status: doing, priority: P1, tags: [백엔드],
-    title: "업로드 파일 용량 제한 추가",
-    dod: "10MB 초과 시 413 반환, 클라이언트가 안내 문구 표시",
-    output: "파일 검증" }
+- { id: BE-43, date: "2026-09-08", status: doing, priority: P1, tags: [도구],
+    title: "탐문 예산 초과 시 호출 거부",
+    dod: "NPC 하루 2회 초과 호출이 실행 전에 거부되고 로그에 남는다",
+    output: "도구 하네스" }
 ```
 
 - `id` — 내 접두사(`PM`/`BE`/`AI`/`APP`/`FE`) + 다음 번호

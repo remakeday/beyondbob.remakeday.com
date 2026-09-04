@@ -1,111 +1,113 @@
 member: minseok
 tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
-  - { id: BE-01, date: "2026-09-03", status: doing, priority: P0, tags: [ERD], title: "ERD 초안 — 테이블 목록과 관계 정의",
-      dod: "고립 테이블 0개, 모든 테이블이 노드-엣지로 연결된 초안 게시", output: "/plan/data/ ERD 다이어그램" }
-  - { id: BE-02, date: "2026-09-03", status: todo,  priority: P0, tags: [인프라], title: "core/matrix DB 매니저 실연결",
-      dod: "grid_oracle_database_manager 로 세션 획득 후 SELECT 1 성공", output: "core/matrix/*" }
-  - { id: BE-03, date: "2026-09-03", status: todo,  priority: P1, tags: [규약], title: "백엔드 로컬 실행 규약 · 의존성 정리",
-      dod: "requirements.txt 확정, uvicorn 8300 포트로 한 명령 기동, README 반영", output: "backend/README" }
+  - { id: BE-01, date: "2026-09-03", status: doing, priority: P0, tags: [ERD],    title: "ERD 초안 — 세션·루프·발화·판정 로그",
+      dod: "계정 테이블 없이 익명 session 기준으로 테이블 목록과 관계 초안 게시, 고립 테이블 0개", output: "/plan/data/" }
+  - { id: BE-02, date: "2026-09-03", status: todo,  priority: P0, tags: [도메인], title: "도메인 계층 골격 — 의심도·신뢰도·발화 예산",
+      dod: "LLM 없이 import 되고 유닛테스트가 도는 순수 함수 모듈이 존재", output: "domain/" }
+  - { id: BE-03, date: "2026-09-03", status: todo,  priority: P0, tags: [규약],   title: "포트 3개 인터페이스 정의 (LLM·도구·도메인)",
+      dod: "세 포트의 시그니처가 코드로 존재하고, 도구 이름이 도메인 중립(ask_third_party·search_history)", output: "ports/" }
 
   # ── D-12 · 9/04 (금) ──────────────────────────────────────
-  - { id: BE-04, date: "2026-09-04", status: todo, priority: P0, tags: [ERD], title: "ERD v1 확정 + 마이그레이션 도구 도입",
-      dod: "Alembic 초기 리비전으로 빈 DB에 전체 스키마 생성 성공", output: "alembic/versions" }
-  - { id: BE-05, date: "2026-09-04", status: todo, priority: P0, tags: [백엔드], title: "인증 BC — Fractal 11-File Set 스캐폴드",
-      dod: "GET /auth/myself 가 200 반환 (router→usecase→interactor→port→repository 배선 확인)", output: "apps/auth/*" }
-  - { id: BE-06, date: "2026-09-04", status: todo, priority: P0, tags: [API], title: "API 계약 v1 발행 (OpenAPI)",
-      dod: "웹·앱이 참조할 스키마 URL 공개, 필드명·에러 포맷 합의 완료", output: "/plan/api/" }
+  - { id: BE-04, date: "2026-09-04", status: todo, priority: P0, tags: [ERD],    title: "ERD v1 FREEZE + Alembic 초기 리비전",
+      dod: "빈 DB에 전체 스키마 생성 성공, downgrade 작성 완료", output: "alembic/versions" }
+  - { id: BE-05, date: "2026-09-04", status: todo, priority: P0, tags: [도메인], title: "도메인 규칙 테스트 우선 작성",
+      dod: "의심 누적·신뢰 임계·예산 감소/회복/하한·루프 잔류율 5% 가 테스트로 고정", output: "tests/domain" }
+  - { id: BE-06, date: "2026-09-04", status: todo, priority: P0, tags: [API],    title: "API 계약 v1 발행 (OpenAPI)",
+      dod: "세션·루프·발화(SSE)·노트·인스펙터 스키마 공개, 프론트 2인이 참조 시작", output: "/plan/api/" }
+  - { id: BE-07, date: "2026-09-04", status: todo, priority: P1, tags: [규약],   title: "세션 발급 + GET /sessions/me 배선 검증",
+      dod: "로그인 없이 첫 요청에서 익명 세션이 발급되고 200 왕복", output: "session API" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
-  - { id: BE-07, date: "2026-09-05", status: todo, priority: P0, tags: [백엔드], title: "회원가입 · 로그인 구현",
-      dod: "비밀번호 해시 저장, 중복 가입 차단, 로그인 성공 시 토큰 반환", output: "POST /auth/signup, /auth/login" }
-  - { id: BE-08, date: "2026-09-05", status: todo, priority: P0, tags: [보안], title: "JWT 발급 · 갱신 · 검증 + 인가 미들웨어",
-      dod: "만료 토큰 401, 갱신 토큰으로 재발급 성공, 보호 라우트 접근 제어 동작", output: "인증 미들웨어" }
-  - { id: BE-09, date: "2026-09-05", status: todo, priority: P1, tags: [규약], title: "전 BC myself 배선 검증 루틴",
-      dod: "새 BC 추가 시 myself 부터 확인하는 절차를 문서화하고 기존 BC 전부 통과", output: "배선 체크리스트" }
+  - { id: BE-08, date: "2026-09-05", status: todo, priority: P0, tags: [도메인], title: "루프 생성 · 상태 전이 · 아침 화면 데이터",
+      dod: "POST /loops 가 고정 문장과 손상 1층 문장을 담아 반환, LLM 호출 없이 즉시", output: "loop API" }
+  - { id: BE-09, date: "2026-09-05", status: todo, priority: P0, tags: [도메인], title: "발화 예산 소모 · 차단 · 회복",
+      dod: "예산 소진 시 BUDGET_EXHAUSTED, 루프 스킵 시 회복, 하한 3 유지", output: "예산 규칙" }
+  - { id: BE-10, date: "2026-09-05", status: todo, priority: P0, tags: [API],    title: "발화 엔드포인트 + SSE 골격",
+      dod: "POST /loops/{id}/utterances 가 delta→done 이벤트를 실제로 흘린다", output: "SSE 엔드포인트" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
-  - { id: BE-10, date: "2026-09-06", status: todo, priority: P0, tags: [백엔드], title: "사용자 프로필 BC",
-      dod: "프로필 조회·수정 동작, 본인 외 수정 시 403", output: "apps/profile/*" }
-  - { id: BE-11, date: "2026-09-06", status: todo, priority: P0, tags: [백엔드], title: "핵심 리소스 BC #1 — CRUD",
-      dod: "생성·조회·수정·삭제 4개 엔드포인트가 스테이징에서 동작", output: "핵심 도메인 API" }
-  - { id: BE-12, date: "2026-09-06", status: todo, priority: P1, tags: [규약], title: "공통 예외 · 응답 포맷 (AOP)",
-      dod: "모든 에러가 동일한 JSON 형태(code/message/detail)로 반환", output: "예외 변환 Aspect" }
+  - { id: BE-11, date: "2026-09-06", status: todo, priority: P0, tags: [판정],   title: "판정 로그 저장 — judgement_log",
+      dod: "발화 1건당 의심/신뢰/도구/불일치/재계획 판정이 순서대로 기록됨", output: "판정 저장소" }
+  - { id: BE-12, date: "2026-09-06", status: todo, priority: P0, tags: [도구],   title: "도구 디스패치 + 탐문 예산",
+      dod: "ask_npc 호출이 하네스를 통과하고, NPC 하루 2회 초과 시 실행 전 거부", output: "도구 포트 구현" }
+  - { id: BE-13, date: "2026-09-06", status: todo, priority: P0, tags: [도구],   title: "도구 부작용 반영 — 이름 빌린 쪽 의심도",
+      dod: "ask_npc 결과의 side_effect 가 대상 NPC 상태에 실제로 적용되고 로그에 남음", output: "side_effect 처리" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
-  - { id: BE-13, date: "2026-09-07", status: todo, priority: P0, tags: [백엔드], title: "핵심 리소스 BC #2",
-      dod: "BC #1 과 동일한 11-File 패턴으로 완성, 관계 조회 동작", output: "두 번째 도메인 API" }
-  - { id: BE-14, date: "2026-09-07", status: todo, priority: P0, tags: [API], title: "목록 조회 — 페이지네이션 · 정렬 · 필터",
-      dod: "cursor 또는 offset 규약 확정, 프론트/앱이 동일 규약 사용", output: "목록 API 규약" }
-  - { id: BE-15, date: "2026-09-07", status: todo, priority: P0, tags: [협업], title: "웹 · 앱 연동 대응 (계약 이슈 처리)",
-      dod: "1차 통합 중 나온 계약 불일치를 당일 내 해소하고 OpenAPI 갱신", output: "계약 변경 로그" }
+  - { id: BE-14, date: "2026-09-07", status: todo, priority: P0, tags: [협업],   title: "웹 1차 통합 대응",
+      dod: "프론트 2인이 실 API로 아침→대화→응답을 완주, 계약 이슈 당일 해소", output: "계약 변경 로그" }
+  - { id: BE-15, date: "2026-09-07", status: todo, priority: P0, tags: [전이],   title: "도메인 어댑터 30분 탐색",
+      dod: "감사 도메인 어댑터를 시도해 코어가 막히는지만 확인. 막히면 새어든 개념을 지목", output: "탐색 기록" }
+  - { id: BE-16, date: "2026-09-07", status: todo, priority: P1, tags: [ERD],    title: "노트 자동 기록 — note_entry",
+      dod: "루프 종료 시 죽음의 감각·주요 사건이 노트에 자동 적재", output: "노트 저장" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
-  - { id: BE-16, date: "2026-09-08", status: todo, priority: P0, tags: [백엔드], title: "파일 · 이미지 업로드",
-      dod: "업로드 후 접근 가능한 URL 반환, 용량·확장자 검증 동작", output: "POST /files" }
-  - { id: BE-17, date: "2026-09-08", status: todo, priority: P0, tags: [협업], title: "AI BC 가 쓸 아웃바운드 포트 제공",
-      dod: "AI 에이전트가 도메인 데이터를 조회할 내부 인터페이스 확정 및 구현", output: "내부 포트" }
-  - { id: BE-18, date: "2026-09-08", status: todo, priority: P1, tags: [규약], title: "트랜잭션 · 감사 로그 Aspect",
-      dod: "쓰기 유스케이스가 트랜잭션 경계 안에서 실행되고 변경 이력이 남음", output: "AOP 설정" }
+  - { id: BE-17, date: "2026-09-08", status: todo, priority: P0, tags: [도메인], title: "세계 손상 산출 — 개입 깊이",
+      dod: "발화 수·신뢰 변화량·결정적 발언에서 depth_score 가 계산되고 층 전환이 일어남", output: "world_damage" }
+  - { id: BE-18, date: "2026-09-08", status: todo, priority: P0, tags: [API],    title: "권고 응답 기록 엔드포인트",
+      dod: "POST /advices/{id}/response 로 accepted/ignored 가 저장, 발화 전 무시도 기록됨", output: "advice API" }
+  - { id: BE-19, date: "2026-09-08", status: todo, priority: P1, tags: [ERD],    title: "손상 발현 기록 — damage_event",
+      dod: "층별 발현이 어디서 언제 일어났는지 조회 가능", output: "damage_event" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
-  - { id: BE-19, date: "2026-09-09", status: todo, priority: P0, tags: [QA], title: "알파용 시드 데이터",
-      dod: "한 명령으로 시연 가능한 데이터가 스테이징에 적재", output: "scripts/seed.py" }
-  - { id: BE-20, date: "2026-09-09", status: todo, priority: P0, tags: [QA], title: "알파 시연 대응 · 즉시 버그 수정",
-      dod: "시연 중 발견된 백엔드 P0 를 당일 처리", output: "핫픽스 커밋" }
-  - { id: BE-21, date: "2026-09-09", status: todo, priority: P1, tags: [성능], title: "API 성능 1차 — N+1 제거 · 인덱스",
-      dod: "목록 API 쿼리 수 감소 확인, 주요 조회 컬럼 인덱스 추가", output: "성능 개선 커밋" }
+  - { id: BE-20, date: "2026-09-09", status: todo, priority: P0, tags: [QA],     title: "알파 시연 대응 · 백엔드 핫픽스",
+      dod: "1루프 완주 중 발생한 백엔드 P0 를 당일 처리", output: "핫픽스" }
+  - { id: BE-21, date: "2026-09-09", status: todo, priority: P0, tags: [API],    title: "인스펙터 API",
+      dod: "GET /loops/{id}/inspector 가 8.8 구조 그대로 판정 체인 반환", output: "인스펙터 API" }
+  - { id: BE-22, date: "2026-09-09", status: todo, priority: P1, tags: [성능],   title: "판정 로그 조회 인덱스",
+      dod: "인스펙터 조회가 N+1 없이 단일 쿼리 범위에서 처리", output: "인덱스" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
-  - { id: BE-22, date: "2026-09-10", status: todo, priority: P0, tags: [백엔드], title: "잔여 MUST 엔드포인트 완결",
-      dod: "MUST 범위 API 목록에 미구현 0건", output: "API 완료 표" }
-  - { id: BE-23, date: "2026-09-10", status: todo, priority: P0, tags: [보안], title: "권한 정책 마감 (소유자 · 관리자)",
-      dod: "타인 리소스 접근·수정 시도 전건 403, 테스트로 고정", output: "권한 테스트" }
-  - { id: BE-24, date: "2026-09-10", status: todo, priority: P1, tags: [QA], title: "통합 테스트 — 핵심 시나리오",
-      dod: "가입→로그인→핵심동작→조회 흐름이 pytest 로 자동 검증", output: "tests/integration" }
+  - { id: BE-23, date: "2026-09-10", status: todo, priority: P0, tags: [도메인], title: "메모리 정책 주입 — 민석 예외",
+      dod: "루프 전이 시 채연·은상은 5% 잔류, 민석은 유지. 같은 인터페이스에 정책만 다름", output: "메모리 정책" }
+  - { id: BE-24, date: "2026-09-10", status: todo, priority: P0, tags: [도메인], title: "엔딩 판정 — 4종 분기",
+      dod: "원인 파악·관계 축으로 repeat/isolation/hesitation/handover 가 결정됨", output: "엔딩 판정" }
+  - { id: BE-25, date: "2026-09-10", status: todo, priority: P0, tags: [전이],   title: "도메인 포트 정식 구현",
+      dod: "게임/감사 두 어댑터가 같은 포트를 구현하고 설정으로 전환됨", output: "domain adapter" }
 
   # ── D-5 · 9/11 (금) ───────────────────────────────────────
-  - { id: BE-25, date: "2026-09-11", status: todo, priority: P0, tags: [API], title: "API 계약 최종 고정",
-      dod: "Feature Freeze 시점 스키마를 태깅, 이후 변경 금지", output: "openapi v1.0" }
-  - { id: BE-26, date: "2026-09-11", status: todo, priority: P1, tags: [API], title: "에러 코드 정리 · 문서화",
-      dod: "클라이언트가 분기하는 모든 에러 코드가 표로 존재", output: "에러 코드 표" }
-  - { id: BE-27, date: "2026-09-11", status: todo, priority: P1, tags: [QA], title: "백엔드 회귀 테스트 스위트",
-      dod: "CI 에서 전체 테스트 5분 내 통과", output: "CI 리포트" }
+  - { id: BE-26, date: "2026-09-11", status: todo, priority: P0, tags: [전이],   title: "전이 시연 — 감사 대응 실행",
+      dod: "어댑터 교체만으로 감사 시나리오가 돌고 엔진 코드 diff 가 비어 있음", output: "전이 시연" }
+  - { id: BE-27, date: "2026-09-11", status: todo, priority: P0, tags: [API],    title: "API 계약 최종 고정",
+      dod: "Freeze 시점 스키마 태깅, 에러 코드 표 완성", output: "openapi v1.0" }
+  - { id: BE-28, date: "2026-09-11", status: todo, priority: P1, tags: [QA],     title: "도메인 회귀 테스트 스위트",
+      dod: "CI에서 도메인 테스트가 LLM 없이 3분 내 통과", output: "CI 리포트" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: BE-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA], title: "버그 스쿼시 (P0 · P1)",
-      dod: "배정된 P0/P1 전건 종료", output: "이슈 종료" }
-  - { id: BE-29, date: "2026-09-12", status: todo, priority: P0, tags: [인프라], title: "마이그레이션 롤백 검증",
-      dod: "downgrade 1스텝 후 재적용까지 데이터 손상 없이 성공", output: "롤백 검증 로그" }
-  - { id: BE-30, date: "2026-09-12", status: todo, priority: P2, tags: [운영], title: "로그 정합성 점검",
-      dod: "요청 ID 로 요청-응답-에러 추적 가능", output: "로깅 개선" }
+  - { id: BE-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "버그 스쿼시 (P0·P1)",
+      dod: "배정 전건 종료. 판정 로그 유실은 최우선", output: "이슈 종료" }
+  - { id: BE-30, date: "2026-09-12", status: todo, priority: P0, tags: [인프라], title: "마이그레이션 롤백 검증",
+      dod: "downgrade 1스텝 후 재적용까지 데이터 손상 없이 성공", output: "롤백 로그" }
+  - { id: BE-31, date: "2026-09-12", status: todo, priority: P1, tags: [QA],     title: "회귀 R5·R7 담당 수행",
+      dod: "거짓 출처 발각과 민석 간파 시나리오 통과 표시", output: "회귀 결과" }
 
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
-  - { id: BE-31, date: "2026-09-13", status: todo, priority: P0, tags: [성능], title: "부하 스모크 대응 · 커넥션 풀 튜닝",
-      dod: "동시 50 요청에서 커넥션 고갈 없음, p95 목표 충족", output: "풀 설정" }
-  - { id: BE-32, date: "2026-09-13", status: todo, priority: P0, tags: [보안], title: "보안 점검 — 입력 검증 · 인젝션 · 권한 우회",
-      dod: "체크리스트 전 항목 통과, 미흡 항목은 당일 수정", output: "보안 점검표" }
-  - { id: BE-33, date: "2026-09-13", status: todo, priority: P1, tags: [인프라], title: "백업 · 복구 리허설",
-      dod: "백업 파일로 별도 DB 복구 후 서비스 기동 성공", output: "복구 리허설 로그" }
+  - { id: BE-32, date: "2026-09-13", status: todo, priority: P0, tags: [보안],   title: "세션/IP 루프 제한 구현",
+      dod: "익명 반복 접속이 차단되고 429 반환, 정상 유저는 영향 없음", output: "레이트 리밋" }
+  - { id: BE-33, date: "2026-09-13", status: todo, priority: P0, tags: [성능],   title: "부하 스모크 · 커넥션 풀",
+      dod: "동시 50 세션에서 커넥션 고갈 없음, 아침 화면 p95 < 500ms", output: "부하 리포트" }
+  - { id: BE-34, date: "2026-09-13", status: todo, priority: P1, tags: [인프라], title: "백업 · 복구 리허설",
+      dod: "백업 파일로 별도 DB 복구 후 API 기동 성공", output: "복구 로그" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
-  - { id: BE-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 브랜치 백엔드 검증",
-      dod: "RC1 이미지로 스테이징 전 시나리오 통과", output: "검증 결과" }
-  - { id: BE-35, date: "2026-09-14", status: todo, priority: P0, tags: [인프라], title: "프로덕션 마이그레이션 스크립트 확정",
-      dod: "무중단 여부·소요시간·롤백 방법이 문서에 명시", output: "배포 런북 항목" }
-  - { id: BE-36, date: "2026-09-14", status: todo, priority: P1, tags: [운영], title: "헬스체크 · 레디니스 엔드포인트",
-      dod: "DB 연결 실패 시 unhealthy 로 응답, 프록시가 이를 인식", output: "GET /health" }
+  - { id: BE-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 백엔드 검증",
+      dod: "RC1 이미지로 스테이징 회귀 전건 통과", output: "검증 결과" }
+  - { id: BE-36, date: "2026-09-14", status: todo, priority: P0, tags: [인프라], title: "프로덕션 마이그레이션 스크립트 확정",
+      dod: "추가만 하는 마이그레이션으로 구성, 소요시간·롤백 방법 명시", output: "배포 런북" }
+  - { id: BE-37, date: "2026-09-14", status: todo, priority: P1, tags: [운영],   title: "헬스체크 · 레디니스",
+      dod: "DB·LLM 연결 실패가 각각 구분되어 응답", output: "GET /health" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
-  - { id: BE-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응 · 핫픽스 대기",
-      dod: "머지 중단 상태 유지, 승인된 핫픽스만 처리", output: "핫픽스 로그" }
-  - { id: BE-38, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 — 백엔드 파트",
-      dod: "프로덕션 배포·롤백 리허설에서 백엔드 단계 무오류", output: "리허설 참여 기록" }
+  - { id: BE-38, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응 · 핫픽스 대기",
+      dod: "승인된 핫픽스만 처리", output: "핫픽스 로그" }
+  - { id: BE-39, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포·롤백 리허설 백엔드 파트",
+      dod: "마이그레이션 적용과 downgrade 가 리허설에서 무오류", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
-  - { id: BE-39, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 배포 백엔드 검증",
-      dod: "마이그레이션 적용 후 핵심 API 전건 정상 응답", output: "배포 검증" }
-  - { id: BE-40, date: "2026-09-16", status: todo, priority: P0, tags: [운영], title: "오픈 온콜 (2시간)",
+  - { id: BE-40, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 배포 백엔드 검증",
+      dod: "마이그레이션 후 1루프 완주 + 인스펙터 개봉 정상", output: "배포 검증" }
+  - { id: BE-41, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — API·DB",
       dod: "에러 로그 실시간 확인, 이상 시 즉시 보고", output: "온콜 기록" }
-  - { id: BE-41, date: "2026-09-16", status: todo, priority: P2, tags: [기록], title: "데브로그 — 백엔드 구조 회고",
-      dod: "Fractal 11-File Set 적용 결과와 개선점을 글 1편으로 작성", output: "데브로그" }
+  - { id: BE-42, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 포트 3개 설계 회고",
+      dod: "도메인 어댑터 교체가 실제로 짧은 작업이었는지 기록", output: "데브로그" }
