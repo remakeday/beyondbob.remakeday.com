@@ -1,80 +1,83 @@
-# 팀 프로필 — com.remakeday/docs/teamprofile.md 기준
+# 팀 프로필 — com.remakeday/docs/teamprofile.md v3.1 기준 (2026-09-14)
+# 역할 구조 원본: Masterless_Company_Team_Roles_v1.1 — 동일 팀·동일 분담을 REMAKE DAY에 맞게 번역
 - key:      ryujun
   name:     "류준"
-  role:     "PM · 인프라 · 릴리스"
-  prefix:   "PM"
+  role:     "Team Lead · AI Agent"
+  prefix:   "TL"
   color:    "#f2c94c"
   initial:  "류"
   scope:    >-
-    프로젝트 총괄, 인프라(Vercel·서버·DB·CI/CD·도메인), Jekyll 개발 허브 운영,
-    팀원 업무 확인·숙지 사이클, 릴리스 판단. 기획서 작성자이므로
-    대사·엔딩 텍스트도 직접 맡는다 — 기획서가 가장 공들이라 지목한 지점이다.
+    스코프·기술 결정 최종 확정. 계층 구조(모듈러 모놀리스·헥사고날·Fractal)와
+    Port/Adapter 경계, API 계약 소유. LLM 7역할의 프롬프트·구조화 출력 스키마·
+    시스템 하네스(재생성·폴백 경로)를 구현한다. 발표자.
   owns:
-    - "인프라 / 배포 파이프라인 (Vercel)"
-    - "Jekyll 개발 허브 (이 사이트)"
-    - "서사 텍스트 · 엔딩 4종"
-    - "범위 판단 · 데일리 리뷰 & 승인"
+    - "소프트웨어 아키텍처 · API 계약"
+    - "Agent Harness (run_with_harness · 사실 층)"
+    - "LLM 역할 프롬프트 · 구조화 출력 스키마"
+    - "스코프 확정 · 발표"
 
 - key:      minseok
   name:     "장민석"
-  role:     "백엔드 · AI"
-  prefix:   "BE"
+  role:     "AI Evaluation"
+  prefix:   "EVAL"
   color:    "#56ccf2"
   initial:  "민"
   scope:    >-
-    도메인 계층(의심도·신뢰도·발화 예산·루프 전이)과 저장소·API 계약.
-    도메인은 순수 함수라 LLM 없이 테스트되며, 명세와 검증을 사람이 소유하는 지점이다.
-    도메인 어댑터 교체(전이)의 인터페이스도 담당.
+    "이 슬롯에 어떤 모델을 쓸 것인가"를 측정 가능한 실험으로 설계·실행.
+    평가 러너·프로브·게이트 소유, Core 선정(E7)·NPC descent(E6),
+    metrics.yml 적립과 비열등 판정, provider 어댑터, Inspector·Harness 뷰.
   owns:
-    - "도메인 계층 (순수 함수 · 테스트 우선)"
-    - "ERD & 마이그레이션 · 판정 로그"
-    - "API 계약 + 세션/루프/발화"
-    - "도메인 포트 · 전이 어댑터"
+    - "평가 설계 (E7 · E6 · Funnel · 게이트)"
+    - "평가 러너 · metrics.yml (append-only)"
+    - "provider 어댑터 (ollama · gemini · fake)"
+    - "Inspector / Harness 뷰 · 배포 지표"
 
 - key:      chaeyeon
   name:     "신채연"
-  role:     "AI · 백엔드"
-  prefix:   "AI"
+  role:     "Full-stack · Game Frontend"
+  prefix:   "FS"
   color:    "#bb6bd9"
   initial:  "채"
   scope:    >-
-    BeyondBob Engine 의 에이전트 층 전부 — Planner·Agent·Advisor·Re-plan·Evaluator,
-    도구 2개(ask_npc·search_notes), 민석 메모리 예외, JSON 스키마 하네스.
-    침묵 권고는 이 프로젝트에서 AI가 제안자가 되는 유일한 층이다.
+    세계 규칙을 결정론 코드로 구현 — 낮 6비트 루프·밤 채점·신의 개입·원숭이손.
+    Game API와 PostgreSQL 스키마 소유, LLM 폴백에도 규칙이 걸리는 기계 보정 유지.
+    Next.js /play 게임 화면을 연결·구현하고 기동을 주도한다. 시연 조작.
   owns:
-    - "Planner / Agent / Re-plan / Evaluator"
-    - "Advisor (침묵 권고) + 측정 ②"
-    - "도구 2개 · 메모리 정책 (민석 예외)"
-    - "하네스 · 모델 선정 · 비용"
+    - "게임 엔진 (낮 루프 · 밤 채점 · 개입)"
+    - "Game API · DB (alembic)"
+    - "/play 게임 화면 (Next.js)"
+    - "시연 조작"
 
 - key:      eunsang
   name:     "이은상"
-  role:     "웹 프론트엔드 (노트 · 인스펙터)"
-  prefix:   "APP"
+  role:     "QA · UI Support · Release"
+  prefix:   "QA"
   color:    "#6fcf97"
   initial:  "은"
   scope:    >-
-    기획서에 모바일 앱이 없어 웹으로 재배치. 루프 노트와 인스펙터 화면을 맡는다.
-    인스펙터는 1차 사용자(에이전트 제품 팀)의 핵심 기능이고 노트는 대표 캡처 후보라
-    비중이 가볍지 않다. 전이 도메인 화면과 모바일 웹 최적화도 담당.
+    규칙·재현성·화면 검증과 결함 기록. Playwright 뷰포트 자동 검사(headless 고정),
+    플레이 검증·결함 로그, 보조 화면(토스트·인디케이터·안내)과 그림·사운드 반입 지원,
+    start/stop_demo 기동·외부망 검증·통합 리허설.
   owns:
-    - "루프 노트 (타임라인 · 검색)"
-    - "인스펙터 (판정 로그 개봉)"
-    - "전이 도메인 화면"
-    - "모바일 웹 최적화"
+    - "자동 검사 (frontend/tests · 뷰포트)"
+    - "플레이 검증 · 결함 로그"
+    - "보조 화면 · 그림/사운드 반입 검증"
+    - "기동 스크립트 · 릴리스 검증"
 
 - key:      chungsik
   name:     "김충식"
-  role:     "프론트엔드 (웹)"
-  prefix:   "FE"
+  role:     "Scenario Director · Content"
+  prefix:   "SC"
   color:    "#eb5757"
   initial:  "충"
   scope:    >-
-    게임 본류 화면. 아침 화면·대화창·침묵 권고 배너와 디자인 토큰을 맡는다.
-    아침 화면은 공개 배포 진입 화면이고, 권고 배너는 측정 ②의 로깅 지점이라
-    두 화면이 곧 제출물의 첫인상과 핵심 지표를 쥔다.
+    REMAKE DAY의 세계를 쓴다. 시나리오 A(구역)의 인물·비트·관찰·진실 명제·쿠키
+    콘텐츠 데이터, 장면·인물·쿠키 그림과 스타일 가이드. 사운드 — 배경 BGM과
+    음성 대사(팀원 각자 자기 배역 목소리 녹음)를 기획·수집·반입.
+    beyondbob Jekyll 허브의 문서 콘텐츠(데브로그·가이드) 관리.
   owns:
-    - "아침 화면 (공개 진입점)"
-    - "대화창 · 발화 예산 UI"
-    - "침묵 권고 배너 (A/B 포함)"
-    - "디자인 토큰 · 접근성"
+    - "시나리오 A 콘텐츠 (인물 · 진실 명제 · 쿠키)"
+    - "그림 (장면 · 인물 · 쿠키 12종)"
+    - "사운드 (배경 BGM · 음성 대사 — 팀원 각자 녹음)"
+    - "이미지 제작서 · 데모/플레이 가이드"
+    - "Jekyll 허브 콘텐츠 (데브로그)"
