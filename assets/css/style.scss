@@ -190,6 +190,18 @@ tbody tr:hover { background: rgba(255,255,255,.02); }
 .stat__value { font-size: 28px; font-weight: 800; line-height: 1.2; margin-top: 4px; font-family: var(--mono); }
 .stat__note  { font-size: 12px; color: var(--text-3); margin-top: 2px; }
 
+/* ── 구현 화면 캡처 ─────────────────────────────────────── */
+.shot { margin: 18px 0 30px; }
+.shot img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg-soft);
+}
+.shot figcaption { margin-top: 8px; font-size: 13px; color: var(--text-3); }
+.shot-pair { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.shot-pair .shot { margin: 0; }
+.shot-toc { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; margin: 0 0 8px; padding: 0; list-style: none; }
+
 /* ── D-day 배너 ─────────────────────────────────────────── */
 .dday {
   display: flex; flex-wrap: wrap; align-items: center; gap: 18px;
