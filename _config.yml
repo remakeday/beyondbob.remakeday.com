@@ -4,7 +4,7 @@
 title:       "REMAKE DAY"
 tagline:     "BeyondBob 개발 허브"
 description: "REMAKE DAY 팀의 기획·칸반·일정·데브로그를 한곳에서 관리하는 개발 허브입니다."
-url:         "https://beyondbob.remakeday.com"
+url:         "https://blog.remakeday.com"
 baseurl:     ""
 lang:        ko-KR
 timezone:    Asia/Seoul
@@ -60,3 +60,4 @@ exclude:
   - README.md
   - .github
   - "REMAKE_DAY_*"   # 기획서 원문 — 비공개. NFD 파일명이라 글로브로 제외한다
+  - "TalkFile_*"     # 대화 원문 노트 — 페이지로 옮긴 뒤의 원본. 빌드에서 제외한다

@@ -2,7 +2,7 @@ member: ryujun
 tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
   - { id: PM-01, date: "2026-09-03", status: done,  priority: P0, tags: [지킬],   title: "Jekyll 개발 허브 구축 · 도메인 연결",
-      dod: "beyondbob.remakeday.com 에서 기획·칸반·타임라인이 열린다 (가비아 DNS 연결 완료)", output: "이 사이트" }
+      dod: "blog.remakeday.com 에서 기획·칸반·타임라인이 열린다 (가비아 DNS 연결 완료)", output: "이 사이트" }
   - { id: PM-02, date: "2026-09-03", status: done,  priority: P0, tags: [인프라], title: "Vercel 계정 · 프로젝트 등록",
       dod: "웹 배포 대상이 준비되고, 추후 도메인 연결이 클릭 수준으로 가능", output: "Vercel 프로젝트" }
   - { id: PM-03, date: "2026-09-03", status: doing, priority: P0, tags: [기획],   title: "기획서 v6 를 기획 문서 10편에 반영",

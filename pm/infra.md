@@ -51,7 +51,7 @@ description: "PM 이 실제로 실행하는 절차. 명령과 순서를 그대�
 
 | 이름 | 타입 | 가리키는 곳 | 용도 |
 |---|---|---|---|
-| `beyondbob.remakeday.com` | CNAME | `remakeday.github.io` | 이 개발 허브 |
+| `blog.remakeday.com` | CNAME | `remakeday.github.io` | 이 개발 허브 (저장소 이름은 `beyondbob.remakeday.com`) |
 | `api.…` | A | 프로덕션 서버 IP | 백엔드 API |
 | `api-stg.…` | A | 스테이징 서버 IP | 스테이징 API |
 | `www` / apex | *(D-12 확정)* | | 서비스 웹 |

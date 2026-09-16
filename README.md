@@ -32,7 +32,7 @@ tags: [백엔드]
 ---
 ```
 
-자세한 내용은 사이트의 [이 사이트 사용법](https://beyondbob.remakeday.com/pm/jekyll-guide/) 참고.
+자세한 내용은 사이트의 [이 사이트 사용법](https://blog.remakeday.com/pm/jekyll-guide/) 참고.
 
 ## 로컬 실행
 

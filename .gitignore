@@ -10,3 +10,6 @@ Gemfile.lock
 
 # 기획서 원문 — 비공개. 파일명이 NFD(macOS)라 한글 리터럴로는 매칭되지 않으므로 글로브로 막는다
 REMAKE_DAY_*
+
+# 대화 원문 노트 — misc/ 페이지로 옮긴 뒤의 원본. 커밋하지 않는다
+TalkFile_*
