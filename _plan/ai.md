@@ -4,10 +4,51 @@ slug: ai
 owner: chaeyeon
 due: "2026-09-04"
 state: p1
-state_label: "기획서 8장 반영"
+state_label: "모델 확정 9/17"
 eyebrow: "기획 06"
 description: "Planner · Agent · Advisor · Re-plan · Evaluator · Memory. 도구는 딱 두 개. 민석만 메모리 정책이 다릅니다."
 ---
+
+<div class="callout callout--ok">
+  <div class="callout__title">현행 구성 — 2026-09-17 확정</div>
+  <p>아래 본문은 기획서 v6(09-03) 기준 설계입니다. 실제 구현에서 확정된 역할·모델·하네스는 이 절이 우선합니다.
+  원본: com.remakeday <code>docs/model_evaluation.md</code> 부록 A.19, <code>docs/REMAKE_DAY_모델구성_정책프롬프트_v1.md</code>.
+  모델 선정 경위는 <a href="{{ '/misc/llm-orchestration/' | relative_url }}">LLM 구성 (확정)</a>에 있습니다.</p>
+</div>
+
+## 현행 구성 (2026-09-17)
+
+### 역할별 모델 배치
+
+모델은 슬롯 두 개로 나뉩니다. 역할마다 모델을 따로 두지 않고, **인물 대화만 NPC 슬롯, 나머지 판단은 전부 Core 슬롯**입니다.
+
+| 슬롯 | 모델 (제출) | 맡는 역할 | 롤백 (로컬) |
+|---|---|---|---|
+| **Core** | `claude-sonnet-5` | 관리자 검사(`manager_check`) · 밤 채점(`evaluator_verdict`) · 신의 질문(`advisor_answer`) · 하루 계획(`planner`) · 발화 분류(`classifier`) | `gemma4:12b` (think off) |
+| **NPC** | `claude-haiku-4-5` | 인물 대화(`agent`) | `kanana1.5:8b` |
+| 임베딩 | `gemini-embedding-001` | 채점 RAG | — |
+
+비용의 87~94%가 Core에서 나오고, 그중 관리자 검사가 Core 입력의 절반 이상입니다. NPC 모델 선택은 비용에 거의 영향이 없습니다.
+
+### 하네스 — 프롬프트가 아니라 코드
+
+- 모든 역할의 출력은 **JSON만** 받습니다. 스키마 위반이면 하네스가 거부하고 **최대 2회 재생성**, 그래도 실패하면 역할별 폴백으로 넘어갑니다
+- 재생성·폴백은 역할별로 기록되고 평가 게이트(완주·폴백 0)의 판정 대상입니다
+- 제출 조합 self-play 5회차에서 재생성은 planner 1회뿐이었고 폴백은 0이었습니다
+- 알려진 구멍: Anthropic 구조화 출력은 `maxItems`를 강제하지 않아 planner `beats`가 상한 6을 넘을 때가 있습니다. 지금은 재생성으로 복구되고, 프롬프트 쪽 상한 명시나 응답 후 자르기를 검토 중입니다
+
+### 7세 정책
+
+NPC는 7세 아이처럼 쉬운 말로 말합니다. `run_age7_check.py`가 5항목(사실대로 · 「왜」에 대한 답 · 3턴 망각 · 유도 수용 · 문자 그대로)을 재고, **4/5 이상 · 누설 0**이 게이트입니다.
+
+- 로컬 kanana, Haiku 4.5, Sonnet 5 모두 **4/5 통과** (채점기 gemma4:12b로 통일 후 재측정)
+- 공통으로 떨어지는 항목은 **3턴 망각** — 세 모델 모두 이름·위치·숫자를 정확히 기억해 말합니다
+- 2026-09-15 대화 정책 `npc-dialogue-2`부터 「7세」는 **쉬운 말투의 기준**이고, 강제 「몰라」와 3줄 망각은 통과 조건에서 뺐습니다. 대신 질문 이해 · 자기 행동의 이유 설명 · 당일 기억을 요구합니다
+
+<div class="callout callout--warn">
+  <div class="callout__title">메모리 비대칭은 현재 구현과 다릅니다</div>
+  <p>아래 「Memory — 의도적 비대칭」의 민석 예외는 v6 설계입니다. 현재 구현(npc-dialogue-2)에서는 <strong>네 NPC 모두 새 루프에서 당일 기억을 초기화하고 신뢰 5%만 남기며, 민석만 과거 대화를 기억하는 예외는 없습니다.</strong></p>
+</div>
 
 ## 왜 LLM이 필요한가
 
@@ -202,3 +243,5 @@ A의 재판정: 유저 발언 불일치 → 의심도 +15 (누적 56)
 | 2026-09-03 | NPC 탐문 예산 초기 2회 | 거짓말 난이도 손잡이 |
 | 2026-09-03 | 민석 예외를 별도 클래스가 아닌 정책 주입으로 | 8.4. 인터페이스가 갈라지면 전이 때 무너진다 |
 | 2026-09-03 | AI degrade 모드 없음 | LLM이 곧 게임. 대신 이중화·비용 상한을 강화 |
+| 2026-09-15 | NPC 대화 정책 `npc-dialogue-2` — 7세는 말투 기준, 강제 회피·3줄 망각 제거, 네 NPC 모두 루프마다 당일 기억 초기화 | 승인된 설계 `2026-09-15-npc-dialogue-persona-design` (com.remakeday) |
+| 2026-09-17 | **Core `claude-sonnet-5` · NPC `claude-haiku-4-5` 확정**, 로컬(gemma4:12b · kanana1.5:8b)은 롤백용 유지 | 심사 기간 서빙 제약. 같은 게이트로 비열등 확인(A.19) |
