@@ -5,11 +5,11 @@ tasks:
       dod: "blog.remakeday.com 에서 기획·칸반·타임라인이 열린다 (가비아 DNS 연결 완료)", output: "이 사이트" }
   - { id: PM-02, date: "2026-09-03", status: done,  priority: P0, tags: [인프라], title: "Vercel 계정 · 프로젝트 등록",
       dod: "웹 배포 대상이 준비되고, 추후 도메인 연결이 클릭 수준으로 가능", output: "Vercel 프로젝트" }
-  - { id: PM-03, date: "2026-09-03", status: doing, priority: P0, tags: [기획],   title: "기획서 v6 를 기획 문서 10편에 반영",
+  - { id: PM-03, date: "2026-09-03", status: done,  priority: P0, tags: [기획],   title: "기획서 v6 를 기획 문서 10편에 반영",
       dod: "제품 정의·방어선·ERD·에이전트 설계가 원문 기준으로 교체되고 추론 표시가 사라진다", output: "/plan/ 전체" }
-  - { id: PM-04, date: "2026-09-03", status: doing, priority: P1, tags: [결정],   title: "발화 예산을 설정값으로 분리 · 잠정 기본값 지정",
+  - { id: PM-04, date: "2026-09-03", status: review, priority: P1, tags: [결정],   title: "발화 예산을 설정값으로 분리 · 잠정 기본값 지정",
       dod: "상수 하드코딩 금지. 초기 5 / 5루프째 4 / 하한 3 을 잠정값으로 두고 팀 합의 전까지 유효함을 공지", output: "설정 파일 · 공지" }
-  - { id: PM-05, date: "2026-09-03", status: doing, priority: P0, tags: [운영],   title: "이은상 역할 재배치 (앱 → 노트·인스펙터)",
+  - { id: PM-05, date: "2026-09-03", status: review, priority: P0, tags: [운영],   title: "이은상 역할 재배치 (앱 → 노트·인스펙터)",
       dod: "기획서에 모바일 앱이 없음을 공유하고 웹 화면 분담을 본인 합의로 확정", output: "팀 프로필 갱신" }
   - { id: PM-06, date: "2026-09-03", status: todo,  priority: P0, tags: [인프라], title: "GitHub 브랜치 보호 · PR 템플릿",
       dod: "main 직접 push 차단, 1인 승인 필수, PR 템플릿에 방어선 항목 체크란 포함", output: "레포 설정" }
@@ -17,17 +17,17 @@ tasks:
   # ── D-12 · 9/04 (금) ──────────────────────────────────────
   - { id: PM-07, date: "2026-09-04", status: todo, priority: P0, tags: [운영],   title: "ERD FREEZE 회의 주재 · 결정 기록",
       dod: "18:00 ERD v1 승인, 이후 변경 절차(PM 승인+마이그레이션+클라 대응) 공지", output: "/plan/data/ 결정 로그" }
-  - { id: PM-08, date: "2026-09-04", status: todo, priority: P0, tags: [인프라], title: "스테이징 API 서버 + PostgreSQL(벡터) 프로비저닝",
+  - { id: PM-08, date: "2026-09-04", status: review, priority: P0, tags: [인프라], title: "스테이징 API 서버 + PostgreSQL(벡터) 프로비저닝",
       dod: "api-stg 헬스체크 통과, 벡터 확장 설치 확인, 일 1회 백업 크론 동작", output: "스테이징 환경" }
-  - { id: PM-09, date: "2026-09-04", status: todo, priority: P0, tags: [보안],   title: "시크릿 체계 + LLM 비용 상한 키 등록",
+  - { id: PM-09, date: "2026-09-04", status: doing, priority: P0, tags: [보안],   title: "시크릿 체계 + LLM 비용 상한 키 등록",
       dod: ".env.example 만 커밋, GitHub/Vercel 시크릿 등록, LLM_DAILY_LIMIT_USD 값 확정", output: "/pm/infra/ 시크릿 표" }
   - { id: PM-10, date: "2026-09-04", status: todo, priority: P0, tags: [운영],   title: "인프라 권한 2인 부여 (장민석)",
       dod: "서버·시크릿·배포 권한을 장민석이 동등하게 보유 — PM 단일 장애점 제거", output: "권한 부여" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
-  - { id: PM-11, date: "2026-09-05", status: todo, priority: P0, tags: [인프라], title: "백엔드 CI — 테스트 + import-linter 게이트",
+  - { id: PM-11, date: "2026-09-05", status: review, priority: P0, tags: [인프라], title: "백엔드 CI — 테스트 + import-linter 게이트",
       dod: "도메인 계층이 LLM 어댑터를 참조하면 CI 실패하고 머지가 막힌다", output: ".github/workflows" }
-  - { id: PM-12, date: "2026-09-05", status: todo, priority: P0, tags: [인프라], title: "Vercel 웹 배포 + PR 프리뷰 연결",
+  - { id: PM-12, date: "2026-09-05", status: review, priority: P0, tags: [인프라], title: "Vercel 웹 배포 + PR 프리뷰 연결",
       dod: "PR마다 프리뷰 URL 생성, main 머지 시 스테이징 반영", output: "Vercel 연동" }
   - { id: PM-13, date: "2026-09-05", status: todo, priority: P1, tags: [서사],   title: "아침 문장 · 손상 1층 문안 1차",
       dod: "고정 문장 1개 + 두 번째 문장 변형 후보 10개 작성", output: "텍스트 시트" }
@@ -35,9 +35,9 @@ tasks:
       dod: "review 카드 판정 완료, 막힌 항목 3개 이하, 사이트 반영 커밋", output: "데브로그 1건" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
-  - { id: PM-15, date: "2026-09-06", status: todo, priority: P0, tags: [인프라], title: "스테이징 자동 배포 + HTTPS",
+  - { id: PM-15, date: "2026-09-06", status: doing, priority: P0, tags: [인프라], title: "스테이징 자동 배포 + HTTPS",
       dod: "main 머지 → 5분 내 반영, api 도메인 https 접속, 인증서 자동 갱신", output: "배포 파이프라인" }
-  - { id: PM-16, date: "2026-09-06", status: todo, priority: P1, tags: [서사],   title: "NPC 3인 말투 가이드",
+  - { id: PM-16, date: "2026-09-06", status: review, priority: P1, tags: [서사],   title: "NPC 3인 말투 가이드",
       dod: "민석·채연·은상 각각 어휘·문장 길이·회피 방식이 구분되는 예문 5개씩", output: "말투 가이드" }
   - { id: PM-17, date: "2026-09-06", status: todo, priority: P1, tags: [리뷰],   title: "데일리 리뷰 #2",
       dod: "방어선 ① 진척 확인, 내일 통합 선행조건 점검", output: "리뷰 기록" }
@@ -45,7 +45,7 @@ tasks:
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
   - { id: PM-48, date: "2026-09-07", status: todo, priority: P0, tags: [결정],   title: "팀 합의 — 발화 예산 확정 (전원 출석)",
       dod: "초기 회수·감소 곡선·하한을 5인 합의로 확정하고 결정 로그에 근거와 함께 기록", output: "/plan/scope/ 결정 로그" }
-  - { id: PM-18, date: "2026-09-07", status: todo, priority: P0, tags: [QA],     title: "1루프 스모크 스크립트",
+  - { id: PM-18, date: "2026-09-07", status: review, priority: P0, tags: [QA],     title: "1루프 스모크 스크립트",
       dod: "한 명령으로 세션 발급→아침→발화 3회→루프 종료까지 확인, 실패 시 종료코드 1", output: "scripts/smoke.sh" }
   - { id: PM-19, date: "2026-09-07", status: todo, priority: P0, tags: [운영],   title: "LLM 비용 · 스키마 통과율 대시보드",
       dod: "일일 토큰·비용과 역할별 스키마 통과율을 한 화면에서 확인, 80% 알람", output: "관측 대시보드" }
@@ -55,7 +55,7 @@ tasks:
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
   - { id: PM-21, date: "2026-09-08", status: todo, priority: P0, tags: [서사],   title: "손상 2·3층 문안 (노트 불일치 · 충식 소실)",
       dod: "불일치 케이스 5개, 충식 언급 소거 단계 3단 문안 작성", output: "텍스트 시트" }
-  - { id: PM-22, date: "2026-09-08", status: todo, priority: P0, tags: [운영],   title: "알파 시연 시나리오 확정",
+  - { id: PM-22, date: "2026-09-08", status: review, priority: P0, tags: [운영],   title: "알파 시연 시나리오 확정",
       dod: "전원이 각자 기기에서 따라할 1루프 대본과 확인 항목 배포", output: "시연 시나리오" }
   - { id: PM-23, date: "2026-09-08", status: todo, priority: P1, tags: [리뷰],   title: "데일리 리뷰 #4",
       dod: "권고 로깅이 실제로 쌓이는지 DB에서 직접 확인", output: "리뷰 기록" }
@@ -69,7 +69,7 @@ tasks:
       dod: "R2~R10 트리거 도달 여부 점검, 상위 5개에 담당·기한 재지정", output: "/plan/risk/" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
-  - { id: PM-27, date: "2026-09-10", status: todo, priority: P0, tags: [인프라], title: "프로덕션 인프라 프로비저닝",
+  - { id: PM-27, date: "2026-09-10", status: done, priority: P0, tags: [인프라], title: "프로덕션 인프라 프로비저닝",
       dod: "프로덕션 API·DB·Vercel이 스테이징과 동일 구성으로 기동", output: "prod 환경" }
   - { id: PM-28, date: "2026-09-10", status: todo, priority: P0, tags: [서사],   title: "엔딩 4종 텍스트 초안",
       dod: "반복·고립·망설임·인계 4편 작성. 망설임이 위로상처럼 읽히지 않을 것", output: "엔딩 텍스트" }
@@ -81,11 +81,11 @@ tasks:
       dod: "18:00 공지, 이후 기능 PR 자동 반려, 예외는 PM 승인 건만", output: "동결 공지" }
   - { id: PM-31, date: "2026-09-11", status: todo, priority: P0, tags: [릴리스], title: "릴리스 체크리스트 v1 배포",
       dod: "방어선 5개 + 기능/오류/데이터/보안/배포 항목에 담당자 지정", output: "/plan/release/" }
-  - { id: PM-32, date: "2026-09-11", status: todo, priority: P0, tags: [QA],     title: "전이 시연 입회 — 엔진 diff 확인",
+  - { id: PM-32, date: "2026-09-11", status: review, priority: P0, tags: [QA],     title: "전이 시연 입회 — 엔진 diff 확인",
       dod: "감사 어댑터 적용 시 BeyondBob Engine 코드 diff 가 비어 있음을 직접 확인", output: "diff 증빙" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: PM-33, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "버그 트리아지 운영",
+  - { id: PM-33, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "버그 트리아지 운영",
       dod: "P0/P1 전건에 담당·기한 지정, 하루 2회 갱신. 판정 로그 유실은 P0로 분류", output: "이슈 보드" }
   - { id: PM-34, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "회귀 시나리오 R1~R10 운영",
       dod: "10개 시나리오가 표로 존재하고 각 담당이 통과 표시", output: "회귀 표" }
@@ -93,9 +93,9 @@ tasks:
       dod: "P0 잔여 0건 확인, 아니면 인원 재배치", output: "리뷰 기록" }
 
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
-  - { id: PM-36, date: "2026-09-13", status: todo, priority: P0, tags: [보안],   title: "공개 대비 — 세션/IP 제한 · 비용 상한 검증",
+  - { id: PM-36, date: "2026-09-13", status: done, priority: P0, tags: [보안],   title: "공개 대비 — 세션/IP 제한 · 비용 상한 검증",
       dod: "익명 반복 접속이 실제로 차단되고, 상한 도달 시 정해진 안내가 나온다", output: "제한 설정" }
-  - { id: PM-37, date: "2026-09-13", status: todo, priority: P0, tags: [보안],   title: "시크릿 스캔 · 권한 점검",
+  - { id: PM-37, date: "2026-09-13", status: done, priority: P0, tags: [보안],   title: "시크릿 스캔 · 권한 점검",
       dod: "레포 시크릿 0건, CORS 화이트리스트 확정", output: "보안 점검표" }
   - { id: PM-38, date: "2026-09-13", status: todo, priority: P0, tags: [서사],   title: "엔딩 텍스트 팀 리뷰",
       dod: "3인 이상이 읽고 망설임 엔딩이 이야기로 성립하는지 확인", output: "리뷰 기록" }
@@ -105,7 +105,7 @@ tasks:
       dod: "v1.0.0-rc.1 태그와 방어선 5개 달성 내역 발행", output: "GitHub Release" }
   - { id: PM-40, date: "2026-09-14", status: todo, priority: P0, tags: [QA],     title: "릴리스 체크리스트 최종 검증 주재",
       dod: "전 항목 통과 서명, 미통과 항목은 범위 축소로 처리", output: "검증 결과" }
-  - { id: PM-41, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "온콜 · 롤백 절차 문서화",
+  - { id: PM-41, date: "2026-09-14", status: doing, priority: P0, tags: [릴리스], title: "온콜 · 롤백 절차 문서화",
       dod: "누가·무엇을·몇 분 안에 하는지 한 장으로 정리", output: "/pm/infra/" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
@@ -113,11 +113,11 @@ tasks:
       dod: "핫픽스 외 머지 중단, 예외 승인 창구 단일화", output: "동결 공지" }
   - { id: PM-43, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 + 롤백 리허설",
       dod: "각 1회 성공, 단계별 소요시간을 런북에 기록", output: "리허설 로그" }
-  - { id: PM-44, date: "2026-09-15", status: todo, priority: P1, tags: [운영],   title: "공개 소개 문구 · 진입 동선 확정",
+  - { id: PM-44, date: "2026-09-15", status: review, priority: P1, tags: [운영],   title: "공개 소개 문구 · 진입 동선 확정",
       dod: "소개 문구를 표면 목표로 통일, 커리어 시나리오가 같은 링크에서 진입 가능", output: "공개 콘텐츠" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
-  - { id: PM-45, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 배포 실행",
+  - { id: PM-45, date: "2026-09-16", status: doing, priority: P0, tags: [릴리스], title: "프로덕션 배포 실행",
       dod: "백업 → 마이그레이션 → API → 웹 순서로 배포, 1루프 완주 확인", output: "v1.0.0" }
   - { id: PM-46, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 30분 관측 · 온콜",
       dod: "에러율·지연·LLM 비용 정상, 실사용 로그가 실제로 쌓이는지 확인", output: "관측 기록" }

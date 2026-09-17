@@ -1,33 +1,33 @@
 member: chaeyeon
 tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
-  - { id: AI-01, date: "2026-09-03", status: doing, priority: P0, tags: [설계],   title: "에이전트 6층 구성 확정",
+  - { id: AI-01, date: "2026-09-03", status: review, priority: P0, tags: [설계],   title: "에이전트 6층 구성 확정",
       dod: "Planner·Agent·Advisor·Re-plan·Evaluator·Memory 의 입출력 스키마가 문서로 확정", output: "/plan/ai/" }
-  - { id: AI-02, date: "2026-09-03", status: todo,  priority: P0, tags: [모델],   title: "LLM 프로바이더 선정 · 역할별 후보 · 비용 추정",
+  - { id: AI-02, date: "2026-09-03", status: done,  priority: P0, tags: [모델],   title: "LLM 프로바이더 선정 · 역할별 후보 · 비용 추정",
       dod: "Agent(저지연)·Planner(추론)·Evaluator(긴 로그) 후보와 판당 예상 비용 표", output: "모델 선정서" }
-  - { id: AI-03, date: "2026-09-03", status: todo,  priority: P0, tags: [설계],   title: "NPC 3인 초기 상태 · 목표 정의",
+  - { id: AI-03, date: "2026-09-03", status: done,  priority: P0, tags: [설계],   title: "NPC 3인 초기 상태 · 목표 정의",
       dod: "민석·채연·은상의 자기 목표와 초기 의심/신뢰, 관계가 데이터로 정의", output: "NPC 정의" }
 
   # ── D-12 · 9/04 (금) ──────────────────────────────────────
-  - { id: AI-04, date: "2026-09-04", status: todo, priority: P0, tags: [하네스], title: "JSON 스키마 하네스 + 재시도",
+  - { id: AI-04, date: "2026-09-04", status: done, priority: P0, tags: [하네스], title: "JSON 스키마 하네스 + 재시도",
       dod: "자유 텍스트 응답이 거부되고, 스키마 위반 시 재시도 후 안전 기본값", output: "harness/" }
-  - { id: AI-05, date: "2026-09-04", status: todo, priority: P0, tags: [프롬프트], title: "Agent 판정 프롬프트 v0",
+  - { id: AI-05, date: "2026-09-04", status: done, priority: P0, tags: [프롬프트], title: "Agent 판정 프롬프트 v0",
       dod: "발화 1건에 대해 응답·의심여부·도구호출·계획수정 을 JSON으로 반환", output: "prompts/agent/v0" }
   - { id: AI-06, date: "2026-09-04", status: todo, priority: P0, tags: [ERD],    title: "llm_call 계측 테이블 반영 요청",
       dod: "역할·모델·스키마통과·재시도·토큰·지연·비용 필드가 ERD v1 에 포함", output: "ERD 반영" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
-  - { id: AI-07, date: "2026-09-05", status: todo, priority: P0, tags: [포트],   title: "LLM 포트 + 어댑터 구현",
+  - { id: AI-07, date: "2026-09-05", status: done, priority: P0, tags: [포트],   title: "LLM 포트 + 어댑터 구현",
       dod: "도메인은 포트만 의존, 설정 변경만으로 모델 교체 가능", output: "LlmPort" }
-  - { id: AI-08, date: "2026-09-05", status: todo, priority: P0, tags: [에이전트], title: "Agent 층 — 발화 1건 판정 왕복",
+  - { id: AI-08, date: "2026-09-05", status: done, priority: P0, tags: [에이전트], title: "Agent 층 — 발화 1건 판정 왕복",
       dod: "유저 발화가 Agent를 거쳐 응답으로 돌아오고, 수치는 코드가 계산", output: "Agent 구현" }
   - { id: AI-09, date: "2026-09-05", status: todo, priority: P0, tags: [에이전트], title: "스트리밍 응답 처리",
       dod: "토큰 단위 델타가 SSE로 흐르고 done/error 로 반드시 종료", output: "스트리밍" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
-  - { id: AI-10, date: "2026-09-06", status: todo, priority: P0, tags: [도구],   title: "ask_npc 구현 — NPC가 NPC에게 확인",
+  - { id: AI-10, date: "2026-09-06", status: review, priority: P0, tags: [도구],   title: "ask_npc 구현 — NPC가 NPC에게 확인",
       dod: "Agent가 판단해 호출하고, 결과가 재판정에 반영되어 거짓 출처가 발각됨", output: "ask_npc" }
-  - { id: AI-11, date: "2026-09-06", status: todo, priority: P0, tags: [에이전트], title: "Planner — 루프 시작 시 하루 계획",
+  - { id: AI-11, date: "2026-09-06", status: done, priority: P0, tags: [에이전트], title: "Planner — 루프 시작 시 하루 계획",
       dod: "NPC 3인이 각자 비트 단위 계획을 세우고 저장", output: "Planner" }
   - { id: AI-12, date: "2026-09-06", status: todo, priority: P1, tags: [비용],   title: "토큰 · 비용 계측 적재",
       dod: "요청별 토큰/비용/지연이 llm_call 에 기록되고 일자별 집계 가능", output: "비용 집계" }
@@ -37,7 +37,7 @@ tasks:
       dod: "의심 임계·신뢰 임계·탐문 결과·계획 실패에서 계획이 실제로 바뀌고 로그에 남음", output: "Re-plan" }
   - { id: AI-14, date: "2026-09-07", status: todo, priority: P0, tags: [협업],   title: "SSE 이벤트 계약 3인 합의",
       dod: "advice/delta/tool/done/error 를 프론트 2인과 동일하게 확정", output: "SSE 스펙" }
-  - { id: AI-15, date: "2026-09-07", status: todo, priority: P0, tags: [안정성], title: "실패 폴백 — 타임아웃 · 컨텍스트 초과",
+  - { id: AI-15, date: "2026-09-07", status: done, priority: P0, tags: [안정성], title: "실패 폴백 — 타임아웃 · 컨텍스트 초과",
       dod: "재시도 후 AI_UNAVAILABLE, 컨텍스트 초과 시 노트 요약 후 재시도", output: "폴백" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
@@ -49,11 +49,11 @@ tasks:
       dod: "1루프에 0~1회 수준으로 발동. 매 턴 뜨지 않음을 로그로 확인", output: "발동 규칙" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
-  - { id: AI-19, date: "2026-09-09", status: todo, priority: P0, tags: [QA],     title: "알파 시연 대응",
+  - { id: AI-19, date: "2026-09-09", status: done, priority: P0, tags: [QA],     title: "알파 시연 대응",
       dod: "1루프 완주 중 판정 실패·스키마 오류 0건", output: "핫픽스" }
-  - { id: AI-20, date: "2026-09-09", status: todo, priority: P0, tags: [평가],   title: "판정 일관성 실험 (11.1 첫 행)",
+  - { id: AI-20, date: "2026-09-09", status: review, priority: P0, tags: [평가],   title: "판정 일관성 실험 (11.1 첫 행)",
       dod: "같은 발화 20회 반복 투입 시 의심도 변화 편차를 측정하고 기준 설정", output: "일관성 리포트" }
-  - { id: AI-21, date: "2026-09-09", status: todo, priority: P1, tags: [프롬프트], title: "Agent 프롬프트 v1 튜닝",
+  - { id: AI-21, date: "2026-09-09", status: done, priority: P1, tags: [프롬프트], title: "Agent 프롬프트 v1 튜닝",
       dod: "판정이 흔들린 케이스 5건 반영, 자유 판단을 범주 선택으로 좁힘", output: "prompts/agent/v1" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
@@ -65,7 +65,7 @@ tasks:
       dod: "루프 종료 시 누가 왜 그 선택에 도달했는지 서술을 생성", output: "Evaluator" }
 
   # ── D-5 · 9/11 (금) ───────────────────────────────────────
-  - { id: AI-25, date: "2026-09-11", status: todo, priority: P0, tags: [전이],   title: "감사 도메인 프롬프트 어댑터",
+  - { id: AI-25, date: "2026-09-11", status: done, priority: P0, tags: [전이],   title: "감사 도메인 프롬프트 어댑터",
       dod: "용어만 교체한 프롬프트로 감사 시나리오가 돌고, 엔진 코드는 그대로", output: "audit adapter" }
   - { id: AI-26, date: "2026-09-11", status: todo, priority: P1, tags: [전이],   title: "커리어 시나리오 프롬프트",
       dod: "두 번째 어댑터가 프롬프트 하나로 동작 (5초 시연용)", output: "career adapter" }
@@ -73,25 +73,25 @@ tasks:
       dod: "운영 프롬프트를 v1.0 으로 태깅, 이후 변경은 PM 승인", output: "prompts/v1.0" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: AI-28, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "AI 버그 스쿼시",
+  - { id: AI-28, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "AI 버그 스쿼시",
       dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
   - { id: AI-29, date: "2026-09-12", status: todo, priority: P0, tags: [평가],   title: "탐문 ON/OFF 대조 실험",
       dod: "동일 발화 시퀀스에서 ask_npc 유무에 따라 발각률이 갈리는지 수치로 확인", output: "대조 리포트" }
-  - { id: AI-30, date: "2026-09-12", status: todo, priority: P1, tags: [평가],   title: "Evaluator 판정 일관성",
+  - { id: AI-30, date: "2026-09-12", status: done, priority: P1, tags: [평가],   title: "Evaluator 판정 일관성",
       dod: "같은 로그 반복 투입 시 원인 체인이 흔들리지 않음", output: "일관성 리포트" }
 
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
-  - { id: AI-31, date: "2026-09-13", status: todo, priority: P0, tags: [비용],   title: "비용 상한 · 자동 차단",
+  - { id: AI-31, date: "2026-09-13", status: review, priority: P0, tags: [비용],   title: "비용 상한 · 자동 차단",
       dod: "일 한도 초과 시 알림 발송 및 차단, 정해진 안내 문구 노출", output: "쿼터" }
-  - { id: AI-32, date: "2026-09-13", status: todo, priority: P0, tags: [보안],   title: "프롬프트 인젝션 방어 점검",
+  - { id: AI-32, date: "2026-09-13", status: review, priority: P0, tags: [보안],   title: "프롬프트 인젝션 방어 점검",
       dod: "주입 시도 10건에서 시스템 지시 유지, NPC가 역할을 벗어나지 않음", output: "인젝션 테스트" }
-  - { id: AI-33, date: "2026-09-13", status: todo, priority: P1, tags: [성능],   title: "지연 측정 · 첫 토큰까지 시간",
+  - { id: AI-33, date: "2026-09-13", status: doing, priority: P1, tags: [성능],   title: "지연 측정 · 첫 토큰까지 시간",
       dod: "발화 후 TTFT 목표치 설정 및 충족", output: "지연 리포트" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
-  - { id: AI-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 검증 — 스키마 통과율",
+  - { id: AI-34, date: "2026-09-14", status: done, priority: P0, tags: [릴리스], title: "RC 검증 — 스키마 통과율",
       dod: "역할별 통과율·재시도율이 기준치 이상, 하네스 안정 확인", output: "하네스 리포트" }
-  - { id: AI-35, date: "2026-09-14", status: todo, priority: P0, tags: [인프라], title: "프로덕션 키 · 역할별 모델 확정",
+  - { id: AI-35, date: "2026-09-14", status: doing, priority: P0, tags: [인프라], title: "프로덕션 키 · 역할별 모델 확정",
       dod: "운영 키가 시크릿에만 존재, 역할별 모델과 한도가 prod 기준으로 설정", output: "prod 설정" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
