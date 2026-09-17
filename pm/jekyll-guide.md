@@ -69,8 +69,10 @@ Ruby 가 없으면 설치가 번거로우니, **그냥 YAML 만 고쳐서 push**
 |---|---|
 | `todo` | 아직 시작 전 (기본값) |
 | `doing` | 지금 붙잡고 있다. **동시에 2건까지** |
-| `review` | 완료 기준(`dod`)을 채웠다. **PM 확인 요청** |
-| `done` | ✋ **PM 만 씁니다.** 직접 붙이지 마세요 |
+| `review` | 완료 기준(`dod`)을 채웠다. **팀장 확인 요청** |
+| `done` | ✋ **팀장만 씁니다.** 직접 붙이지 마세요 |
+
+매일 23:00 개발 저장소(com.remakeday)의 자동 동기화가 일지·커밋 근거로 상태를 **앞으로만** 올립니다. 근거가 확인된 카드는 `done` 까지 올라갈 수 있고, 사람이 올려둔 상태는 내리지 않습니다. 바뀐 칸반 파일만 자동으로 커밋·푸시합니다.
 
 ```bash
 git add _data/kanban/minseok.yml
@@ -176,8 +178,8 @@ _data/
 _plan/                   기획 문서 10편
 pm/                      PM 운영 문서
 _posts/                  데브로그
-_layouts/ _includes/     화면 틀 (PM 만)
-assets/css/style.scss    스타일 (PM 만)
+_layouts/ _includes/     화면 틀 (팀장만)
+assets/css/style.scss    스타일 (팀장만)
 ```
 
 **날짜를 바꾸려면** `_config.yml` 의 `project.deadline` 과 `_data/schedule.yml` 을 함께 고칩니다.

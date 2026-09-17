@@ -29,7 +29,7 @@ layout: default
     <p style="color:var(--text-2);font-size:13.5px">
       카드 상태는 <code>_data/kanban/{{ page.member }}.yml</code> 의 <code>status</code> 값을 바꾸면 반영됩니다
       (<code>todo</code> → <code>doing</code> → <code>review</code> → <code>done</code>).
-      <code>review</code> 는 <strong>PM 확인 대기</strong>를 뜻하고, <code>done</code> 은 PM이 확인한 뒤에만 붙입니다.
+      <code>review</code> 는 <strong>팀장 확인 대기</strong>를 뜻하고, <code>done</code> 은 팀장이 확인한 뒤에만 붙입니다.
     </p>
     {% include kanban-board.html tasks=BOARD %}
 

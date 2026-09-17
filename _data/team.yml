@@ -2,67 +2,75 @@
 # 역할 구조 원본: Masterless_Company_Team_Roles_v1.1 — 동일 팀·동일 분담을 REMAKE DAY에 맞게 번역
 - key:      ryujun
   name:     "류준"
-  role:     "Team Lead · AI Agent"
+  role:     "Team Lead · AI Agent Engineer"
   prefix:   "TL"
   color:    "#f2c94c"
   initial:  "류"
   scope:    >-
-    스코프·기술 결정 최종 확정. 계층 구조(모듈러 모놀리스·헥사고날·Fractal)와
-    Port/Adapter 경계, API 계약 소유. LLM 7역할의 프롬프트·구조화 출력 스키마·
-    시스템 하네스(재생성·폴백 경로)를 구현한다. 발표자.
+    팀장으로서 스코프와 기술 결정을 최종 확정한다. 백엔드 계층 구조(모듈러 모놀리스·헥사고날·
+    Fractal 11-File Set)와 Port/Adapter 경계를 설계하고 프론트–백엔드 API 계약을 소유한다.
+    LLM이 말하는 7개 자리의 프롬프트·구조화 출력 스키마·시스템 하네스를 구현하고, 모델이
+    실패해도 게임이 무너지지 않도록 재생성과 폴백 경로를 책임진다. 발표를 맡는다.
   owns:
     - "소프트웨어 아키텍처 · API 계약"
-    - "Agent Harness (run_with_harness · 사실 층)"
-    - "LLM 역할 프롬프트 · 구조화 출력 스키마"
+    - "Agent Harness (재생성 · 폴백 · 사실 층 검사)"
+    - "LLM 역할 프롬프트 · 구조화 출력 · 7세 정책"
+    - "시나리오 교체 가능성 (BaseScenario 계약)"
     - "스코프 확정 · 발표"
 
 - key:      minseok
   name:     "장민석"
-  role:     "AI Evaluation"
+  role:     "AI Evaluation Engineer"
   prefix:   "EVAL"
   color:    "#56ccf2"
   initial:  "민"
   scope:    >-
-    "이 슬롯에 어떤 모델을 쓸 것인가"를 측정 가능한 실험으로 설계·실행.
-    평가 러너·프로브·게이트 소유, Core 선정(E7)·NPC descent(E6),
-    metrics.yml 적립과 비열등 판정, provider 어댑터, Inspector·Harness 뷰.
+    "이 슬롯에 어떤 모델을 쓸 것인가"라는 질문을 측정 가능한 실험으로 설계하고 실행한다.
+    평가 러너·프로브 코퍼스·게이트를 소유하고, Core 슬롯 선정(E7)과 NPC 슬롯 descent(E6)에
+    숫자를 붙인다. 하네스 계측(HarnessReport)을 집계하고, provider 어댑터와 판단 근거를
+    시각화하는 Inspector·Harness 뷰를 만든다. 발표의 모델 평가 구간을 맡는다.
   owns:
     - "평가 설계 (E7 · E6 · Funnel · 게이트)"
+    - "하네스 계측 집계 (HarnessReport)"
     - "평가 러너 · metrics.yml (append-only)"
-    - "provider 어댑터 (ollama · gemini · fake)"
-    - "Inspector / Harness 뷰 · 배포 지표"
+    - "provider 어댑터 · 배포 지표 (지연 · VRAM)"
+    - "Inspector / Harness 뷰 · 발표 모델 평가 구간"
 
 - key:      chaeyeon
   name:     "신채연"
-  role:     "Full-stack · Game Frontend"
+  role:     "Full-stack Engineer · Game Frontend"
   prefix:   "FS"
   color:    "#bb6bd9"
   initial:  "채"
   scope:    >-
-    세계 규칙을 결정론 코드로 구현 — 낮 6비트 루프·밤 채점·신의 개입·원숭이손.
-    Game API와 PostgreSQL 스키마 소유, LLM 폴백에도 규칙이 걸리는 기계 보정 유지.
-    Next.js /play 게임 화면을 연결·구현하고 기동을 주도한다. 시연 조작.
+    세계가 굴러가는 규칙을 결정론 코드로 구현한다. 하루 6비트 낮 루프, 밤의 노트·주장·채점,
+    신의 개입(질문·규칙·원숭이손), 회차 간 세계 손상과 쿠키를 만들고 Game API와 PostgreSQL
+    스키마를 소유한다. LLM이 폴백이어도 규칙은 반드시 걸리도록 기계 보정 경로를 유지한다.
+    Next.js /play 게임 화면을 연결·구현하고 프로덕션 빌드·기동을 주도한다. 시연 조작을 맡는다.
   owns:
-    - "게임 엔진 (낮 루프 · 밤 채점 · 개입)"
-    - "Game API · DB (alembic)"
+    - "게임 엔진 (낮 루프 · 밤 채점 · 신의 개입)"
+    - "Game API · DB (PostgreSQL · alembic)"
     - "/play 게임 화면 (Next.js)"
+    - "프론트 프로덕션 빌드 · 기동"
     - "시연 조작"
 
 - key:      eunsang
   name:     "이은상"
-  role:     "QA · UI Support · Release"
+  role:     "QA · UI Support · Release Engineer"
   prefix:   "QA"
   color:    "#6fcf97"
   initial:  "은"
   scope:    >-
-    규칙·재현성·화면 검증과 결함 기록. Playwright 뷰포트 자동 검사(headless 고정),
-    플레이 검증·결함 로그, 보조 화면(토스트·인디케이터·안내)과 그림·사운드 반입 지원,
-    start/stop_demo 기동·외부망 검증·통합 리허설.
+    규칙·재현성·화면을 검증하고 결함을 기록한다. 뷰포트 자동 검사와 플레이 검증으로 제출 가능
+    상태를 보증하고, 보조 화면과 그림·사운드 반입을 지원한다. 통합 리허설과 백엔드/프론트
+    외부망 검증, 기동 스크립트를 책임진다. Jekyll 허브와 게임 런타임의 링크·뷰포트·정적 파일
+    경로도 검증한다.
   owns:
-    - "자동 검사 (frontend/tests · 뷰포트)"
+    - "게임 QA (백엔드 회귀 스위트 · 채점 재현성)"
+    - "자동 검사 (frontend/tests · 390px · 1440px)"
     - "플레이 검증 · 결함 로그"
     - "보조 화면 · 그림/사운드 반입 검증"
-    - "기동 스크립트 · 릴리스 검증"
+    - "기동 스크립트 · 외부망 검증 · 통합 리허설"
 
 - key:      chungsik
   name:     "김충식"
@@ -71,13 +79,13 @@
   color:    "#eb5757"
   initial:  "충"
   scope:    >-
-    REMAKE DAY의 세계를 쓴다. 시나리오 A(구역)의 인물·비트·관찰·진실 명제·쿠키
-    콘텐츠 데이터, 장면·인물·쿠키 그림과 스타일 가이드. 사운드 — 배경 BGM과
-    음성 대사(팀원 각자 자기 배역 목소리 녹음)를 기획·수집·반입.
-    beyondbob Jekyll 허브의 문서 콘텐츠(데브로그·가이드) 관리.
+    REMAKE DAY가 살아가는 세계를 쓴다. 시나리오 A(구역)의 인물·비트·공개 관찰·진실 명제·쿠키
+    콘텐츠 데이터와 장면·인물·쿠키 그림·스타일 가이드를 만든다. 사운드도 소유한다 — 배경 BGM과
+    음성 대사(팀원 각자 자기 배역 목소리 녹음)를 기획·수집·반입한다. Jekyll 허브의 문서
+    콘텐츠(데브로그·가이드)를 관리하고, 세계관과 콘텐츠에 관한 질문을 받는다.
   owns:
-    - "시나리오 A 콘텐츠 (인물 · 진실 명제 · 쿠키)"
-    - "그림 (장면 · 인물 · 쿠키 12종)"
+    - "시나리오 A 콘텐츠 (인물 · 비트 · 진실 명제 · 쿠키 12종)"
+    - "그림 (장면 · 인물 · 쿠키 · 스타일 가이드)"
     - "사운드 (배경 BGM · 음성 대사 — 팀원 각자 녹음)"
     - "이미지 제작서 · 데모/플레이 가이드"
-    - "Jekyll 허브 콘텐츠 (데브로그)"
+    - "Jekyll 허브 콘텐츠 (데브로그 · 가이드)"

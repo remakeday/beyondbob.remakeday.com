@@ -67,7 +67,7 @@ description: REMAKE DAY 팀의 14일 릴리스 현황을 한 화면에서 확인
     <div class="stat">
       <div class="stat__label">완료</div>
       <div class="stat__value" style="color:var(--accent)">{{ N_DONE }}</div>
-      <div class="stat__note">PM 확인 완료 기준</div>
+      <div class="stat__note">팀장 확인 완료 기준</div>
     </div>
     <div class="stat">
       <div class="stat__label">오늘 할 일</div>
@@ -147,7 +147,7 @@ description: REMAKE DAY 팀의 14일 릴리스 현황을 한 화면에서 확인
         </p>
       </div>
       <div class="card">
-        <div class="card__title">③ PM이 매일 확인한다</div>
+        <div class="card__title">③ 팀장이 매일 확인한다</div>
         <p style="font-size:13.5px;color:var(--text-2);margin:0">
           <a href="{{ '/pm/review/' | relative_url }}">리뷰 &amp; 숙지 사이클</a>에 따라
           하루 두 번 상태를 맞추고 기록을 남깁니다.

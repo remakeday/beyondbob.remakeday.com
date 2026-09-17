@@ -12,13 +12,15 @@
 
 | 이름 | 파일 |
 |---|---|
-| 류준 (PM) | `_data/kanban/ryujun.yml` |
-| 장민석 (백엔드·AI) | `_data/kanban/minseok.yml` |
-| 신채연 (AI·백엔드) | `_data/kanban/chaeyeon.yml` |
-| 이은상 (Flutter) | `_data/kanban/eunsang.yml` |
-| 김충식 (프론트엔드) | `_data/kanban/chungsik.yml` |
+| 류준 (Team Lead · AI Agent Engineer) | `_data/kanban/ryujun.yml` |
+| 장민석 (AI Evaluation Engineer) | `_data/kanban/minseok.yml` |
+| 신채연 (Full-stack Engineer · Game Frontend) | `_data/kanban/chaeyeon.yml` |
+| 이은상 (QA · UI Support · Release Engineer) | `_data/kanban/eunsang.yml` |
+| 김충식 (Scenario Director · Content) | `_data/kanban/chungsik.yml` |
 
-`todo` → `doing` → `review` 까지가 담당자, **`done` 은 PM 만** 붙입니다.
+`todo` → `doing` → `review` 까지가 담당자, **`done` 은 팀장(류준)만** 붙입니다.
+
+> **자동 동기화** — 매일 23:00 `com.remakeday/scripts/jekyll-kanban-sync.sh` 가 개발 저장소의 일지·커밋을 근거로 카드 상태를 판정해 **앞으로만** 올립니다(`todo` → `doing` → `review` → `done`). 사람이 올려둔 상태는 내리지 않고, `status` 값 외에는 건드리지 않습니다. 바뀐 칸반 파일만 자동으로 커밋·푸시하므로 그날 밤 사이트에 반영됩니다. 데브로그 포스트도 23:45에 같은 방식으로 올라갑니다. 판정 근거는 `~/.claude/jekyll-kanban-remakeday-cron.log` 에 남습니다.
 
 ### 2. 데브로그 쓰기
 

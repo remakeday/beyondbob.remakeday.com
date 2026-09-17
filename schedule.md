@@ -27,7 +27,7 @@ description: 킥오프부터 서비스 오픈까지 14일. 하루마다 관문(G
     <div class="callout callout--danger">
       <div class="callout__title">날짜는 못 밀고, 범위는 민다</div>
       <p>9/16 은 고정입니다. D-7(9/09) 알파 시연에서 남은 분량이 감당 안 되면
-      그날 저녁 PM이 <a href="{{ '/plan/scope/' | relative_url }}">범위 문서</a>에서 SHOULD 이하를 잘라냅니다.
+      그날 저녁 팀장이 <a href="{{ '/plan/scope/' | relative_url }}">범위 문서</a>에서 SHOULD 이하를 잘라냅니다.
       개인이 혼자 야근으로 메우는 방식은 금지합니다 — 어디가 늦는지 안 보이게 되기 때문입니다.</p>
     </div>
 

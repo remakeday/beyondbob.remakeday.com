@@ -45,7 +45,7 @@ description: 빌드 시점(KST) 날짜에 해당하는 업무만 모아서 보�
     <div class="callout">
       <div class="callout__title">참고</div>
       <p>이 페이지는 <strong>사이트가 빌드된 시점</strong>의 날짜를 씁니다.
-      매일 아침 PM이 커밋을 밀면 자동 재빌드되어 갱신됩니다(GitHub Actions).</p>
+      매일 아침 팀장이 커밋을 밀면 자동 재빌드되어 갱신됩니다(GitHub Actions).</p>
     </div>
   </div>
 </div>
