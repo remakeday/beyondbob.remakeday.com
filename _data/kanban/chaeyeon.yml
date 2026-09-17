@@ -51,7 +51,7 @@ tasks:
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
   - { id: AI-19, date: "2026-09-09", status: done, priority: P0, tags: [QA],     title: "알파 시연 대응",
       dod: "1루프 완주 중 판정 실패·스키마 오류 0건", output: "핫픽스" }
-  - { id: AI-20, date: "2026-09-09", status: review, priority: P0, tags: [평가],   title: "판정 일관성 실험 (11.1 첫 행)",
+  - { id: AI-20, date: "2026-09-09", status: done,   priority: P0, tags: [평가],   title: "판정 일관성 실험 (11.1 첫 행)",
       dod: "같은 발화 20회 반복 투입 시 의심도 변화 편차를 측정하고 기준 설정", output: "일관성 리포트" }
   - { id: AI-21, date: "2026-09-09", status: done, priority: P1, tags: [프롬프트], title: "Agent 프롬프트 v1 튜닝",
       dod: "판정이 흔들린 케이스 5건 반영, 자유 판단을 범주 선택으로 좁힘", output: "prompts/agent/v1" }
@@ -81,7 +81,7 @@ tasks:
       dod: "같은 로그 반복 투입 시 원인 체인이 흔들리지 않음", output: "일관성 리포트" }
 
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
-  - { id: AI-31, date: "2026-09-13", status: review, priority: P0, tags: [비용],   title: "비용 상한 · 자동 차단",
+  - { id: AI-31, date: "2026-09-13", status: done,   priority: P0, tags: [비용],   title: "비용 상한 · 자동 차단",
       dod: "일 한도 초과 시 알림 발송 및 차단, 정해진 안내 문구 노출", output: "쿼터" }
   - { id: AI-32, date: "2026-09-13", status: review, priority: P0, tags: [보안],   title: "프롬프트 인젝션 방어 점검",
       dod: "주입 시도 10건에서 시스템 지시 유지, NPC가 역할을 벗어나지 않음", output: "인젝션 테스트" }

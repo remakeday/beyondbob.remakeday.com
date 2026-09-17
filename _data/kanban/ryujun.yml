@@ -45,7 +45,7 @@ tasks:
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
   - { id: PM-48, date: "2026-09-07", status: review, priority: P0, tags: [결정],   title: "팀 합의 — 발화 예산 확정 (전원 출석)",
       dod: "초기 회수·감소 곡선·하한을 5인 합의로 확정하고 결정 로그에 근거와 함께 기록", output: "/plan/scope/ 결정 로그" }
-  - { id: PM-18, date: "2026-09-07", status: review, priority: P0, tags: [QA],     title: "1루프 스모크 스크립트",
+  - { id: PM-18, date: "2026-09-07", status: done,   priority: P0, tags: [QA],     title: "1루프 스모크 스크립트",
       dod: "한 명령으로 세션 발급→아침→발화 3회→루프 종료까지 확인, 실패 시 종료코드 1", output: "scripts/smoke.sh" }
   - { id: PM-19, date: "2026-09-07", status: todo, priority: P0, tags: [운영],   title: "LLM 비용 · 스키마 통과율 대시보드",
       dod: "일일 토큰·비용과 역할별 스키마 통과율을 한 화면에서 확인, 80% 알람", output: "관측 대시보드" }

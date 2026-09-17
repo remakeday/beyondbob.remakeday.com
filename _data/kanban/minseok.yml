@@ -63,7 +63,7 @@ tasks:
       dod: "루프 전이 시 채연·은상은 5% 잔류, 민석은 유지. 같은 인터페이스에 정책만 다름", output: "메모리 정책" }
   - { id: BE-24, date: "2026-09-10", status: todo, priority: P0, tags: [도메인], title: "엔딩 판정 — 4종 분기",
       dod: "원인 파악·관계 축으로 repeat/isolation/hesitation/handover 가 결정됨", output: "엔딩 판정" }
-  - { id: BE-25, date: "2026-09-10", status: review, priority: P0, tags: [전이],   title: "도메인 포트 정식 구현",
+  - { id: BE-25, date: "2026-09-10", status: done,   priority: P0, tags: [전이],   title: "도메인 포트 정식 구현",
       dod: "게임/감사 두 어댑터가 같은 포트를 구현하고 설정으로 전환됨", output: "domain adapter" }
 
   # ── D-5 · 9/11 (금) ───────────────────────────────────────
