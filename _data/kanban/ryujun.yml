@@ -43,7 +43,7 @@ tasks:
       dod: "방어선 ① 진척 확인, 내일 통합 선행조건 점검", output: "리뷰 기록" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
-  - { id: PM-48, date: "2026-09-07", status: todo, priority: P0, tags: [결정],   title: "팀 합의 — 발화 예산 확정 (전원 출석)",
+  - { id: PM-48, date: "2026-09-07", status: review, priority: P0, tags: [결정],   title: "팀 합의 — 발화 예산 확정 (전원 출석)",
       dod: "초기 회수·감소 곡선·하한을 5인 합의로 확정하고 결정 로그에 근거와 함께 기록", output: "/plan/scope/ 결정 로그" }
   - { id: PM-18, date: "2026-09-07", status: review, priority: P0, tags: [QA],     title: "1루프 스모크 스크립트",
       dod: "한 명령으로 세션 발급→아침→발화 3회→루프 종료까지 확인, 실패 시 종료코드 1", output: "scripts/smoke.sh" }
@@ -61,7 +61,7 @@ tasks:
       dod: "권고 로깅이 실제로 쌓이는지 DB에서 직접 확인", output: "리뷰 기록" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
-  - { id: PM-24, date: "2026-09-09", status: todo, priority: P0, tags: [QA],     title: "알파 시연 주재 — 전원 1루프 완주",
+  - { id: PM-24, date: "2026-09-09", status: review, priority: P0, tags: [QA],     title: "알파 시연 주재 — 전원 1루프 완주",
       dod: "5인 전원이 각자 기기에서 아침→대화→죽음→아침을 완주", output: "시연 결과표" }
   - { id: PM-25, date: "2026-09-09", status: todo, priority: P0, tags: [결정],   title: "범위 컷 결정 (방어선 미달 시)",
       dod: "미착수 방어선이 2개 이상이면 ⑨→⑧→⑦→⑥ 순으로 컷하고 공지, 이후 재론 없음", output: "/plan/scope/ 갱신" }

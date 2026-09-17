@@ -3,7 +3,7 @@ tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
   - { id: APP-01, date: "2026-09-03", status: review, priority: P0, tags: [운영],   title: "역할 재배치 확인 — 앱 → 노트·인스펙터",
       dod: "기획서에 모바일 앱이 없음을 확인하고 웹 화면 분담에 합의", output: "역할 확정" }
-  - { id: APP-02, date: "2026-09-03", status: todo,  priority: P0, tags: [셋업],   title: "웹 개발 환경 셋업 · 김충식과 토큰 공유",
+  - { id: APP-02, date: "2026-09-03", status: review, priority: P0, tags: [셋업],   title: "웹 개발 환경 셋업 · 김충식과 토큰 공유",
       dod: "같은 레포에서 dev 서버가 뜨고 디자인 토큰을 공유해 사용", output: "환경 셋업" }
   - { id: APP-03, date: "2026-09-03", status: review, priority: P1, tags: [설계],   title: "노트 · 인스펙터 화면 구조 설계",
       dod: "두 화면의 정보 구조와 진입 동선을 스케치로 확정", output: "화면 설계" }
@@ -27,7 +27,7 @@ tasks:
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
   - { id: APP-10, date: "2026-09-06", status: done, priority: P0, tags: [화면],   title: "인스펙터 실 API 연동",
       dod: "발화 1건의 판정 체인이 실제 로그로 열린다", output: "인스펙터" }
-  - { id: APP-11, date: "2026-09-06", status: todo, priority: P0, tags: [화면],   title: "도구 호출 체인 표시",
+  - { id: APP-11, date: "2026-09-06", status: review, priority: P0, tags: [화면],   title: "도구 호출 체인 표시",
       dod: "ask_npc 호출·결과·부작용이 체인 안에서 구분되어 보인다", output: "툴 체인 UI" }
   - { id: APP-12, date: "2026-09-06", status: todo, priority: P1, tags: [UX],     title: "인스펙터 진입 동선",
       dod: "게임 흐름을 방해하지 않으면서 언제든 열 수 있다", output: "진입 동선" }
