@@ -1,7 +1,7 @@
 member: chaeyeon
 tasks:
   # ── D-13 · 9/03 (목) ──────────────────────────────────────
-  - { id: AI-01, date: "2026-09-03", status: review, priority: P0, tags: [설계],   title: "에이전트 6층 구성 확정",
+  - { id: AI-01, date: "2026-09-03", status: done,   priority: P0, tags: [설계],   title: "에이전트 6층 구성 확정",
       dod: "Planner·Agent·Advisor·Re-plan·Evaluator·Memory 의 입출력 스키마가 문서로 확정", output: "/plan/ai/" }
   - { id: AI-02, date: "2026-09-03", status: done,  priority: P0, tags: [모델],   title: "LLM 프로바이더 선정 · 역할별 후보 · 비용 추정",
       dod: "Agent(저지연)·Planner(추론)·Evaluator(긴 로그) 후보와 판당 예상 비용 표", output: "모델 선정서" }
@@ -41,7 +41,7 @@ tasks:
       dod: "재시도 후 AI_UNAVAILABLE, 컨텍스트 초과 시 노트 요약 후 재시도", output: "폴백" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
-  - { id: AI-16, date: "2026-09-08", status: todo, priority: P0, tags: [권고],   title: "Advisor 구현 — 침묵 권고",
+  - { id: AI-16, date: "2026-09-08", status: done, priority: P0, tags: [권고],   title: "Advisor 구현 — 침묵 권고",
       dod: "임계 근접 시 희소하게 발동하고 근거를 함께 반환", output: "Advisor" }
   - { id: AI-17, date: "2026-09-08", status: todo, priority: P0, tags: [측정],   title: "권고 A/B — 근거 표시 유무 분기",
       dod: "rationale_shown 이 세션별로 갈리고 로그에 기록됨", output: "A/B 분기" }
@@ -61,13 +61,13 @@ tasks:
       dod: "민석만 루프 기억 유지, 채연·은상 5% 잔류. 인터페이스는 동일", output: "메모리 정책" }
   - { id: AI-23, date: "2026-09-10", status: todo, priority: P0, tags: [메모리], title: "정체 발현 트리거",
       dod: "민석이 유저가 아직 하지 않은 말에 반응하고 곧바로 수습한다", output: "발현 트리거" }
-  - { id: AI-24, date: "2026-09-10", status: doing, priority: P0, tags: [에이전트], title: "Evaluator — 원인 체인 서술",
+  - { id: AI-24, date: "2026-09-10", status: done,  priority: P0, tags: [에이전트], title: "Evaluator — 원인 체인 서술",
       dod: "루프 종료 시 누가 왜 그 선택에 도달했는지 서술을 생성", output: "Evaluator" }
 
   # ── D-5 · 9/11 (금) ───────────────────────────────────────
   - { id: AI-25, date: "2026-09-11", status: done, priority: P0, tags: [전이],   title: "감사 도메인 프롬프트 어댑터",
       dod: "용어만 교체한 프롬프트로 감사 시나리오가 돌고, 엔진 코드는 그대로", output: "audit adapter" }
-  - { id: AI-26, date: "2026-09-11", status: todo, priority: P1, tags: [전이],   title: "커리어 시나리오 프롬프트",
+  - { id: AI-26, date: "2026-09-11", status: done, priority: P1, tags: [전이],   title: "커리어 시나리오 프롬프트",
       dod: "두 번째 어댑터가 프롬프트 하나로 동작 (5초 시연용)", output: "career adapter" }
   - { id: AI-27, date: "2026-09-11", status: todo, priority: P0, tags: [프롬프트], title: "프롬프트 동결 · 버전 태깅",
       dod: "운영 프롬프트를 v1.0 으로 태깅, 이후 변경은 PM 승인", output: "prompts/v1.0" }
@@ -85,7 +85,7 @@ tasks:
       dod: "일 한도 초과 시 알림 발송 및 차단, 정해진 안내 문구 노출", output: "쿼터" }
   - { id: AI-32, date: "2026-09-13", status: review, priority: P0, tags: [보안],   title: "프롬프트 인젝션 방어 점검",
       dod: "주입 시도 10건에서 시스템 지시 유지, NPC가 역할을 벗어나지 않음", output: "인젝션 테스트" }
-  - { id: AI-33, date: "2026-09-13", status: doing, priority: P1, tags: [성능],   title: "지연 측정 · 첫 토큰까지 시간",
+  - { id: AI-33, date: "2026-09-13", status: done,  priority: P1, tags: [성능],   title: "지연 측정 · 첫 토큰까지 시간",
       dod: "발화 후 TTFT 목표치 설정 및 충족", output: "지연 리포트" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────

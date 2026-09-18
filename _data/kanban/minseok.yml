@@ -19,11 +19,11 @@ tasks:
       dod: "로그인 없이 첫 요청에서 익명 세션이 발급되고 200 왕복", output: "session API" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
-  - { id: BE-08, date: "2026-09-05", status: doing, priority: P0, tags: [도메인], title: "루프 생성 · 상태 전이 · 아침 화면 데이터",
+  - { id: BE-08, date: "2026-09-05", status: done,  priority: P0, tags: [도메인], title: "루프 생성 · 상태 전이 · 아침 화면 데이터",
       dod: "POST /loops 가 고정 문장과 손상 1층 문장을 담아 반환, LLM 호출 없이 즉시", output: "loop API" }
   - { id: BE-09, date: "2026-09-05", status: done, priority: P0, tags: [도메인], title: "발화 예산 소모 · 차단 · 회복",
       dod: "예산 소진 시 BUDGET_EXHAUSTED, 루프 스킵 시 회복, 하한 3 유지", output: "예산 규칙" }
-  - { id: BE-10, date: "2026-09-05", status: review, priority: P0, tags: [API],    title: "발화 엔드포인트 + SSE 골격",
+  - { id: BE-10, date: "2026-09-05", status: done,   priority: P0, tags: [API],    title: "발화 엔드포인트 + SSE 골격",
       dod: "POST /loops/{id}/utterances 가 delta→done 이벤트를 실제로 흘린다", output: "SSE 엔드포인트" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
@@ -31,7 +31,7 @@ tasks:
       dod: "발화 1건당 의심/신뢰/도구/불일치/재계획 판정이 순서대로 기록됨", output: "판정 저장소" }
   - { id: BE-12, date: "2026-09-06", status: review, priority: P0, tags: [도구],   title: "도구 디스패치 + 탐문 예산",
       dod: "ask_npc 호출이 하네스를 통과하고, NPC 하루 2회 초과 시 실행 전 거부", output: "도구 포트 구현" }
-  - { id: BE-13, date: "2026-09-06", status: review, priority: P0, tags: [도구],   title: "도구 부작용 반영 — 이름 빌린 쪽 의심도",
+  - { id: BE-13, date: "2026-09-06", status: done,   priority: P0, tags: [도구],   title: "도구 부작용 반영 — 이름 빌린 쪽 의심도",
       dod: "ask_npc 결과의 side_effect 가 대상 NPC 상태에 실제로 적용되고 로그에 남음", output: "side_effect 처리" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
@@ -43,9 +43,9 @@ tasks:
       dod: "루프 종료 시 죽음의 감각·주요 사건이 노트에 자동 적재", output: "노트 저장" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
-  - { id: BE-17, date: "2026-09-08", status: todo, priority: P0, tags: [도메인], title: "세계 손상 산출 — 개입 깊이",
+  - { id: BE-17, date: "2026-09-08", status: review, priority: P0, tags: [도메인], title: "세계 손상 산출 — 개입 깊이",
       dod: "발화 수·신뢰 변화량·결정적 발언에서 depth_score 가 계산되고 층 전환이 일어남", output: "world_damage" }
-  - { id: BE-18, date: "2026-09-08", status: todo, priority: P0, tags: [API],    title: "권고 응답 기록 엔드포인트",
+  - { id: BE-18, date: "2026-09-08", status: review, priority: P0, tags: [API],    title: "권고 응답 기록 엔드포인트",
       dod: "POST /advices/{id}/response 로 accepted/ignored 가 저장, 발화 전 무시도 기록됨", output: "advice API" }
   - { id: BE-19, date: "2026-09-08", status: todo, priority: P1, tags: [ERD],    title: "손상 발현 기록 — damage_event",
       dod: "층별 발현이 어디서 언제 일어났는지 조회 가능", output: "damage_event" }
@@ -61,7 +61,7 @@ tasks:
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
   - { id: BE-23, date: "2026-09-10", status: todo, priority: P0, tags: [도메인], title: "메모리 정책 주입 — 민석 예외",
       dod: "루프 전이 시 채연·은상은 5% 잔류, 민석은 유지. 같은 인터페이스에 정책만 다름", output: "메모리 정책" }
-  - { id: BE-24, date: "2026-09-10", status: todo, priority: P0, tags: [도메인], title: "엔딩 판정 — 4종 분기",
+  - { id: BE-24, date: "2026-09-10", status: review, priority: P0, tags: [도메인], title: "엔딩 판정 — 4종 분기",
       dod: "원인 파악·관계 축으로 repeat/isolation/hesitation/handover 가 결정됨", output: "엔딩 판정" }
   - { id: BE-25, date: "2026-09-10", status: done,   priority: P0, tags: [전이],   title: "도메인 포트 정식 구현",
       dod: "게임/감사 두 어댑터가 같은 포트를 구현하고 설정으로 전환됨", output: "domain adapter" }
