@@ -13,7 +13,7 @@ tasks:
       dod: "자유 텍스트 응답이 거부되고, 스키마 위반 시 재시도 후 안전 기본값", output: "harness/" }
   - { id: AI-05, date: "2026-09-04", status: done, priority: P0, tags: [프롬프트], title: "Agent 판정 프롬프트 v0",
       dod: "발화 1건에 대해 응답·의심여부·도구호출·계획수정 을 JSON으로 반환", output: "prompts/agent/v0" }
-  - { id: AI-06, date: "2026-09-04", status: todo, priority: P0, tags: [ERD],    title: "llm_call 계측 테이블 반영 요청",
+  - { id: AI-06, date: "2026-09-04", status: doing, priority: P0, tags: [ERD],    title: "llm_call 계측 테이블 반영 요청",
       dod: "역할·모델·스키마통과·재시도·토큰·지연·비용 필드가 ERD v1 에 포함", output: "ERD 반영" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
@@ -91,17 +91,17 @@ tasks:
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
   - { id: AI-34, date: "2026-09-14", status: done, priority: P0, tags: [릴리스], title: "RC 검증 — 스키마 통과율",
       dod: "역할별 통과율·재시도율이 기준치 이상, 하네스 안정 확인", output: "하네스 리포트" }
-  - { id: AI-35, date: "2026-09-14", status: doing, priority: P0, tags: [인프라], title: "프로덕션 키 · 역할별 모델 확정",
+  - { id: AI-35, date: "2026-09-14", status: done,  priority: P0, tags: [인프라], title: "프로덕션 키 · 역할별 모델 확정",
       dod: "운영 키가 시크릿에만 존재, 역할별 모델과 한도가 prod 기준으로 설정", output: "prod 설정" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
   - { id: AI-36, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응",
       dod: "프롬프트·모델 설정 변경 중단, 승인 건만", output: "동결 확인" }
-  - { id: AI-37, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 AI 파트",
+  - { id: AI-37, date: "2026-09-15", status: review, priority: P0, tags: [릴리스], title: "배포 리허설 AI 파트",
       dod: "리허설에서 발화 왕복과 권고 발동 정상", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
-  - { id: AI-38, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 에이전트 검증",
+  - { id: AI-38, date: "2026-09-16", status: done, priority: P0, tags: [릴리스], title: "프로덕션 에이전트 검증",
       dod: "운영 환경에서 1루프 완주 + 권고 1회 발동 + 로그 적재 확인", output: "검증 로그" }
   - { id: AI-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 비용 · 실패율",
       dod: "오픈 2시간 토큰 사용량·스키마 실패율 이상 없음", output: "온콜 기록" }

@@ -101,7 +101,7 @@ tasks:
       dod: "리허설에서 노트·인스펙터 정상 확인", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
-  - { id: APP-38, date: "2026-09-16", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
+  - { id: APP-38, date: "2026-09-16", status: review, priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
       dod: "운영에서 노트 축적과 인스펙터 개봉 정상", output: "배포 검증" }
   - { id: APP-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 모바일 유입 관측",
       dod: "모바일 브라우저에서의 이탈·오류 확인", output: "온콜 기록" }

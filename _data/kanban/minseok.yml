@@ -91,7 +91,7 @@ tasks:
       dod: "백업 파일로 별도 DB 복구 후 API 기동 성공", output: "복구 로그" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
-  - { id: BE-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 백엔드 검증",
+  - { id: BE-35, date: "2026-09-14", status: review, priority: P0, tags: [릴리스], title: "RC 백엔드 검증",
       dod: "RC1 이미지로 스테이징 회귀 전건 통과", output: "검증 결과" }
   - { id: BE-36, date: "2026-09-14", status: todo, priority: P0, tags: [인프라], title: "프로덕션 마이그레이션 스크립트 확정",
       dod: "추가만 하는 마이그레이션으로 구성, 소요시간·롤백 방법 명시", output: "배포 런북" }

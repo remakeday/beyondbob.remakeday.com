@@ -75,7 +75,7 @@ tasks:
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
   - { id: FE-28, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "버그 스쿼시",
       dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
-  - { id: FE-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "회귀 R1~R4 담당 수행",
+  - { id: FE-29, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "회귀 R1~R4 담당 수행",
       dod: "루프 완주·예산 소진·권고 수용·권고 무시 통과 표시", output: "회귀 결과" }
   - { id: FE-30, date: "2026-09-12", status: done,   priority: P2, tags: [UX],     title: "텍스트 가독성 최종 조정",
       dod: "긴 대사에서 줄바꿈·행간이 무너지지 않음", output: "타이포 조정" }
@@ -89,7 +89,7 @@ tasks:
       dod: "성능·접근성 점수 목표치 충족", output: "리포트" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
-  - { id: FE-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 검증",
+  - { id: FE-34, date: "2026-09-14", status: review, priority: P0, tags: [릴리스], title: "RC 검증",
       dod: "RC1 로 스테이징 회귀 전건 통과", output: "검증 결과" }
   - { id: FE-35, date: "2026-09-14", status: done, priority: P0, tags: [릴리스], title: "프로덕션 환경변수 전환",
       dod: "Vercel prod 환경이 운영 API를 바라보고 정상 동작", output: "prod 빌드" }
@@ -101,7 +101,7 @@ tasks:
       dod: "Vercel 이전 배포로 되돌리는 절차 확인", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
-  - { id: FE-38, date: "2026-09-16", status: review, priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
+  - { id: FE-38, date: "2026-09-16", status: done,   priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
       dod: "운영 도메인에서 1루프 완주", output: "배포 검증" }
   - { id: FE-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 프론트 오류",
       dod: "JS 오류·실패 요청 이상 없음", output: "온콜 기록" }
