@@ -15,7 +15,7 @@ tasks:
       dod: "main 직접 push 차단, 1인 승인 필수, PR 템플릿에 방어선 항목 체크란 포함", output: "레포 설정" }
 
   # ── D-12 · 9/04 (금) ──────────────────────────────────────
-  - { id: PM-07, date: "2026-09-04", status: todo, priority: P0, tags: [운영],   title: "ERD FREEZE 회의 주재 · 결정 기록",
+  - { id: PM-07, date: "2026-09-04", status: review, priority: P0, tags: [운영],   title: "ERD FREEZE 회의 주재 · 결정 기록",
       dod: "18:00 ERD v1 승인, 이후 변경 절차(PM 승인+마이그레이션+클라 대응) 공지", output: "/plan/data/ 결정 로그" }
   - { id: PM-08, date: "2026-09-04", status: review, priority: P0, tags: [인프라], title: "스테이징 API 서버 + PostgreSQL(벡터) 프로비저닝",
       dod: "api-stg 헬스체크 통과, 벡터 확장 설치 확인, 일 1회 백업 크론 동작", output: "스테이징 환경" }
@@ -27,7 +27,7 @@ tasks:
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
   - { id: PM-11, date: "2026-09-05", status: done,   priority: P0, tags: [인프라], title: "백엔드 CI — 테스트 + import-linter 게이트",
       dod: "도메인 계층이 LLM 어댑터를 참조하면 CI 실패하고 머지가 막힌다", output: ".github/workflows" }
-  - { id: PM-12, date: "2026-09-05", status: review, priority: P0, tags: [인프라], title: "Vercel 웹 배포 + PR 프리뷰 연결",
+  - { id: PM-12, date: "2026-09-05", status: done,   priority: P0, tags: [인프라], title: "Vercel 웹 배포 + PR 프리뷰 연결",
       dod: "PR마다 프리뷰 URL 생성, main 머지 시 스테이징 반영", output: "Vercel 연동" }
   - { id: PM-13, date: "2026-09-05", status: todo, priority: P1, tags: [서사],   title: "아침 문장 · 손상 1층 문안 1차",
       dod: "고정 문장 1개 + 두 번째 문장 변형 후보 10개 작성", output: "텍스트 시트" }
@@ -57,7 +57,7 @@ tasks:
       dod: "불일치 케이스 5개, 충식 언급 소거 단계 3단 문안 작성", output: "텍스트 시트" }
   - { id: PM-22, date: "2026-09-08", status: done,   priority: P0, tags: [운영],   title: "알파 시연 시나리오 확정",
       dod: "전원이 각자 기기에서 따라할 1루프 대본과 확인 항목 배포", output: "시연 시나리오" }
-  - { id: PM-23, date: "2026-09-08", status: todo, priority: P1, tags: [리뷰],   title: "데일리 리뷰 #4",
+  - { id: PM-23, date: "2026-09-08", status: done, priority: P1, tags: [리뷰],   title: "데일리 리뷰 #4",
       dod: "권고 로깅이 실제로 쌓이는지 DB에서 직접 확인", output: "리뷰 기록" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
@@ -71,7 +71,7 @@ tasks:
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
   - { id: PM-27, date: "2026-09-10", status: done, priority: P0, tags: [인프라], title: "프로덕션 인프라 프로비저닝",
       dod: "프로덕션 API·DB·Vercel이 스테이징과 동일 구성으로 기동", output: "prod 환경" }
-  - { id: PM-28, date: "2026-09-10", status: review, priority: P0, tags: [서사],   title: "엔딩 4종 텍스트 초안",
+  - { id: PM-28, date: "2026-09-10", status: done,   priority: P0, tags: [서사],   title: "엔딩 4종 텍스트 초안",
       dod: "반복·고립·망설임·인계 4편 작성. 망설임이 위로상처럼 읽히지 않을 것", output: "엔딩 텍스트" }
   - { id: PM-29, date: "2026-09-10", status: todo, priority: P1, tags: [리뷰],   title: "데일리 리뷰 #5",
       dod: "방어선 ③④ 실동작 확인 (손상 발현·민석 기억)", output: "리뷰 기록" }
@@ -103,7 +103,7 @@ tasks:
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
   - { id: PM-39, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC1 태깅 · 릴리스 노트",
       dod: "v1.0.0-rc.1 태그와 방어선 5개 달성 내역 발행", output: "GitHub Release" }
-  - { id: PM-40, date: "2026-09-14", status: todo, priority: P0, tags: [QA],     title: "릴리스 체크리스트 최종 검증 주재",
+  - { id: PM-40, date: "2026-09-14", status: review, priority: P0, tags: [QA],     title: "릴리스 체크리스트 최종 검증 주재",
       dod: "전 항목 통과 서명, 미통과 항목은 범위 축소로 처리", output: "검증 결과" }
   - { id: PM-41, date: "2026-09-14", status: review, priority: P0, tags: [릴리스], title: "온콜 · 롤백 절차 문서화",
       dod: "누가·무엇을·몇 분 안에 하는지 한 장으로 정리", output: "/pm/infra/" }
@@ -119,7 +119,7 @@ tasks:
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
   - { id: PM-45, date: "2026-09-16", status: done,  priority: P0, tags: [릴리스], title: "프로덕션 배포 실행",
       dod: "백업 → 마이그레이션 → API → 웹 순서로 배포, 1루프 완주 확인", output: "v1.0.0" }
-  - { id: PM-46, date: "2026-09-16", status: review, priority: P0, tags: [운영],   title: "오픈 30분 관측 · 온콜",
+  - { id: PM-46, date: "2026-09-16", status: done,   priority: P0, tags: [운영],   title: "오픈 30분 관측 · 온콜",
       dod: "에러율·지연·LLM 비용 정상, 실사용 로그가 실제로 쌓이는지 확인", output: "관측 기록" }
   - { id: PM-47, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "회고 · 릴리스 데브로그",
       dod: "14일간 결정·지연·개선점을 글 1편으로", output: "데브로그" }

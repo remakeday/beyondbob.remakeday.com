@@ -21,7 +21,7 @@ tasks:
       dod: "세션의 누적 노트가 실제로 조회되어 렌더", output: "노트 화면" }
   - { id: APP-08, date: "2026-09-05", status: todo, priority: P1, tags: [UX],     title: "노트 빈 상태 · 첫 루프 처리",
       dod: "1루프에는 노트가 거의 비어 있고, 그 상태가 자연스럽게 보인다", output: "빈 상태" }
-  - { id: APP-09, date: "2026-09-05", status: review, priority: P1, tags: [디자인], title: "감각 파편 표현 — 짧고 불완전하게",
+  - { id: APP-09, date: "2026-09-05", status: done,   priority: P1, tags: [디자인], title: "감각 파편 표현 — 짧고 불완전하게",
       dod: "노트 항목이 보고서가 아니라 파편처럼 보이는 타이포·간격", output: "노트 스타일" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
@@ -91,7 +91,7 @@ tasks:
   # ── D-2 · 9/14 (월) ───────────────────────────────────────
   - { id: APP-34, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "RC 검증 — 노트·인스펙터",
       dod: "RC1 에서 두 화면 회귀 통과", output: "검증 결과" }
-  - { id: APP-35, date: "2026-09-14", status: todo, priority: P0, tags: [릴리스], title: "프로덕션 환경 확인",
+  - { id: APP-35, date: "2026-09-14", status: review, priority: P0, tags: [릴리스], title: "프로덕션 환경 확인",
       dod: "운영 API 기준으로 두 화면 정상 동작", output: "prod 확인" }
 
   # ── D-1 · 9/15 (화) ───────────────────────────────────────

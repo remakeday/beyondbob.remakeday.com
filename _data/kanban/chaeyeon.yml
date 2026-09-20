@@ -45,7 +45,7 @@ tasks:
       dod: "임계 근접 시 희소하게 발동하고 근거를 함께 반환", output: "Advisor" }
   - { id: AI-17, date: "2026-09-08", status: todo, priority: P0, tags: [측정],   title: "권고 A/B — 근거 표시 유무 분기",
       dod: "rationale_shown 이 세션별로 갈리고 로그에 기록됨", output: "A/B 분기" }
-  - { id: AI-18, date: "2026-09-08", status: todo, priority: P0, tags: [권고],   title: "발동 빈도 초기 튜닝",
+  - { id: AI-18, date: "2026-09-08", status: done, priority: P0, tags: [권고],   title: "발동 빈도 초기 튜닝",
       dod: "1루프에 0~1회 수준으로 발동. 매 턴 뜨지 않음을 로그로 확인", output: "발동 규칙" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
@@ -83,7 +83,7 @@ tasks:
   # ── D-3 · 9/13 (일) ───────────────────────────────────────
   - { id: AI-31, date: "2026-09-13", status: done,   priority: P0, tags: [비용],   title: "비용 상한 · 자동 차단",
       dod: "일 한도 초과 시 알림 발송 및 차단, 정해진 안내 문구 노출", output: "쿼터" }
-  - { id: AI-32, date: "2026-09-13", status: review, priority: P0, tags: [보안],   title: "프롬프트 인젝션 방어 점검",
+  - { id: AI-32, date: "2026-09-13", status: done,   priority: P0, tags: [보안],   title: "프롬프트 인젝션 방어 점검",
       dod: "주입 시도 10건에서 시스템 지시 유지, NPC가 역할을 벗어나지 않음", output: "인젝션 테스트" }
   - { id: AI-33, date: "2026-09-13", status: done,  priority: P1, tags: [성능],   title: "지연 측정 · 첫 토큰까지 시간",
       dod: "발화 후 TTFT 목표치 설정 및 충족", output: "지연 리포트" }
@@ -97,13 +97,13 @@ tasks:
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
   - { id: AI-36, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "Code Freeze 대응",
       dod: "프롬프트·모델 설정 변경 중단, 승인 건만", output: "동결 확인" }
-  - { id: AI-37, date: "2026-09-15", status: review, priority: P0, tags: [릴리스], title: "배포 리허설 AI 파트",
+  - { id: AI-37, date: "2026-09-15", status: done,   priority: P0, tags: [릴리스], title: "배포 리허설 AI 파트",
       dod: "리허설에서 발화 왕복과 권고 발동 정상", output: "리허설 기록" }
 
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
   - { id: AI-38, date: "2026-09-16", status: done, priority: P0, tags: [릴리스], title: "프로덕션 에이전트 검증",
       dod: "운영 환경에서 1루프 완주 + 권고 1회 발동 + 로그 적재 확인", output: "검증 로그" }
-  - { id: AI-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 비용 · 실패율",
+  - { id: AI-39, date: "2026-09-16", status: review, priority: P0, tags: [운영],   title: "오픈 온콜 — 비용 · 실패율",
       dod: "오픈 2시간 토큰 사용량·스키마 실패율 이상 없음", output: "온콜 기록" }
   - { id: AI-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 침묵 권고 설계 회고",
       dod: "AI가 제안자가 되는 유일한 층을 어떻게 설계했는지 글 1편", output: "데브로그" }

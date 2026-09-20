@@ -35,7 +35,7 @@ tasks:
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
   - { id: FE-13, date: "2026-09-07", status: done, priority: P0, tags: [화면],   title: "1루프 end-to-end",
       dod: "아침 → 대화 3회 → 하루 종료 → 아침 복귀가 실 API로 완주", output: "루프 플로우" }
-  - { id: FE-14, date: "2026-09-07", status: review, priority: P0, tags: [UX],     title: "로딩 · 오류 · 종료 상태",
+  - { id: FE-14, date: "2026-09-07", status: done,   priority: P0, tags: [UX],     title: "로딩 · 오류 · 종료 상태",
       dod: "LLM 지연·네트워크 끊김·예산 소진에 각각 정해진 화면", output: "상태 UI" }
   - { id: FE-15, date: "2026-09-07", status: todo, priority: P1, tags: [화면],   title: "툴 호출 진행 표시",
       dod: "event: tool 수신 시 '~를 확인하는 중' 표시 후 사라짐", output: "툴 인디케이터" }
@@ -43,7 +43,7 @@ tasks:
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
   - { id: FE-16, date: "2026-09-08", status: review, priority: P0, tags: [권고],   title: "침묵 권고 배너",
       dod: "권고와 근거가 함께 뜨고, 수용/무시 버튼이 동등하게 배치됨", output: "권고 배너" }
-  - { id: FE-17, date: "2026-09-08", status: todo, priority: P0, tags: [측정],   title: "권고 응답 전송 — 무시 포함",
+  - { id: FE-17, date: "2026-09-08", status: done, priority: P0, tags: [측정],   title: "권고 응답 전송 — 무시 포함",
       dod: "무시 후 발화 시 발화 요청 전에 ignored 가 먼저 전송됨", output: "응답 전송" }
   - { id: FE-18, date: "2026-09-08", status: todo, priority: P1, tags: [측정],   title: "근거 표시 A/B 렌더 분기",
       dod: "서버가 내려준 분기값에 따라 근거가 표시되거나 생략됨", output: "A/B 렌더" }
@@ -57,7 +57,7 @@ tasks:
       dod: "방문 → 아침 화면까지 LLM 호출 없이 즉시 렌더", output: "진입 최적화" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
-  - { id: FE-22, date: "2026-09-10", status: review, priority: P0, tags: [화면],   title: "엔딩 화면 4종",
+  - { id: FE-22, date: "2026-09-10", status: done,   priority: P0, tags: [화면],   title: "엔딩 화면 4종",
       dod: "반복·고립·망설임·인계가 각각 다른 마무리로 렌더", output: "엔딩 화면" }
   - { id: FE-23, date: "2026-09-10", status: todo, priority: P0, tags: [화면],   title: "루프 카운터 비노출 · 후반 문장 변화 대응",
       dod: "카운터가 없고, 7시 13분으로 바뀌어도 화면이 자연스럽다", output: "점검" }
@@ -69,7 +69,7 @@ tasks:
       dod: "18:00 이후 기능 커밋 없음", output: "동결 확인" }
   - { id: FE-26, date: "2026-09-11", status: review, priority: P1, tags: [QA],     title: "크로스 브라우저 점검",
       dod: "Chrome·Safari·모바일 브라우저에서 1루프 완주", output: "점검표" }
-  - { id: FE-27, date: "2026-09-11", status: todo, priority: P2, tags: [성능],   title: "번들 사이즈 · 초기 로드",
+  - { id: FE-27, date: "2026-09-11", status: doing, priority: P2, tags: [성능],   title: "번들 사이즈 · 초기 로드",
       dod: "첫 화면 로드가 목표치 이내", output: "번들 리포트" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
@@ -103,7 +103,7 @@ tasks:
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
   - { id: FE-38, date: "2026-09-16", status: done,   priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
       dod: "운영 도메인에서 1루프 완주", output: "배포 검증" }
-  - { id: FE-39, date: "2026-09-16", status: todo, priority: P0, tags: [운영],   title: "오픈 온콜 — 프론트 오류",
+  - { id: FE-39, date: "2026-09-16", status: review, priority: P0, tags: [운영],   title: "오픈 온콜 — 프론트 오류",
       dod: "JS 오류·실패 요청 이상 없음", output: "온콜 기록" }
   - { id: FE-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 스트리밍 대화 UI 회고",
       dod: "SSE 렌더와 권고 배너 구현 경험을 글 1편", output: "데브로그" }
