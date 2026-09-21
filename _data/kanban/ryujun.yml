@@ -35,7 +35,7 @@ tasks:
       dod: "review 카드 판정 완료, 막힌 항목 3개 이하, 사이트 반영 커밋", output: "데브로그 1건" }
 
   # ── D-10 · 9/06 (일) ──────────────────────────────────────
-  - { id: PM-15, date: "2026-09-06", status: review, priority: P0, tags: [인프라], title: "스테이징 자동 배포 + HTTPS",
+  - { id: PM-15, date: "2026-09-06", status: done,   priority: P0, tags: [인프라], title: "스테이징 자동 배포 + HTTPS",
       dod: "main 머지 → 5분 내 반영, api 도메인 https 접속, 인증서 자동 갱신", output: "배포 파이프라인" }
   - { id: PM-16, date: "2026-09-06", status: done,   priority: P1, tags: [서사],   title: "NPC 3인 말투 가이드",
       dod: "민석·채연·은상 각각 어휘·문장 길이·회피 방식이 구분되는 예문 5개씩", output: "말투 가이드" }
@@ -85,7 +85,7 @@ tasks:
       dod: "감사 어댑터 적용 시 BeyondBob Engine 코드 diff 가 비어 있음을 직접 확인", output: "diff 증빙" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: PM-33, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "버그 트리아지 운영",
+  - { id: PM-33, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "버그 트리아지 운영",
       dod: "P0/P1 전건에 담당·기한 지정, 하루 2회 갱신. 판정 로그 유실은 P0로 분류", output: "이슈 보드" }
   - { id: PM-34, date: "2026-09-12", status: done, priority: P0, tags: [QA],     title: "회귀 시나리오 R1~R10 운영",
       dod: "10개 시나리오가 표로 존재하고 각 담당이 통과 표시", output: "회귀 표" }
@@ -111,7 +111,7 @@ tasks:
   # ── D-1 · 9/15 (화) ───────────────────────────────────────
   - { id: PM-42, date: "2026-09-15", status: todo, priority: P0, tags: [운영],   title: "Code Freeze 선언",
       dod: "핫픽스 외 머지 중단, 예외 승인 창구 단일화", output: "동결 공지" }
-  - { id: PM-43, date: "2026-09-15", status: todo, priority: P0, tags: [릴리스], title: "배포 리허설 + 롤백 리허설",
+  - { id: PM-43, date: "2026-09-15", status: review, priority: P0, tags: [릴리스], title: "배포 리허설 + 롤백 리허설",
       dod: "각 1회 성공, 단계별 소요시간을 런북에 기록", output: "리허설 로그" }
   - { id: PM-44, date: "2026-09-15", status: review, priority: P1, tags: [운영],   title: "공개 소개 문구 · 진입 동선 확정",
       dod: "소개 문구를 표면 목표로 통일, 커리어 시나리오가 같은 링크에서 진입 가능", output: "공개 콘텐츠" }

@@ -29,7 +29,7 @@ tasks:
       dod: "Agent가 판단해 호출하고, 결과가 재판정에 반영되어 거짓 출처가 발각됨", output: "ask_npc" }
   - { id: AI-11, date: "2026-09-06", status: done, priority: P0, tags: [에이전트], title: "Planner — 루프 시작 시 하루 계획",
       dod: "NPC 3인이 각자 비트 단위 계획을 세우고 저장", output: "Planner" }
-  - { id: AI-12, date: "2026-09-06", status: doing, priority: P1, tags: [비용],   title: "토큰 · 비용 계측 적재",
+  - { id: AI-12, date: "2026-09-06", status: review, priority: P1, tags: [비용],   title: "토큰 · 비용 계측 적재",
       dod: "요청별 토큰/비용/지연이 llm_call 에 기록되고 일자별 집계 가능", output: "비용 집계" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────

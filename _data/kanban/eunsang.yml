@@ -45,7 +45,7 @@ tasks:
       dod: "불일치가 오류 표시가 아니라 조용히 존재한다. 경고 아이콘 금지", output: "손상 2층 UI" }
   - { id: APP-17, date: "2026-09-08", status: review, priority: P0, tags: [모바일], title: "모바일 웹 최적화 1차",
       dod: "노트·인스펙터가 모바일 화면에서 읽을 수 있는 수준", output: "모바일 대응" }
-  - { id: APP-18, date: "2026-09-08", status: review, priority: P1, tags: [화면],   title: "루프별 그룹핑 · 접기",
+  - { id: APP-18, date: "2026-09-08", status: done,   priority: P1, tags: [화면],   title: "루프별 그룹핑 · 접기",
       dod: "루프가 쌓여도 노트가 한눈에 들어온다", output: "그룹 UI" }
 
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
