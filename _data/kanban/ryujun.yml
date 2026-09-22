@@ -97,7 +97,7 @@ tasks:
       dod: "익명 반복 접속이 실제로 차단되고, 상한 도달 시 정해진 안내가 나온다", output: "제한 설정" }
   - { id: PM-37, date: "2026-09-13", status: done, priority: P0, tags: [보안],   title: "시크릿 스캔 · 권한 점검",
       dod: "레포 시크릿 0건, CORS 화이트리스트 확정", output: "보안 점검표" }
-  - { id: PM-38, date: "2026-09-13", status: todo, priority: P0, tags: [서사],   title: "엔딩 텍스트 팀 리뷰",
+  - { id: PM-38, date: "2026-09-13", status: review, priority: P0, tags: [서사],   title: "엔딩 텍스트 팀 리뷰",
       dod: "3인 이상이 읽고 망설임 엔딩이 이야기로 성립하는지 확인", output: "리뷰 기록" }
 
   # ── D-2 · 9/14 (월) ───────────────────────────────────────

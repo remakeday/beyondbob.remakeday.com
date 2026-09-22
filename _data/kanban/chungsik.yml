@@ -37,7 +37,7 @@ tasks:
       dod: "아침 → 대화 3회 → 하루 종료 → 아침 복귀가 실 API로 완주", output: "루프 플로우" }
   - { id: FE-14, date: "2026-09-07", status: done,   priority: P0, tags: [UX],     title: "로딩 · 오류 · 종료 상태",
       dod: "LLM 지연·네트워크 끊김·예산 소진에 각각 정해진 화면", output: "상태 UI" }
-  - { id: FE-15, date: "2026-09-07", status: review, priority: P1, tags: [화면],   title: "툴 호출 진행 표시",
+  - { id: FE-15, date: "2026-09-07", status: done,   priority: P1, tags: [화면],   title: "툴 호출 진행 표시",
       dod: "event: tool 수신 시 '~를 확인하는 중' 표시 후 사라짐", output: "툴 인디케이터" }
 
   # ── D-8 · 9/08 (화) ───────────────────────────────────────
@@ -53,7 +53,7 @@ tasks:
       dod: "웹 알파가 스테이징 URL에서 동작하고 전원이 완주", output: "알파 배포" }
   - { id: FE-20, date: "2026-09-09", status: done, priority: P0, tags: [QA],     title: "시연 버그 수정",
       dod: "시연 중 발견된 웹 P0 당일 처리", output: "핫픽스" }
-  - { id: FE-21, date: "2026-09-09", status: todo, priority: P1, tags: [UX],     title: "첫 루프 진입 속도",
+  - { id: FE-21, date: "2026-09-09", status: doing, priority: P1, tags: [UX],     title: "첫 루프 진입 속도",
       dod: "방문 → 아침 화면까지 LLM 호출 없이 즉시 렌더", output: "진입 최적화" }
 
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
@@ -103,7 +103,7 @@ tasks:
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
   - { id: FE-38, date: "2026-09-16", status: done,   priority: P0, tags: [릴리스], title: "프로덕션 배포 검증",
       dod: "운영 도메인에서 1루프 완주", output: "배포 검증" }
-  - { id: FE-39, date: "2026-09-16", status: review, priority: P0, tags: [운영],   title: "오픈 온콜 — 프론트 오류",
+  - { id: FE-39, date: "2026-09-16", status: done,   priority: P0, tags: [운영],   title: "오픈 온콜 — 프론트 오류",
       dod: "JS 오류·실패 요청 이상 없음", output: "온콜 기록" }
   - { id: FE-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 스트리밍 대화 UI 회고",
       dod: "SSE 렌더와 권고 배너 구현 경험을 글 1편", output: "데브로그" }
