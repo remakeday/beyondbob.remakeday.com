@@ -13,7 +13,7 @@ tasks:
       dod: "자유 텍스트 응답이 거부되고, 스키마 위반 시 재시도 후 안전 기본값", output: "harness/" }
   - { id: AI-05, date: "2026-09-04", status: done, priority: P0, tags: [프롬프트], title: "Agent 판정 프롬프트 v0",
       dod: "발화 1건에 대해 응답·의심여부·도구호출·계획수정 을 JSON으로 반환", output: "prompts/agent/v0" }
-  - { id: AI-06, date: "2026-09-04", status: doing, priority: P0, tags: [ERD],    title: "llm_call 계측 테이블 반영 요청",
+  - { id: AI-06, date: "2026-09-04", status: review, priority: P0, tags: [ERD],    title: "llm_call 계측 테이블 반영 요청",
       dod: "역할·모델·스키마통과·재시도·토큰·지연·비용 필드가 ERD v1 에 포함", output: "ERD 반영" }
 
   # ── D-11 · 9/05 (토) ──────────────────────────────────────
@@ -73,7 +73,7 @@ tasks:
       dod: "운영 프롬프트를 v1.0 으로 태깅, 이후 변경은 PM 승인", output: "prompts/v1.0" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: AI-28, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "AI 버그 스쿼시",
+  - { id: AI-28, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "AI 버그 스쿼시",
       dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
   - { id: AI-29, date: "2026-09-12", status: todo, priority: P0, tags: [평가],   title: "탐문 ON/OFF 대조 실험",
       dod: "동일 발화 시퀀스에서 ask_npc 유무에 따라 발각률이 갈리는지 수치로 확인", output: "대조 리포트" }
@@ -103,7 +103,7 @@ tasks:
   # ── D-0 · 9/16 (수) ───────────────────────────────────────
   - { id: AI-38, date: "2026-09-16", status: done, priority: P0, tags: [릴리스], title: "프로덕션 에이전트 검증",
       dod: "운영 환경에서 1루프 완주 + 권고 1회 발동 + 로그 적재 확인", output: "검증 로그" }
-  - { id: AI-39, date: "2026-09-16", status: review, priority: P0, tags: [운영],   title: "오픈 온콜 — 비용 · 실패율",
+  - { id: AI-39, date: "2026-09-16", status: done,   priority: P0, tags: [운영],   title: "오픈 온콜 — 비용 · 실패율",
       dod: "오픈 2시간 토큰 사용량·스키마 실패율 이상 없음", output: "온콜 기록" }
   - { id: AI-40, date: "2026-09-16", status: todo, priority: P2, tags: [기록],   title: "데브로그 — 침묵 권고 설계 회고",
       dod: "AI가 제안자가 되는 유일한 층을 어떻게 설계했는지 글 1편", output: "데브로그" }

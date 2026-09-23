@@ -73,7 +73,7 @@ tasks:
       dod: "첫 화면 로드가 목표치 이내", output: "번들 리포트" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: FE-28, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "버그 스쿼시",
+  - { id: FE-28, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "버그 스쿼시",
       dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
   - { id: FE-29, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "회귀 R1~R4 담당 수행",
       dod: "루프 완주·예산 소진·권고 수용·권고 무시 통과 표시", output: "회귀 결과" }

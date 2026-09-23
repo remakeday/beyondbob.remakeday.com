@@ -75,7 +75,7 @@ tasks:
       dod: "CI에서 도메인 테스트가 LLM 없이 3분 내 통과", output: "CI 리포트" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: BE-29, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "버그 스쿼시 (P0·P1)",
+  - { id: BE-29, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "버그 스쿼시 (P0·P1)",
       dod: "배정 전건 종료. 판정 로그 유실은 최우선", output: "이슈 종료" }
   - { id: BE-30, date: "2026-09-12", status: todo, priority: P0, tags: [인프라], title: "마이그레이션 롤백 검증",
       dod: "downgrade 1스텝 후 재적용까지 데이터 손상 없이 성공", output: "롤백 로그" }

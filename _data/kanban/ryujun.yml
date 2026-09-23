@@ -63,7 +63,7 @@ tasks:
   # ── D-7 · 9/09 (수) ───────────────────────────────────────
   - { id: PM-24, date: "2026-09-09", status: done,   priority: P0, tags: [QA],     title: "알파 시연 주재 — 전원 1루프 완주",
       dod: "5인 전원이 각자 기기에서 아침→대화→죽음→아침을 완주", output: "시연 결과표" }
-  - { id: PM-25, date: "2026-09-09", status: todo, priority: P0, tags: [결정],   title: "범위 컷 결정 (방어선 미달 시)",
+  - { id: PM-25, date: "2026-09-09", status: review, priority: P0, tags: [결정],   title: "범위 컷 결정 (방어선 미달 시)",
       dod: "미착수 방어선이 2개 이상이면 ⑨→⑧→⑦→⑥ 순으로 컷하고 공지, 이후 재론 없음", output: "/plan/scope/ 갱신" }
   - { id: PM-26, date: "2026-09-09", status: todo, priority: P1, tags: [리스크], title: "중간 리스크 재평가",
       dod: "R2~R10 트리거 도달 여부 점검, 상위 5개에 담당·기한 재지정", output: "/plan/risk/" }

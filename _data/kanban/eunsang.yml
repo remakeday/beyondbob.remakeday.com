@@ -29,7 +29,7 @@ tasks:
       dod: "발화 1건의 판정 체인이 실제 로그로 열린다", output: "인스펙터" }
   - { id: APP-11, date: "2026-09-06", status: review, priority: P0, tags: [화면],   title: "도구 호출 체인 표시",
       dod: "ask_npc 호출·결과·부작용이 체인 안에서 구분되어 보인다", output: "툴 체인 UI" }
-  - { id: APP-12, date: "2026-09-06", status: todo, priority: P1, tags: [UX],     title: "인스펙터 진입 동선",
+  - { id: APP-12, date: "2026-09-06", status: doing, priority: P1, tags: [UX],     title: "인스펙터 진입 동선",
       dod: "게임 흐름을 방해하지 않으면서 언제든 열 수 있다", output: "진입 동선" }
 
   # ── D-9 · 9/07 (월) ───────────────────────────────────────
@@ -73,7 +73,7 @@ tasks:
       dod: "확대 시 노트·인스펙터 레이아웃이 잘리지 않음", output: "접근성" }
 
   # ── D-4 · 9/12 (토) ───────────────────────────────────────
-  - { id: APP-28, date: "2026-09-12", status: doing, priority: P0, tags: [QA],     title: "버그 스쿼시",
+  - { id: APP-28, date: "2026-09-12", status: review, priority: P0, tags: [QA],     title: "버그 스쿼시",
       dod: "배정 P0/P1 전건 종료", output: "이슈 종료" }
   - { id: APP-29, date: "2026-09-12", status: todo, priority: P0, tags: [QA],     title: "회귀 R6·R10 담당 수행",
       dod: "5루프 노트 축적·손상 2층 확인, 전이 인스펙터 개봉 통과 표시", output: "회귀 결과" }
