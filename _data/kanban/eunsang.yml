@@ -59,7 +59,7 @@ tasks:
   # ── D-6 · 9/10 (목) ───────────────────────────────────────
   - { id: APP-22, date: "2026-09-10", status: todo, priority: P0, tags: [손상],   title: "충식 소실(손상 3층) 표현 지원",
       dod: "노트에 남은 충식 언급이 후반에 어긋나 보이는 처리", output: "손상 3층" }
-  - { id: APP-23, date: "2026-09-10", status: todo, priority: P0, tags: [전이],   title: "전이 도메인 화면 대응 준비",
+  - { id: APP-23, date: "2026-09-10", status: review, priority: P0, tags: [전이],   title: "전이 도메인 화면 대응 준비",
       dod: "인스펙터가 도메인 중립 필드명으로 렌더되어 용어만 갈아끼우면 됨", output: "중립 렌더" }
   - { id: APP-24, date: "2026-09-10", status: review, priority: P1, tags: [모바일], title: "모바일 웹 최적화 2차",
       dod: "대화창까지 포함해 모바일에서 1루프 완주 가능", output: "모바일 대응" }
